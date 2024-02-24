@@ -2,6 +2,12 @@
 #include "version.h"
 #define MOON_LED_LEVEL LED_LEVEL
 
+/*
+#ifdef COMBO_ENABLE
+#include HD_combo_def // this has the combo definitions
+#endif
+*/
+
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   ST_MACRO_0,
