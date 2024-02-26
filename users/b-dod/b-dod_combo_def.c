@@ -86,3 +86,4 @@ combo_t key_combos[] = {
     [HC_combo31] = COMBO(combo31, ST_MACRO_18),
     [HC_combo32] = COMBO(combo32, ST_MACRO_19),
 };
+/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
