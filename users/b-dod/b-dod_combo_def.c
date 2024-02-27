@@ -84,6 +84,6 @@ combo_t key_combos[] = {
     [HC_combo29] = COMBO(combo29, LGUI(KC_A)),
     [HC_combo30] = COMBO(combo30, LGUI(KC_F)),
     [HC_combo31] = COMBO_ACTION(combo31),
-    [HC_combo32] = COMBO_ACTION(combo32),
+    [HC_combo32] = COMBO_ACTION(combo32)
 };
 /* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */

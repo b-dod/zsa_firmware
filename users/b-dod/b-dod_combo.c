@@ -1,11 +1,6 @@
-/*
- Combos
 
- Tailored for Hands Down Neu related variations
-  
- */
-
-uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define and use this instead!
+uint16_t COMBO_LEN = COMBO_LENGTH;
+// remove the COMBO_COUNT define and use this instead!
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
 	if (pressed) {
@@ -72,5 +67,4 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 		    break;
 		} // switch(combo_index)
 	} // if (pressed) - so after this is keyup
-} // HC_combo
-
+} // process_combo_event

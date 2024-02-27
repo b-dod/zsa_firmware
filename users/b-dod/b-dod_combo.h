@@ -1,4 +1,4 @@
-#define EXTRA_SHORT_COMBOS // because I don't believ in big combos-use layers or leader_key
+#define EXTRA_SHORT_COMBOS // no big combos-use layers or leader_key
 
 //
 // where's the file with the combo definitions to be included in the keymap.c

@@ -2,38 +2,16 @@
 #include "version.h"
 #define MOON_LED_LEVEL LED_LEVEL
 
-/*
+
 #ifdef COMBO_ENABLE
 #include HD_combo_def // this has the combo definitions
 #endif
-*/
+
 
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
-  ST_MACRO_0,
-  ST_MACRO_1,
-  ST_MACRO_2,
-  ST_MACRO_3,
-  ST_MACRO_4,
-  ST_MACRO_5,
-  ST_MACRO_6,
-  ST_MACRO_7,
-  ST_MACRO_8,
-  ST_MACRO_9,
-  ST_MACRO_10,
-  ST_MACRO_11,
-  ST_MACRO_12,
-  ST_MACRO_13,
-  ST_MACRO_14,
-  ST_MACRO_15,
-  ST_MACRO_16,
-  ST_MACRO_17,
-  ST_MACRO_18,
-  ST_MACRO_19,
   MAC_SIRI,
 };
-
-
 
 enum tap_dance_codes {
   DANCE_0,
@@ -75,82 +53,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
-const uint16_t PROGMEM combo0[] = { KC_G, KC_M, COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_G, KC_M, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo2[] = { KC_M, KC_P, COMBO_END};
-const uint16_t PROGMEM combo3[] = { KC_P, KC_M, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_N, KC_D, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_N, KC_D, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo6[] = { KC_S, KC_N, COMBO_END};
-const uint16_t PROGMEM combo7[] = { KC_N, KC_S, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo8[] = { KC_H, KC_I, COMBO_END};
-const uint16_t PROGMEM combo9[] = { KC_I, KC_H, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo10[] = { KC_E, KC_I, COMBO_END};
-const uint16_t PROGMEM combo11[] = { KC_E, KC_I, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo12[] = { KC_U, KC_O, COMBO_END};
-const uint16_t PROGMEM combo13[] = { MT(MOD_RSFT, KC_SPACE), KC_U, KC_O, COMBO_END};
-const uint16_t PROGMEM combo14[] = { MT(MOD_RGUI, KC_A), KC_E, COMBO_END};
-const uint16_t PROGMEM combo15[] = { MT(MOD_RSFT, KC_SPACE), MT(MOD_RGUI, KC_A), KC_E, COMBO_END};
-const uint16_t PROGMEM combo16[] = { KC_C, KC_L, COMBO_END};
-const uint16_t PROGMEM combo17[] = { KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM combo18[] = { KC_U, KC_Y, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo19[] = { KC_J, KC_G, COMBO_END};
-const uint16_t PROGMEM combo20[] = { KC_J, KC_G, MT(MOD_RSFT, KC_SPACE), COMBO_END};
-const uint16_t PROGMEM combo21[] = { KC_P, KC_V, COMBO_END};
-const uint16_t PROGMEM combo22[] = { KC_BSPC, KC_DELETE, COMBO_END};
-const uint16_t PROGMEM combo23[] = { KC_X, KC_F, COMBO_END};
-const uint16_t PROGMEM combo24[] = { KC_X, KC_L, COMBO_END};
-const uint16_t PROGMEM combo25[] = { KC_F, KC_L, COMBO_END};
-const uint16_t PROGMEM combo26[] = { KC_L, KC_C, KC_F, COMBO_END};
-const uint16_t PROGMEM combo27[] = { KC_R, KC_D, COMBO_END};
-const uint16_t PROGMEM combo28[] = { KC_R, KC_S, COMBO_END};
-const uint16_t PROGMEM combo29[] = { KC_X, KC_C, COMBO_END};
-const uint16_t PROGMEM combo30[] = { KC_C, KC_W, COMBO_END};
-const uint16_t PROGMEM combo31[] = { KC_X, KC_L, KC_C, COMBO_END};
-const uint16_t PROGMEM combo32[] = { MT(MOD_RSFT, KC_SPACE), KC_C, KC_L, COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, ST_MACRO_0),
-    COMBO(combo1, ST_MACRO_1),
-    COMBO(combo2, ST_MACRO_2),
-    COMBO(combo3, ST_MACRO_3),
-    COMBO(combo4, ST_MACRO_4),
-    COMBO(combo5, ST_MACRO_5),
-    COMBO(combo6, ST_MACRO_6),
-    COMBO(combo7, ST_MACRO_7),
-    COMBO(combo8, ST_MACRO_8),
-    COMBO(combo9, ST_MACRO_9),
-    COMBO(combo10, ST_MACRO_10),
-    COMBO(combo11, ST_MACRO_11),
-    COMBO(combo12, ST_MACRO_12),
-    COMBO(combo13, ST_MACRO_13),
-    COMBO(combo14, ST_MACRO_14),
-    COMBO(combo15, ST_MACRO_15),
-    COMBO(combo16, ST_MACRO_16),
-    COMBO(combo17, KC_Q),
-    COMBO(combo18, RSFT(KC_Q)),
-    COMBO(combo19, KC_Z),
-    COMBO(combo20, RSFT(KC_Z)),
-    COMBO(combo21, ST_MACRO_17),
-    COMBO(combo22, LALT(KC_BSPC)),
-    COMBO(combo23, LGUI(KC_Z)),
-    COMBO(combo24, LGUI(KC_X)),
-    COMBO(combo25, LGUI(KC_C)),
-    COMBO(combo26, LGUI(KC_V)),
-    COMBO(combo27, KC_ESCAPE),
-    COMBO(combo28, KC_TAB),
-    COMBO(combo29, LGUI(KC_A)),
-    COMBO(combo30, LGUI(KC_F)),
-    COMBO(combo31, ST_MACRO_18),
-    COMBO(combo32, ST_MACRO_19),
-};
 
 extern rgb_config_t rgb_matrix_config;
 
 void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
-
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
     [0] = { {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255}, {82,56,255} },
@@ -208,109 +116,8 @@ bool rgb_matrix_indicators_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case ST_MACRO_0:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_G) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_1:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_G)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_2:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_P) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_3:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_P)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_4:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_T) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_5:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_T)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_6:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_S) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_7:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_S)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_8:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_W) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_9:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_W)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_10:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_E) SS_DELAY(90) SS_TAP(X_O));
-    }
-    break;
-    case ST_MACRO_11:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_E)) SS_DELAY(90) SS_TAP(X_O));
-    }
-    break;
-    case ST_MACRO_12:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_U) SS_DELAY(90) SS_TAP(X_A));
-    }
-    break;
-    case ST_MACRO_13:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_U)) SS_DELAY(90) SS_TAP(X_A));
-    }
-    break;
-    case ST_MACRO_14:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_A) SS_DELAY(90) SS_TAP(X_U));
-    }
-    break;
-    case ST_MACRO_15:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_A)) SS_DELAY(90) SS_TAP(X_U));
-    }
-    break;
-    case ST_MACRO_16:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_C) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
-    case ST_MACRO_17:
-    if (record->event.pressed) {
-      SEND_STRING(SS_TAP(X_L) SS_DELAY(90) SS_TAP(X_V));
-    }
-    break;
-    case ST_MACRO_18:
-    if (record->event.pressed) {
-      SEND_STRING(SS_LGUI(SS_TAP(X_LEFT)) SS_DELAY(90) SS_LGUI(SS_LSFT(SS_TAP(X_RIGHT))));
-    }
-    break;
-    case ST_MACRO_19:
-    if (record->event.pressed) {
-      SEND_STRING(SS_RSFT(SS_TAP(X_C)) SS_DELAY(90) SS_TAP(X_H));
-    }
-    break;
     case MAC_SIRI:
       HCS(0xCF);
-
     case RGB_SLD:
         if (rawhid_state.rgb_control) {
             return false;
