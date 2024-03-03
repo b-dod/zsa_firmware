@@ -65,6 +65,9 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 		    case HC_combo32:
 		      SEND_STRING(SS_RSFT(SS_TAP(X_C)) SS_DELAY(90) SS_TAP(X_H));
 		    break;
+			case HC_combo34:
+		      SEND_STRING(SS_LALT(SS_TAP(X_LEFT)) SS_DELAY(90) SS_LALT(SS_LSFT(SS_TAP(X_RIGHT))));
+		    break;
 		} // switch(combo_index)
 	} // if (pressed) - so after this is keyup
 } // process_combo_event

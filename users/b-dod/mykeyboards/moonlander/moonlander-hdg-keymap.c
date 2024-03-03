@@ -19,14 +19,18 @@ enum tap_dance_codes {
   DANCE_2,
   DANCE_3,
 };
+
+#define ______ KC_TRNS
+#define __no__ KC_NO
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_moonlander(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_J,           KC_G,           KC_M,           KC_P,           HD_V,           KC_TRANSPARENT,                                 KC_TRANSPARENT,        KC_SCLN,         KC_DOT,       KC_SLASH,        KC_DQUO,       KC_QUOTE, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_R,           KC_S,           KC_N,           KC_D,           KC_B,           KC_TRANSPARENT,                                 KC_TRANSPARENT,       KC_COMMA, MT(MOD_RGUI, KC_A),       KC_E,           KC_I,           KC_H, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_X,           KC_F,           KC_L,           KC_C,           KC_W,                                                                                 KC_MINUS,           KC_U,           KC_O,           KC_Y,           KC_K, KC_TRANSPARENT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-                                                                        LT(3,KC_T),  LT(2,KC_BSPC), KC_TRANSPARENT,                                 KC_TRANSPARENT, LT(1,KC_ENTER), MT(MOD_RSFT, KC_SPACE)
+    ______, ______, ______, ______, ______, ______, ______,               ______, ______, ______, ______, ______, ______, ______, 
+    ______, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, ______,               ______, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, ______, 
+    ______, HD_LM4, HD_LM3, HD_LM2, HD_LM1, HD_LM0, ______,               ______, HD_RM0, HD_RM1, HD_RM2, HD_RM3, HD_RM4, ______, 
+    ______, HD_LB4, HD_LB3, HD_LB2, HD_LB1, HD_LB0,                               HD_RB0, HD_RB1, HD_RB2, HD_RB3, HD_RB4, ______, 
+    ______, ______, ______, ______, HD_LH3, ______,                               ______, ______, ______, ______, ______, ______, 
+                                            HD_LH2, HD_LH1, ______,       ______, HD_RH1, HD_RH2
   ),
   [1] = LAYOUT_moonlander(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 

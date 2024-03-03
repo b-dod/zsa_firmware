@@ -39,5 +39,7 @@ enum my_combos {
     HC_combo30,
     HC_combo31,
     HC_combo32,
+    HC_combo33,
+    HC_combo34,
     COMBO_LENGTH
 };
