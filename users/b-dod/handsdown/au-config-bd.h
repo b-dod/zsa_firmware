@@ -161,14 +161,14 @@
 #define HD_open_keys  HD_LM1, HD_LB1   // open
 #define HD_close_keys HD_LM3, HD_LB3   // close
 #define HD_quit_keys  HD_LB0, HD_LM0   // quit
-#define HD_find_keys  HD_RM4, HD_RB0   // find selection
+#define HD_find_keys  HD_LM4, HD_LB0   // find selection
 #define HD_sall_keys  HD_LB4, HD_LB1   // select all
 #define HD_slne_keys  HD_LB4, HD_LB2, HD_LB1   // select line
 #define HD_swrd_keys  HD_LB4, HD_LB0   // select word
 #define HD_undo_keys  HD_LB4, HD_LB3   // undo
 #define HD_redo_keys  HD_LB4, HD_LB3, HD_LB2   // redo
 #define HD_copy_keys  HD_LB3, HD_LB2   // copy (hold for cut)
-#define HD_pste_keys  HD_LB2, HD_LB1   // paste (hold for paste-match)
+#define HD_pste_keys  HD_LB3, HD_LB2, HD_LB1   // paste (hold for paste-match)
 #define HD_esc_keys   HD_LM1, HD_LM4   // esc
 
 #define HD_tab_keys  HD_LT4, HD_LT3     // tab

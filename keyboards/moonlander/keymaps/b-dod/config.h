@@ -14,3 +14,5 @@
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
 #define RGB_MATRIX_STARTUP_SPD 60
+
+#define RGB_MATRIX_TIMEOUT 180000 // 3 MINUTES // number of milliseconds to wait until rgb automatically turns off

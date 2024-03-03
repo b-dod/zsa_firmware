@@ -124,37 +124,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code16(KC_U); // almost always "œu"
                 combo_on = combo_index; // but like qu, we'll take it back if we must.
                 break;
-/*
-            case HC_1E: // É
-                tap_code16(A(KC_E)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-            case HC_2E: // È
-                tap_code16(A(KC_GRAVE)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-            case HC_3E: // Ê
-                tap_code16(A(KC_6)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-            case HC_4E: // Ë
-                tap_code16(A(KC_U)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-            case HC_5E: // Ē
-                tap_code16(A(KC_A)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-            case HC_6E: // E̊
-                tap_code16(A(KC_K)); // this should use semkeys
-                tap_code16(KC_E); //
-                break;
-*/
-/*
-            case HC_OSLSH:
-                tap_code16(A(KC_O)); // this should use semkeys
-                break;
-*/
+
             case HC_NDSH:
                 register_code16(A(KC_MINS));  // should be a semkey
                 break;
