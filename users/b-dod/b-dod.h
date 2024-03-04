@@ -1,11 +1,5 @@
 #pragma once
 
-#ifndef USERSPACE
-    #define USERSPACE
-#endif
-
-#include <quantum.h>
-
 //
 // which HD alpha variation are we using?
 //
@@ -15,27 +9,12 @@
 #include "handsdown/au-config-bd.h" // definitions for the Alpha layer and mnemonic combos
 // #include "moutis_layers.h" // definitions for all the other layers
 
-/*
-#ifdef COMBO_HOLD
-    #undef ADAPTIVE_TERM
-    #define ADAPTIVE_TERM COMBO_HOLD  // use COMBO_HOLD time as a standard threshold (same recation time)
-#else
-    #define ADAPTIVE_TERM (TAPPING_TERM/5) // rolling threshold
+#ifndef USERSPACE
+    #define USERSPACE
 #endif
 
-#define LINGER_TIME TAPPING_TERM * 1.2 // how long to hold before a time-depentant behavior begins
-// how long to leave a state active before resetting like APPMENU or CAPSWORD
-#define STATE_RESET_TIME LINGER_TIME * 3
+#include <quantum.h>
 
-#define ADAPTIVE_ENABLE
-// #define ADAPTIVE_TRAILER KC_3
-
-//#define THUMB_REPEATER
-#ifdef THUMB_REPEATER
-#define HD_REPEATER_A HD_BSPC
-#define HD_REPEATER_B KC_ENT
-#endif
-*/
 
 #ifdef COMBO_ENABLE
     #include "process_combo.h"
@@ -44,3 +23,42 @@
 // #include "moutis_casemods.h"
 
 #include "b-dod_combo.h"
+/*
+typedef union {
+    uint32_t raw;
+    struct {
+        uint8_t OSIndex; // index of platforms (0=mac, 1=win, 2=lux)? // used by semantickeys
+        bool AdaptiveKeys; // Adaptive Keys On? (and advanced combos)
+    };
+} user_config_t;
+*/
+/*
+// enum my_layers for layout layers
+enum my_layers {// must be difined before semantickeys.h
+    L_QWERTY,   // 0 - QWERTY compatibility layer
+    L_HD,       // 1 - Hands Down Alpha layer
+    L_SYM,      // 2 - symbols, punctuation, off-map alphas
+    L_FUN,      // 3 - function & number rows
+    L_NUM,      // 4 - numpad (right); navpad (left)
+    L_NAV,      // 5 - nav pad (right); meta keys (left)
+    L_CFG       // 6 - Media/Consumer controls; Keyboard settings
+};
+
+enum OS_Platform { // Used for platform support via SemKeys
+    OS_Mac,     // Mac with ANSI_US_EXTENDED layout
+//    OS_iOS,     // iOS?
+    OS_Win,     // Win with default English/ANSI layout?
+//    OS_Lux,     // Linux (Gnome?/KDE?)
+//    OS_And,     // Android (flavors?)
+    OS_count
+};
+*/
+//#include "b-dod_semantickeys.h"
+/*
+#define register_linger_key(kc) {((kc > (uint16_t)SK_KILL) && (kc < (uint16_t)SemKeys_COUNT)) ? register_SemKey(kc) : register_code16(kc);linger_key = kc;linger_timer = state_reset_timer = timer_read();}
+
+#define unregister_linger_key() {((linger_key > (uint16_t)SK_KILL) && (linger_key < (uint16_t)SemKeys_COUNT)) ? unregister_SemKey(linger_key) : unregister_code16(linger_key);linger_key = 0;}
+
+void matrix_scan_user_process_combo(void);
+*/
+

@@ -15,10 +15,12 @@
 // #define COMBO_TERM 44
 // #define COMBO_COUNT 33
 
-#ifdef COMBO_ENABLE
-    // #undef HD_combo_def
-    // #define HD_combo_def "b-dod_combo_def.c"
+// Pick good defaults for enabling homerow modifiers
+#define TAP_CODE_DELAY 10
+#define TAP_HOLD_CAPS_DELAY 10
+#define PERMISSIVE_HOLD
 
+#ifdef COMBO_ENABLE
     #ifdef COMBO_COUNT
         #undef COMBO_COUNT
     #endif
@@ -34,10 +36,25 @@
     #define COMBO_HOLD (TAPPING_TERM) // time to hold to trigger delayed combo
 #endif
 
-// Pick good defaults for enabling homerow modifiers
-#define TAP_CODE_DELAY 10
-#define TAP_HOLD_CAPS_DELAY 10
-#define PERMISSIVE_HOLD
+#ifdef COMBO_HOLD
+    #undef ADAPTIVE_TERM
+    #define ADAPTIVE_TERM COMBO_HOLD  // use COMBO_HOLD time as a standard threshold (same recation time)
+#else
+    #define ADAPTIVE_TERM (TAPPING_TERM/5) // rolling threshold
+#endif
+
+#define LINGER_TIME TAPPING_TERM * 1.2 // how long to hold before a time-depentant behavior begins
+// how long to leave a state active before resetting like APPMENU or SHIFTWORD
+#define STATE_RESET_TIME LINGER_TIME * 3
+
+#define ADAPTIVE_ENABLE
+#define ADAPTIVE_TRAILER KC_3
+
+//#define THUMB_REPEATER
+#ifdef THUMB_REPEATER
+#define HD_REPEATER_A HD_BSPC
+#define HD_REPEATER_B KC_ENT
+#endif
 
 #define AUTO_SHIFT_TIMEOUT 145
 #define NO_AUTO_SHIFT_TAB
