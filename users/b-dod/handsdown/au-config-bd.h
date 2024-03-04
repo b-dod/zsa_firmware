@@ -171,8 +171,8 @@
 #define HD_pste_keys  HD_LB3, HD_LB2, HD_LB1   // paste (hold for paste-match)
 #define HD_esc_keys   HD_LM1, HD_LM4   // esc
 
-#define HD_tab_keys  HD_LT4, HD_LT3     // tab
-#define HD_stab_keys HD_LT4, HD_LT3, HD_LT2  // Shift-tab
+#define HD_tab_keys  HD_LM4, HD_LM3     // tab
+#define HD_stab_keys HD_LM4, HD_LM3, HD_LM2  // Shift-tab
 #define HD_spc_keys  HD_LM1, HD_LM0     // SPACE
 #define HD_ent_keys  HD_LB0, HD_LB1     // ENTER
 #define HD_ent2_keys HD_LB0, HD_LB1, HD_LB2 // hard-ENTER/page break
@@ -198,7 +198,7 @@
 #define HD_Sh_keys HD_LM3, HD_LM2 // TYPE "sh"
 #define HD_Ph_keys HD_LT1, HD_LT2 // TYPE "ph"
 #define HD_Gh_keys HD_LT3, HD_LT2 // TYPE "gh"
-#define HD_Sch_keys HD_LM4, HD_LM3, HD_LM2 // TYPE "Sch"
+#define HD_Sch_keys HD_LM3, HD_LM2, HD_LM1 // TYPE "Sch"
 
 // Should we put all the diacritic keys here?
 // or get keep them all in the common area (if they all share
