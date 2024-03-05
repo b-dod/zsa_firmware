@@ -22,7 +22,7 @@
 
 
 
-/*  L_SYM Symbols and punctuation (Some via SemKeys/unicode for platform independance)
+/*  L_SYM Symbols and punctuation (Some via SemKeys/unicode for platform independence)
    ╭──────────────────────────────────────────╮                  ╭──────────────────────────────────────────╮
 __ │    Z       Q       ¶       §       ‡     │                  │     ¢        $       €       £       ¥   │ __
 __ │    <       [       (       {       †     |                  |     ¡        *       =       +       /   │ __

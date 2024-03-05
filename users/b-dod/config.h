@@ -4,16 +4,41 @@
   Set any config.h overrides for your specific keymap here.
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
-#undef TAPPING_TERM
-#define TAPPING_TERM 175
+
+//#undef ONESHOT_TIMEOUT
+//#define ONESHOT_TIMEOUT 1250
+/*
+#ifndef NO_DEBUG
+#define NO_DEBUG
+#endif // !NO_DEBUG
+#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
+#define NO_PRINT
+#endif // !NO_PRINT
+*/
+// This enables Link Time Optimization, saving a significant amount of space. Because the Macro and Function features are incompatible with Link Time Optimization, disable those features in config.h:
+
+// disable a bunch of things to save space
+#ifndef NO_ACTION_MACRO
+#define NO_ACTION_MACRO
+#endif
+#ifndef NO_ACTION_FUNCTION
+#define NO_ACTION_FUNCTION
+#endif
+#ifndef NO_ACTION_ONESHOT
+#define NO_ACTION_ONESHOT
+#endif
+#ifndef NO_MUSIC_MODE
+#define NO_MUSIC_MODE
+#endif
+#undef LOCKING_SUPPORT_ENABLE
+#undef LOCKING_RESYNC_ENABLE
 
 //#define TAPPING_TOGGLE 2
 
-#undef ONESHOT_TIMEOUT
-#define ONESHOT_TIMEOUT 1250
-
-// #define COMBO_TERM 44
-// #define COMBO_COUNT 33
+//#ifdef TAPPING_TERM
+#undef TAPPING_TERM
+#define TAPPING_TERM 175 // Mod TAP VS HOLD timing in milliseconds
+//#endif
 
 // Pick good defaults for enabling homerow modifiers
 #define TAP_CODE_DELAY 10
@@ -60,11 +85,6 @@
 #define NO_AUTO_SHIFT_TAB
 #define NO_AUTO_SHIFT_ALPHA
 
-/* disable a bunch of things to save space
-#ifndef NO_ACTION_ONESHOT
-#define NO_ACTION_ONESHOT
-#endif
-*/
 
 #define EN_HDIGRAPH_COMBOS // English H-Digraph combos (Th,Ch,Wh,Sh,Gh,Ph,Sch)
 #define EN_PRONOUN_COMBOS // English First Person pronoun combos (I, I'm, I've I'd I'll etc) (184 bytes on AVR)
