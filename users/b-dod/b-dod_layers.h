@@ -261,7 +261,7 @@ __ │   UNDO     CUT     COPY    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 #define LV_RM5 KC_TRNS
 
 #define LV_LB5 KC_VOLD
-#define LV_LB4 SK_UNDO
+#define LV_LB4 HD_CAPW //SK_UNDO
 #define LV_LB3 SK_CUT
 #define LV_LB2 SK_COPY
 #define LV_LB1 SK_PSTE

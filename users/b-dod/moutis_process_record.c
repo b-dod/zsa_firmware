@@ -35,8 +35,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return true;
       break;
     case HD_CAPW:
-        toggle_caps_word();
-      return false;
+        enable_caps_word();
+      return true;
       break;
 /*
     case RGB_SLD:
