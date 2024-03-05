@@ -27,18 +27,20 @@ const uint16_t PROGMEM combo6[] = { HD_Sh_keys, COMBO_END};
 const uint16_t PROGMEM combo7[] = { HD_Sh_keys, HD_RH2, COMBO_END};
 const uint16_t PROGMEM combo8[] = { HD_Wh_keys, COMBO_END};
 const uint16_t PROGMEM combo9[] = { HD_Wh_keys, HD_RH2, COMBO_END};
+/*
 const uint16_t PROGMEM combo10[] = { HD_RM2, HD_RM3, COMBO_END};
 const uint16_t PROGMEM combo11[] = { HD_RM2, HD_RM3, HD_RH2, COMBO_END};
 const uint16_t PROGMEM combo12[] = { HD_RB1, HD_RB2, COMBO_END};
 const uint16_t PROGMEM combo13[] = { HD_RH2, HD_RB1, HD_RB2, COMBO_END};
 const uint16_t PROGMEM combo14[] = { HD_RM1, HD_RM2, COMBO_END};
 const uint16_t PROGMEM combo15[] = { HD_RM1, HD_RM2, HD_RH2, COMBO_END};
+*/
 const uint16_t PROGMEM combo16[] = { HD_Ch_keys, COMBO_END};
 const uint16_t PROGMEM combo17[] = { HD_Qu_keys, COMBO_END};
 const uint16_t PROGMEM combo18[] = { HD_Qu_keys, HD_RH2, COMBO_END};
 const uint16_t PROGMEM combo19[] = { HD_L1_keys, COMBO_END};
 const uint16_t PROGMEM combo20[] = { HD_L1_keys, HD_RH2, COMBO_END};
-const uint16_t PROGMEM combo21[] = { HD_LT1, HD_LT0, COMBO_END};
+// const uint16_t PROGMEM combo21[] = { HD_LT1, HD_LT0, COMBO_END};
 const uint16_t PROGMEM combo22[] = { KC_BSPC, KC_DELETE, COMBO_END};
 const uint16_t PROGMEM combo23[] = { HD_undo_keys, COMBO_END};
 const uint16_t PROGMEM combo24[] = { HD_LB4, HD_LB2, COMBO_END};
@@ -90,18 +92,20 @@ combo_t key_combos[] = {
     [HC_combo7] = COMBO_ACTION(combo7),
     [HC_combo8] = COMBO_ACTION(combo8),
     [HC_combo9] = COMBO_ACTION(combo9),
+    /*
     [HC_combo10] = COMBO_ACTION(combo10),
     [HC_combo11] = COMBO_ACTION(combo11),
     [HC_combo12] = COMBO_ACTION(combo12),
     [HC_combo13] = COMBO_ACTION(combo13),
     [HC_combo14] = COMBO_ACTION(combo14),
     [HC_combo15] = COMBO_ACTION(combo15),
+    */
     [HC_combo16] = COMBO_ACTION(combo16),
     [HC_combo17] = COMBO(combo17, KC_Q),
     [HC_combo18] = COMBO(combo18, RSFT(KC_Q)),
     [HC_combo19] = COMBO(combo19, KC_Z),
     [HC_combo20] = COMBO(combo20, RSFT(KC_Z)),
-    [HC_combo21] = COMBO_ACTION(combo21),
+//    [HC_combo21] = COMBO_ACTION(combo21),
     [HC_combo22] = COMBO(combo22, LALT(KC_BSPC)),
     [HC_combo23] = COMBO(combo23, LGUI(KC_Z)),
     [HC_combo24] = COMBO(combo24, LGUI(KC_X)),

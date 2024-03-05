@@ -35,6 +35,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 		    case HC_combo9:
 		      SEND_STRING(SS_RSFT(SS_TAP(X_W)) SS_DELAY(90) SS_TAP(X_H));
 		    break;
+		    /*
 		    case HC_combo10:
 		      SEND_STRING(SS_TAP(X_E) SS_DELAY(90) SS_TAP(X_O));
 		    break;
@@ -53,12 +54,15 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 		    case HC_combo15:
 		      SEND_STRING(SS_RSFT(SS_TAP(X_A)) SS_DELAY(90) SS_TAP(X_U));
 		    break;
+		    */
 		    case HC_combo16:
 		      SEND_STRING(SS_TAP(X_C) SS_DELAY(90) SS_TAP(X_H));
 		    break;
+		    /*
 		    case HC_combo21:
 		      SEND_STRING(SS_TAP(X_L) SS_DELAY(90) SS_TAP(X_V));
 		    break;
+		    */
 		    case HC_combo31:
 		      SEND_STRING(SS_LGUI(SS_TAP(X_LEFT)) SS_DELAY(90) SS_LGUI(SS_LSFT(SS_TAP(X_RIGHT))));
 		    break;
