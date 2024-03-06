@@ -364,10 +364,11 @@ byteshave: // CAUTION: messing w/stack frame here!!
                 }
                 break;
 #endif
-            case KC_J:  // optional linger
-            case KC_V:  // optional linger
+//            case KC_J:  // optional linger
+//            case KC_V:  // optional linger
+            case KC_B:  // for linger Bryson
             case KC_Q:  // Qu, linger deletes U
-            case KC_Z:  // optional linger
+//            case KC_Z:  // optional linger
                 if ((saved_mods & MOD_MASK_ALT)
 #ifdef JP_MODE_ENABLE
                     || !IS_ENGLISH_MODE
@@ -454,9 +455,10 @@ storeSettings:
                 }
                 break;
 #endif
-            case KC_J:  //
-            case KC_V:  //
-            case KC_Z:  //
+//            case KC_J:  //
+//            case KC_V:  //
+//            case KC_Z:  //
+            case KC_B:  // for linger Bryson    
             case KC_Q:  // for linger Qu (ironically, need to handle this direclty w/o the macros.)
                 unregister_code16(keycode);
                 linger_key = 0; // make sure nothing lingers

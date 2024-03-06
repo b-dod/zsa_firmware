@@ -37,7 +37,12 @@ void matrix_scan_user(void) {
                     case KC_Q: // already "Q" has been sent; if lingered, add "u"
                         tap_code(KC_U);
                         break;
-
+                    case KC_B: // already "B" has been sent; if lingered, add "ryson"
+                        if ((saved_mods & MOD_MASK_SHIFT)) {
+                            SEND_STRING("ryson");
+                        }
+                        break;                        
+/*
                     case KC_V: // already "V" has been sent; if lingered, add "ivi "
                         if ((saved_mods & MOD_MASK_SHIFT)) {
                             SEND_STRING("ivi");
@@ -53,7 +58,7 @@ void matrix_scan_user(void) {
                             SEND_STRING("acob");
                         }
                         break;
-
+*/
                     case KC_LPRN: //
                         tap_code16(KC_RPRN);
                         tap_code16(KC_LEFT);

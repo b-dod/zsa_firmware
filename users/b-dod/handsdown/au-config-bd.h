@@ -9,7 +9,7 @@
 // First, let's define HD alpha keycodes with any hold-taps/custom keycodes
 //
 #define HD_A RSFT_T(KC_A)
-#define HD_B LT(L_CFG,KC_B)
+#define HD_B KC_B
 #define HD_C KC_C
 #define HD_D RSFT_T(KC_D)
 #define HD_E RGUI_T(KC_E)
