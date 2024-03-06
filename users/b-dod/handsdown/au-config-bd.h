@@ -195,7 +195,7 @@
 //
 #define HD_Th_keys HD_LM2, HD_LM1 // TYPE "th"
 #define HD_Ch_keys HD_LB2, HD_LB1 // TYPE "ch"
-#define HD_Wh_keys HD_RM3, HD_RM4 // TYPE "wh"
+#define HD_Wh_keys HD_LT4, HD_LT3 // TYPE "wh"
 #define HD_Sh_keys HD_LM3, HD_LM2 // TYPE "sh"
 #define HD_Ph_keys HD_LT1, HD_LT2 // TYPE "ph"
 #define HD_Gh_keys HD_LT3, HD_LT2 // TYPE "gh"
