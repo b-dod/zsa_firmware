@@ -17,6 +17,14 @@
 // Other variation dependent combos have predetermined
 // positions for 34 key boards
 
+#ifdef APPMENU_keys
+const uint16_t PROGMEM H_menu_combo[] = {APPMENU_keys, COMBO_END}; // AppMENU
+// const uint16_t PROGMEM H_menu_nav_combo[] = {APPMENU_nav_keys, COMBO_END}; // AppMENU
+#else
+const uint16_t PROGMEM H_menu_combo[] = {HD_LB3, HD_LB1, COMBO_END}; // AppMENU // default Appmenu location
+// const uint16_t PROGMEM H_menu_nav_combo[] = {LN_LB3, LN_LB1, COMBO_END}; // AppMENU on Nav layer
+#endif
+
 const uint16_t PROGMEM combo0[] = { HD_Gh_keys, COMBO_END};
 const uint16_t PROGMEM combo1[] = { HD_Gh_keys, HD_RH2, COMBO_END};
 const uint16_t PROGMEM combo2[] = { HD_Ph_keys, COMBO_END};
@@ -71,17 +79,19 @@ const uint16_t PROGMEM F_ESC_combo[] = {HD_esc_keys, COMBO_END}; // ESCape
 // const uint16_t PROGMEM Hequal_combo[] = {HD_RB2, HD_RB3, COMBO_END}; // = equal (hold for %)
 
 // spatially arranged characters and diacritics
-// const uint16_t PROGMEM Hscln_combo[] = {HD_RM0, HD_RM1, COMBO_END}; // ; semicolon
-// const uint16_t PROGMEM Hcoln_combo[] = {HD_RT1, HD_RT3, COMBO_END}; // : colon
-// const uint16_t PROGMEM Hexlm_combo[] = {HD_RT1, HD_RT2, COMBO_END}; // !
-// const uint16_t PROGMEM Hques_combo[] = {HD_RT2, HD_RT3, COMBO_END}; // ?
-// const uint16_t PROGMEM Hdolr_combo[] = {HD_RT2, HD_RT4, COMBO_END}; // " DOUBLE QUOTE  // " hijacked for $
+const uint16_t PROGMEM Hscln_combo[] = {HD_RM0, HD_RM1, COMBO_END}; // ; semicolon
+const uint16_t PROGMEM Hcoln_combo[] = {HD_RT1, HD_RT3, COMBO_END}; // : colon
+const uint16_t PROGMEM Hexlm_combo[] = {HD_RT1, HD_RT2, COMBO_END}; // !
+const uint16_t PROGMEM Hques_combo[] = {HD_RT2, HD_RT3, COMBO_END}; // ?
+const uint16_t PROGMEM Hdolr_combo[] = {HD_RT2, HD_RT4, COMBO_END}; // " DOUBLE QUOTE  // " hijacked for $
 const uint16_t PROGMEM Htic_combo[] = {HD_RT3, HD_RT4, COMBO_END}; // ` tic (not dead key grave)
 
 // const uint16_t PROGMEM Hhash_combo[] = {HD_RT0, HD_RT2, COMBO_END}; // # HASH hijacked for §
-// const uint16_t PROGMEM Hat_combo[] = {HD_RT0, HD_RT1, COMBO_END}; // @
+const uint16_t PROGMEM Hat_combo[] = {HD_RT0, HD_RT1, COMBO_END}; // @
 
 combo_t key_combos[] = {
+    [HC_APP] = COMBO(H_menu_combo, KC_APP), // app menu
+//    [HC_APPNAV] = COMBO(H_menu_nav_combo, KC_APP), // app menu
     [HC_combo0] = COMBO_ACTION(combo0),
     [HC_combo1] = COMBO_ACTION(combo1),
     [HC_combo2] = COMBO_ACTION(combo2),
@@ -122,6 +132,12 @@ combo_t key_combos[] = {
     [HC_TIC] = COMBO(Htic_combo, KC_GRAVE),  // ` (not dead)
     [HC_SPC] = COMBO(Hspc_combo, KC_SPC), // SPACE
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER
-    [HC_ENT2] = COMBO(Hent2_combo, LGUI(KC_ENT)) // hard-ENTER
+    [HC_ENT2] = COMBO(Hent2_combo, LGUI(KC_ENT)), // hard-ENTER
+    [HC_SCLN] = COMBO(Hscln_combo, KC_SCLN), // ;
+    [HC_COLN] = COMBO(Hcoln_combo, KC_COLN), // :
+    [HC_EXLM] = COMBO(Hexlm_combo, KC_EXLM), // !
+    [HC_QUES] = COMBO(Hques_combo, KC_QUES), // ?
+    [HC_DOLR] = COMBO(Hdolr_combo, KC_DLR), // $
+    [HC_AT] = COMBO(Hat_combo, KC_AT) // @
 };
 /* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */

@@ -32,11 +32,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case MAC_SIRI:
       HCS(0xCF);
-      return true;
+      return false;
       break;
     case HD_CAPW:
         enable_caps_word();
-      return true;
+      return false;
       break;
 /*
     case RGB_SLD:

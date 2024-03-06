@@ -6,6 +6,8 @@
 #define HD_combo_def "b-dod_combo_def.c"
 
 enum my_combos {
+    HC_APP,
+//    HC_APPNAV,
     HC_combo0,
     HC_combo1,
     HC_combo2,
@@ -47,5 +49,11 @@ enum my_combos {
     HC_SPC,
     HC_ENT,
     HC_ENT2,
+    HC_SCLN,
+    HC_COLN,
+    HC_EXLM,
+    HC_QUES,
+    HC_DOLR,
+    HC_AT,
     COMBO_LENGTH
 };
