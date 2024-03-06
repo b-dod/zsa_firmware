@@ -89,8 +89,8 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
     [SK_WORDNXT - SK_KILL] = {A(KC_RIGHT),C(KC_RIGHT)}, // WORD RIGHT
     [SK_DOCBEG - SK_KILL] = {G(KC_UP),C(KC_HOME)}, // Go to start of document
     [SK_DOCEND - SK_KILL] = {G(KC_DOWN),C(KC_END)}, // Go to end of document
-    [SK_LINEBEG - SK_KILL] = {G(KC_DOWN),C(KC_END)}, // Go to beg of line
-    [SK_LINEEND - SK_KILL] = {G(KC_DOWN),C(KC_END)}, // Go to end of line
+    [SK_LINEBEG - SK_KILL] = {G(KC_LEFT),C(KC_END)}, // Go to beg of line
+    [SK_LINEEND - SK_KILL] = {G(KC_RIGHT),C(KC_END)}, // Go to end of line
     [SK_PARAPRV - SK_KILL] = {A(KC_UP),C(KC_UP)}, // Go to previous paragraph
     [SK_PARANXT - SK_KILL] = {A(KC_DOWN),C(KC_DOWN)}, // Go to next paragraph
     [SK_HISTPRV - SK_KILL] = {G(KC_LBRC),A(KC_LEFT)}, // BROWSER BACK
@@ -143,6 +143,12 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
                     tap_SemKey(SK_WORDPRV);
                     register_code(KC_LSFT); // shift for select is close to universal?
                     tap_SemKey(SK_WORDNXT); // of course, not for VIM and the like,
+                    unregister_code(KC_LSFT); // but we're talking OS platforms?
+                    break;
+                case SK_SLNE: // Select current line
+                    tap_SemKey(SK_LINEBEG);
+                    register_code(KC_LSFT); // shift for select is close to universal?
+                    tap_SemKey(SK_LINEEND); // of course, not for VIM and the like,
                     unregister_code(KC_LSFT); // but we're talking OS platforms?
                     break;
                 case SK_ENYE: // ñ/Ñ ENYE

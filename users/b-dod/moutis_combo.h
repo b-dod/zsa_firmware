@@ -8,10 +8,10 @@
 //
 #define HD_combo_def "moutis_combo_def.c"
 
-#include "personalizedmacros.h"
+// #include "personalizedmacros.h"
 
 #ifndef At_ComboHeld
-#define At_ComboHeld ".com"
+#define At_ComboHeld "@gmail.com"
 #endif
 #ifndef LeftComboTapE
 #define LeftComboTapE "LeftCombo tapped"
@@ -214,6 +214,7 @@ enum my_combos {
     HC_QUIT,
     HC_FIND, // Find the selection
     HC_SWRD, // select current word
+    HC_SLNE, // select current line
     HC_SALL, // select all
 
     HC_UNDO,

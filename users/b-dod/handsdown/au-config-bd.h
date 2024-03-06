@@ -157,10 +157,10 @@
 // the above combos may compete for the same locations,
 // we'll define them all here.
 //
-#define HD_new_keys   HD_LM2, HD_LB2   // new
-#define HD_open_keys  HD_LM1, HD_LB1   // open
-#define HD_close_keys HD_LM3, HD_LB3   // close
 #define HD_quit_keys  HD_LB0, HD_LM0   // quit
+#define HD_open_keys  HD_LM1, HD_LB1   // open
+#define HD_new_keys   HD_LM2, HD_LB2   // new
+#define HD_close_keys HD_LM3, HD_LB3   // close
 #define HD_find_keys  HD_LM4, HD_LB0   // find selection
 #define HD_sall_keys  HD_LB4, HD_LB1   // select all
 #define HD_slne_keys  HD_LB4, HD_LB2, HD_LB1   // select line
@@ -177,6 +177,7 @@
 #define HD_ent_keys  HD_LB0, HD_LB1     // ENTER
 #define HD_ent2_keys HD_LB0, HD_LB1, HD_LB2 // hard-ENTER/page break
 #define APPMENU_keys  HD_LB3, HD_LB1  // APPMENU
+#define APPMENU_nav_keys  LN_LT1, LN_LT0  // APPMENU
 
 // TEXT ENTRY - off map standard alphas (also on Layer L_SYM @ Z=LT4 & Q=LT3)
 //

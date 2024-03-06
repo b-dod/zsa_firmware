@@ -66,7 +66,7 @@ void keyboard_post_init_user(void) {
 #include "moutis_semantickeys.c" // anything could send a semantic, so…first
 
 #ifdef COMBO_ENABLE
-    #include "b-dod_combo.c"  // combo processing code (def in keymap)
+    #include "moutis_combo.c"  // combo processing code (def in keymap)
 #endif
 
 #include "moutis_casemods.c"

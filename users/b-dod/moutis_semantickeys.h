@@ -42,6 +42,7 @@ enum my_keycodes {
     SK_PSTM, // paste_match
     SK_SALL, // select all
     SK_SWRD, // select current word
+    SK_SLNE, // select current line
     SK_CLOZ, // close
     SK_QUIT, // quit
     SK_FIND, // find
