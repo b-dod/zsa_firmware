@@ -11,7 +11,7 @@
 #define HD_A RSFT_T(KC_A)
 #define HD_B KC_B
 #define HD_C KC_C
-#define HD_D RSFT_T(KC_D)
+#define HD_D LSFT_T(KC_D)
 #define HD_E RGUI_T(KC_E)
 #define HD_F KC_F
 #define HD_G KC_G
@@ -21,12 +21,12 @@
 #define HD_K KC_K
 #define HD_L KC_L
 #define HD_M KC_M
-#define HD_N RGUI_T(KC_N)
+#define HD_N LGUI_T(KC_N)
 #define HD_O KC_O
 #define HD_P KC_P
 #define HD_Q KC_Q
-#define HD_R RCTL_T(KC_R)
-#define HD_S RALT_T(KC_S)
+#define HD_R LCTL_T(KC_R)
+#define HD_S LALT_T(KC_S)
 #define HD_T LT(L_NAV,KC_T)
 #define HD_U KC_U
 #define HD_V KC_V

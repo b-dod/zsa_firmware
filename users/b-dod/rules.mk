@@ -8,6 +8,7 @@ UNICODE_ENABLE = no      # will need this for HD Polyglot
 NKRO_ENABLE = no         # USB Nkey Rollover
 KEY_OVERRIDE_ENABLE = no
 CONSOLE_ENABLE = no
+COMMAND_ENABLE = no        # Commands for debug and configuration
 SPACE_CADET_ENABLE = no
 GRAVE_ESC_ENABLE = no
 TAP_DANCE_ENABLE = no

@@ -24,9 +24,9 @@
 #ifndef NO_ACTION_FUNCTION
 #define NO_ACTION_FUNCTION
 #endif
-#ifndef NO_ACTION_ONESHOT
-#define NO_ACTION_ONESHOT
-#endif
+//#ifndef NO_ACTION_ONESHOT
+//#define NO_ACTION_ONESHOT
+//#endif
 #ifndef NO_MUSIC_MODE
 #define NO_MUSIC_MODE
 #endif
@@ -63,9 +63,9 @@
 
 #ifdef COMBO_HOLD
     #undef ADAPTIVE_TERM
-    #define ADAPTIVE_TERM COMBO_HOLD  // use COMBO_HOLD time as a standard threshold (same recation time)
+    #define ADAPTIVE_TERM COMBO_HOLD * 1.2 // use COMBO_HOLD time as a standard threshold (same recation time)
 #else
-    #define ADAPTIVE_TERM (TAPPING_TERM/5) // rolling threshold
+    #define ADAPTIVE_TERM (TAPPING_TERM/4) // rolling threshold
 #endif
 
 #define LINGER_TIME TAPPING_TERM * 1.2 // how long to hold before a time-depentant behavior begins

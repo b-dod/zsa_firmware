@@ -2,6 +2,7 @@
 
 #include "b-dod.h"
 
+
 /*
     My globals
 */
@@ -10,15 +11,16 @@ uint8_t  saved_mods = 0; // to pass state between process_record_user and matrix
 uint16_t record_keycode = 0; // the keykcode we poke at in process_record
 uint16_t key_trap = 0; // the actual keycode registered (need to unregister)
 #ifdef ADAPTIVE_ENABLE
+uint16_t preprior_keycode = KC_NO;
 uint16_t prior_keycode = KC_NO;
 uint16_t prior_keydown = 0; // timer of keydown for adaptive threshhold.
 #endif
 
 uint16_t linger_key = 0;  // keycode for linger actions (ex. "Qu")
 uint32_t linger_timer = 0; // time to hold a key before something else happens.
-uint32_t state_reset_timer = 0;  // time to leave a state active before shutting it down automatically.
-bool appmenu_on = false;  // state of windows-like app switcher
-bool mods_held = false;  // nood to remember how we entered the appmenu state
+uint32_t appmenu_timer = 0;  // time to leave appmenu active before shutting it down automatically.
+bool appmenu_on = false;  // appmenu triggered (after holding key)
+bool mods_held = false;  // need to remember how we entered the appmenu state
 
 /*
 #ifdef JP_MODE_ENABLE
@@ -64,7 +66,15 @@ void keyboard_post_init_user(void) {
 #include "moutis_app_menu.c" // my custom app_menu handler (mac/win)
 
 #include "moutis_semantickeys.c" // anything could send a semantic, so…first
+/*
+#ifdef OLED_DRIVER_ENABLE
+    #include "moutis_OLED.c"
+#endif
 
+#ifdef ENCODER_ENABLE
+    #include "moutis_ENCODER.c"
+#endif
+*/
 #ifdef COMBO_ENABLE
     #include "moutis_combo.c"  // combo processing code (def in keymap)
 #endif
@@ -74,7 +84,6 @@ void keyboard_post_init_user(void) {
 #ifdef ADAPTIVE_ENABLE
 #include HD_adaptive_code   // this is HD variation dependent
 #endif
-
 
 // #include HD_process_record_code   // this might need to be HD variation dependent?
 #include "moutis_process_record.c"

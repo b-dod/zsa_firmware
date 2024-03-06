@@ -53,7 +53,7 @@ const uint16_t PROGMEM Hpste_combo[] = {HD_pste_keys, COMBO_END}; // paste (hold
 
 /* examples of text entry combos */
 const uint16_t PROGMEM H_Left_combo[] = {HD_LT3, HD_LT2, HD_LT1, COMBO_END}; // TYPE LeftComboTapE
-const uint16_t PROGMEM H_Right_combo[] = {HD_RT1, HD_RT2, HD_RT3, COMBO_END}; // some demonstrator macro placeholder
+//const uint16_t PROGMEM H_Right_combo[] = {HD_RT1, HD_RT2, HD_RT3, COMBO_END}; // some demonstrator macro placeholder
 
 const uint16_t PROGMEM F_KILL_combo[] = {HD_RT3, HD_RT0, COMBO_END}; // KILL = Force quit OR CTRL-ALT-DEL
 const uint16_t PROGMEM F_SCLP_combo[] = {HD_LT2, HD_LT1, HD_LT0, COMBO_END}; // SCREEN shot SELECTION to clipboard
@@ -62,8 +62,8 @@ const uint16_t PROGMEM F_SCAP_combo[] = {HD_LT3, HD_LT2, HD_LT1, HD_LT0, COMBO_E
 
 const uint16_t PROGMEM F_CAPS_combo[] = {HD_LM3, HD_LM2, HD_RM2, HD_RM3, COMBO_END}; // CAPS LOCK (on until hit again)
 const uint16_t PROGMEM H_CAPW_combo[] = {HD_LM1, HD_LM2, HD_RM1, HD_RM2, COMBO_END}; // CAPS WORD (on until word delimiter)
-const uint16_t PROGMEM H_EISUU_combo[] = {HD_LM3, HD_LM2, HD_LM1, COMBO_END}; // KC_MHEN
-const uint16_t PROGMEM H_KANA_combo[] = {HD_RM3, HD_RM2, HD_RM1, COMBO_END}; // KC_HENK
+//const uint16_t PROGMEM H_EISUU_combo[] = {HD_LM3, HD_LM2, HD_LM1, COMBO_END}; // KC_MHEN
+//const uint16_t PROGMEM H_KANA_combo[] = {HD_RM3, HD_RM2, HD_RM1, COMBO_END}; // KC_HENK
 
 
 
@@ -280,8 +280,8 @@ combo_t key_combos[] = {
     [FC_CAPS] = COMBO(F_CAPS_combo, KC_CAPS), // CAPS LOCK
     [HC_CAPW] = COMBO_ACTION(H_CAPW_combo), // CAPS_WORD
 
-    [FC_LANG2] = COMBO(H_EISUU_combo, SK_MHEN), // eisuu (others)
-    [FC_LANG1] = COMBO(H_KANA_combo, SK_HENK), // kana (others)
+//    [FC_LANG2] = COMBO(H_EISUU_combo, SK_MHEN), // eisuu (others)
+//    [FC_LANG1] = COMBO(H_KANA_combo, SK_HENK), // kana (others)
 
     [HC_NDSH] = COMBO_ACTION(Hndsh_combo), // – N-DASH
     [HC_MDSH] = COMBO_ACTION(Hmdsh_combo), // — M-DASH
@@ -335,7 +335,7 @@ combo_t key_combos[] = {
 #endif // EN_PRONOUN_COMBOS
 
     [HC_TYPE_LEFTCOMBO] = COMBO_ACTION(H_Left_combo), // a personally useful 5-8gram!
-    [HC_TYPE_RIGHTCOMBO] = COMBO_ACTION(H_Right_combo), // a demonstrator, how long autotypes can be!
+//    [HC_TYPE_RIGHTCOMBO] = COMBO_ACTION(H_Right_combo), // a demonstrator, how long autotypes can be!
     
     [HC_SPC] = COMBO(Hspc_combo, KC_SPC), // SPACE
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER
