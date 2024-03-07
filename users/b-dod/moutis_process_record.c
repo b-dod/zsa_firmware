@@ -107,12 +107,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 */
 
             case KC_BSPC:  // make S(KC_BSPC) = KC_DEL; ALT = word_del L & R
-                if (!(saved_mods & MOD_MASK_SHIFT)) // only SHFT? (ALT ok)
-                    break; // N: nothing to do
+                if (saved_mods & MOD_MASK_SHIFT) { // only SHFT? (ALT ok)
+                //    break; // N: nothing to do
                 // shift down with KC_BSPC? (ALT OK)
-                unregister_mods(MOD_MASK_SA); // get rid of shift & alt
-                key_trap = KC_DEL;  // mode monitor on to clear this on keyup
-                goto register_key_trap_and_return;
+                    unregister_mods(MOD_MASK_SHIFT); // get rid of shift
+                    key_trap = KC_DEL;  // mode monitor on to clear this on keyup
+                    goto register_key_trap_and_return;
+                    }
 /*
                 key_trap = SK_DEL;  // mode monitor on to clear this on keyup
                 register_semKey(key_trap);
