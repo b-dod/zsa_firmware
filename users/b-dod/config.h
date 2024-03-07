@@ -64,7 +64,7 @@
 
 #ifdef COMBO_HOLD
     #undef ADAPTIVE_TERM
-    #define ADAPTIVE_TERM COMBO_HOLD * 1.2 // use COMBO_HOLD time as a standard threshold (same recation time)
+    #define ADAPTIVE_TERM COMBO_HOLD // use COMBO_HOLD time as a standard threshold (same recation time)
 #else
     #define ADAPTIVE_TERM (TAPPING_TERM/4) // rolling threshold
 #endif
