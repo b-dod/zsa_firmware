@@ -383,6 +383,7 @@ register_key_trap_and_return:
                     }
                 }
 #endif
+            case KC_B:  // for linger Bryson    
             case KC_Q:  // Qu, linger deletes U
                 if ((saved_mods & MOD_MASK_ALT)
 #ifdef JP_MODE_ENABLE
