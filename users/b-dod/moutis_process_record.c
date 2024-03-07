@@ -67,6 +67,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Do we turn off CAPS_WORD?
     if (caps_word_timer) {
         if (!process_caps_word(keycode, record)) {
+#ifdef ADAPTIVE_ENABLE
+            prior_keydown = timer_read(); // (re)start prior_key timing
+            preprior_keycode = prior_keycode; // look back 2 keystrokes?
+            prior_keycode = keycode; // this keycode is now stripped of mods+taps
+#endif
             return false; // took care of that key
         }
     }
