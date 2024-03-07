@@ -79,6 +79,8 @@ void keyboard_post_init_user(void) {
     #include "moutis_combo.c"  // combo processing code (def in keymap)
 #endif
 
+#include "b-dod_tapterm.c"
+
 #include "moutis_casemods.c"
 
 #ifdef ADAPTIVE_ENABLE

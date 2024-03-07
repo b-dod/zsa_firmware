@@ -248,10 +248,10 @@ __ │   UNDO     CUT     COPY    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 #define LV_RT5 KC_NUM
 
 #define LV_LM5 KC_VOLU
-#define LV_LM4 KC_LCTL
-#define LV_LM3 KC_LALT
-#define LV_LM2 KC_LGUI
-#define LV_LM1 KC_LSFT
+#define LV_LM4 LCTL_T(KC_NO)
+#define LV_LM3 LALT_T(KC_NO)
+#define LV_LM2 LGUI_T(KC_NO)
+#define LV_LM1 LSFT_T(KC_NO)
 #define LV_LM0 SK_FIND
 #define LV_RM0 SK_WORDPRV
 #define LV_RM1 KC_LEFT
