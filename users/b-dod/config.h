@@ -42,7 +42,7 @@
 
 // Pick good defaults for enabling homerow modifiers
 #define TAP_CODE_DELAY 10
-#define TAP_HOLD_CAPS_DELAY 10
+#define TAP_HOLD_CAPS_DELAY 100
 #define PERMISSIVE_HOLD
 #define TAPPING_TERM_PER_KEY
 
