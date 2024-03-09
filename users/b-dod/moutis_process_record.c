@@ -205,13 +205,13 @@ register_key_trap_and_return:
                 if (!saved_mods)
                     goto linger_and_return; // CAUTION: messing w/stack frame here!!
                 if (saved_mods & MOD_MASK_SHIFT) { // SHFT down? (ALT ok)
-                    tap_code16(A(KC_COMM)); // ≤ convert to SemKey
+                    tap_SemKey(SK_LTEQ); // ≤
                     return_state = false; // stop processing this record.
                 }
                 break;
             case KC_GT:  // SHIFT = ≥,
                 if (saved_mods & MOD_MASK_SHIFT) { // SHFT down? (ALT ok)
-                    tap_code16(A(KC_DOT)); // convert to SemKey
+                    tap_SemKey(SK_GTEQ); // ≥
                     return_state = false; // stop processing this record.
                 }
                 break;

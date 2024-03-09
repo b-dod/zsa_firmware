@@ -112,6 +112,12 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
     [SK_DCRS - SK_KILL] = {LSA(KC_7),LSA(KC_7)}, // ‡ Double Cross ** need Win Compose via BCD?
     [SK_SCRS - SK_KILL] = {RSA(KC_5),RSA(KC_5)}, // † Single Cross ** need Win Compose via BCD?
     [SK_BBLT - SK_KILL] = {LALT(KC_8),LALT(KC_8)}, // • Bold Bullet ** need Win Compose via BCD?
+    [SK_GTEQ - SK_KILL] = {LALT(KC_DOT),LALT(KC_DOT)}, // ≥ Greater Than or Equal to ** need Win Compose via BCD?
+    [SK_LTEQ - SK_KILL] = {LALT(KC_COMM),LALT(KC_COMM)}, // ≤ Less Than or Equal to ** need Win Compose via BCD?
+    [SK_NOTEQ - SK_KILL] = {LALT(KC_EQL),LALT(KC_EQL)}, // ≠ NOT Equal to ** need Win Compose via BCD?
+    [SK_APPROXEQ - SK_KILL] = {LALT(KC_X),LALT(KC_X)}, // ≈ APPROX Equal to ** need Win Compose via BCD?
+    [SK_OMEGA - SK_KILL] = {LALT(KC_Z),LALT(KC_Z)}, // Ω OMEGA ** need Win Compose via BCD?
+    [SK_DEGR - SK_KILL] = {S(A(KC_8)),S(A(KC_8))}, // ° DEGREE ** need Win Compose via BCD?
         // Currency
     [SK_CENT - SK_KILL] = {LALT(KC_4),LALT(KC_4)}, // ¢ ** need Win Compose via BCD?
     [SK_EURO - SK_KILL] = {A(S(KC_2)),A(S(KC_2))}, // € ** need Win Compose via BCD?

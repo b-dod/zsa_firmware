@@ -388,9 +388,9 @@ ADD_HERE:
                     tap_code(KC_9);
                     break;
                                         
-                case HC_TYPE_LEFTCOMBO:
-                        send_string(LeftComboTapE); //
-                    break;
+//                case HC_TYPE_LEFTCOMBO:
+//                        send_string(LeftComboTapE); //
+//                    break;
                 case HC_TYPE_RIGHTCOMBO:
                         send_string(RightComboTapE); // send "Japan" right away
                     break;

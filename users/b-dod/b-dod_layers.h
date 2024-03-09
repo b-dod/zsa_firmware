@@ -24,8 +24,8 @@
 
 /*  L_SYM Symbols and punctuation (Some via SemKeys/unicode for platform independence)
    ╭──────────────────────────────────────────╮                  ╭──────────────────────────────────────────╮
-__ │    Z       Q       ¶       §       ‡     │                  │     ¢        $       €       £       ¥   │ __
-__ │    <       [       (       {       †     |                  |     ¡        *       =       +       /   │ __
+__ │    Z       Q       ≠       ≈       Ω     │                  │     ¢        $       €       £       ¥   │ __
+__ │    <       [       (       {       °     |                  |     ?        *       =       +       /   │ __
 __ │    >       ]       )       }       •     │ __  __   __  __  │     _        |       &       ^       %   │ __
    ╰──────────────────╮ VolD  D_WordL D_WordR │ VolU         __  │     ª        °       ·     ╭─────────────╯
       HISTPRV HISTNXT ╰───────────────────────╯                  ╰────────────────────────────╯ ZOOMRST ZOOMOUT
@@ -34,9 +34,9 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LT5 KC_TRNS
 #define LS_LT4 KC_Z
 #define LS_LT3 KC_Q
-#define LS_LT2 SK_PARA
-#define LS_LT1 SK_SECT
-#define LS_LT0 SK_DCRS
+#define LS_LT2 SK_NOTEQ
+#define LS_LT1 SK_APPROXEQ
+#define LS_LT0 SK_OMEGA
 #define LS_RT0 SK_CENT
 #define LS_RT1 KC_DLR
 #define LS_RT2 SK_EURO
@@ -49,8 +49,8 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LM3 KC_LBRC
 #define LS_LM2 KC_LPRN
 #define LS_LM1 KC_LCBR
-#define LS_LM0 LSA(KC_8)  // ° — was SK_SCRS
-#define LS_RM0 SK_IEXC
+#define LS_LM0 SK_DEGR  // ° — was SK_SCRS
+#define LS_RM0 KC_QUES // ? – was SK_IEXC
 #define LS_RM1 RSFT_T(KC_PAST)
 #define LS_RM2 RGUI_T(KC_PEQL)
 #define LS_RM3 RALT_T(KC_PPLS)
@@ -62,7 +62,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LB3 KC_RBRC
 #define LS_LB2 KC_RPRN
 #define LS_LB1 KC_RCBR
-#define LS_LB0 LALT(KC_8)
+#define LS_LB0 SK_BBLT
 #define LS_LBA KC_TRNS
 #define LS_LBB KC_TRNS
 #define LS_RBB KC_TRNS
@@ -84,7 +84,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_RHA KC_NO
 #define LS_RH0 KC_VOLU
 #define LS_RH1 LALT(KC_9) // ª
-#define LS_RH2 LSA(KC_8)  // °
+#define LS_RH2 SK_DEGR  // °
 #define LS_RH3 LSA(KC_9) // ·
 #define LS_RH4 KC_TRNS
 #define LS_RH5 KC_TRNS
@@ -227,16 +227,16 @@ __ │ UNDO     CUT     COPY    PSTE      SPC   │ __ __   __ __ │  PCMM     
 
 /*   L_NAV THE NAVIGATION (right hand) LAYER w/ edit & mods on left
    ╭──────────────────────────────────────────╮                  ╭───────────────────────────────────────────────╮
-__ │   QUIT     CLOZ    SCAP    SCLP    PSTM  │                  │  DOCBEG     HOME    UP      PGUP    PARAPRV   │ KC_NUM
+__ │   CLOZ     QUIT    SCAP    SCLP    PSTM  │                  │  DOCBEG     HOME    UP      PGUP    PARAPRV   │ KC_NUM
 __ │   LCTL     LALT    LGUI    LSFT    FIND  |                  |  WORDPRV    LEFT    DOWN    RGHT    WORDNXT   │ __
-__ │   UNDO     CUT     COPY    PSTE    FAGN  │ __  __    __  __ │  DOCEND     END     DOWN    PGDN    PARANXT   │ __
+__ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND     END     DOWN    PGDN    PARANXT   │ __
    ╰──────────────────╮  __   S(MENU)   MENU  │ __           __  │  HISTPRV  HISTNXT    __    ╭──────────────────╯
       HISTPRV HISTNXT ╰───────────────────────╯                  ╰────────────────────────────╯ ZOOMRST ZOOMOUT
 */
 
 #define LV_LT5 KC_TRNS
-#define LV_LT4 SK_QUIT
-#define LV_LT3 SK_CLOZ
+#define LV_LT4 SK_CLOZ
+#define LV_LT3 SK_QUIT
 #define LV_LT2 SK_SCAP
 #define LV_LT1 SK_SCLP
 #define LV_LT0 SK_PSTM
@@ -261,10 +261,10 @@ __ │   UNDO     CUT     COPY    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 #define LV_RM5 KC_TRNS
 
 #define LV_LB5 KC_VOLD
-#define LV_LB4 HD_CAPW //SK_UNDO
-#define LV_LB3 SK_CUT
-#define LV_LB2 SK_COPY
-#define LV_LB1 SK_PSTE
+#define LV_LB4 SK_UNDO // HD_CAPW
+#define LV_LB3 SK_COPY
+#define LV_LB2 SK_CUT
+#define LV_LB1 SK_PSTE // MAC_SIRI
 #define LV_LB0 SK_FAGN
 #define LV_LBA KC_TRNS
 #define LV_LBB KC_TRNS

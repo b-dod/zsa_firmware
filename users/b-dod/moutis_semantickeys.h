@@ -81,6 +81,12 @@ enum my_keycodes {
     SK_DCRS, // ‡ Double Cross
     SK_SCRS, // † Single Cross
     SK_BBLT, // • Bold Bullet
+    SK_GTEQ, // ≥ Greater Than or Equal to
+    SK_LTEQ, // ≤ Less Than or Equal to
+    SK_NOTEQ, // ≠ NOT Equal to
+    SK_APPROXEQ, // ≈ APPROX Equal to
+    SK_OMEGA, // Ω OMEGA
+    SK_DEGR, // ° DEGREE
         // Currency
     SK_CENT, // ¢
     SK_EURO, // €
