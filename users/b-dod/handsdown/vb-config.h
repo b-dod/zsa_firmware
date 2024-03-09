@@ -10,7 +10,7 @@
 //
 #define HD_A RSFT_T(KC_A)
 #define HD_B KC_B
-#define HD_C RALT_T(KC_C)
+#define HD_C LALT_T(KC_C)
 #define HD_D KC_D
 #define HD_E RGUI_T(KC_E)
 #define HD_F KC_F
@@ -18,16 +18,16 @@
 #define HD_H RCTL_T(KC_H)
 #define HD_I RALT_T(KC_I)
 #define HD_J KC_J
-#define HD_K LT(L_NUM,KC_K)
+#define HD_K KC_K
 #define HD_L KC_L
 #define HD_M KC_M
-#define HD_N RGUI_T(KC_N)
+#define HD_N LGUI_T(KC_N)
 #define HD_O KC_O
 #define HD_P KC_P
 #define HD_Q KC_Q
 #define HD_R LT(L_NAV,KC_R)
-#define HD_S RCTL_T(KC_S)
-#define HD_T RSFT_T(KC_T)
+#define HD_S LCTL_T(KC_S)
+#define HD_T LSFT_T(KC_T)
 #define HD_U KC_U
 #define HD_V KC_V
 #define HD_W KC_W
@@ -37,14 +37,14 @@
 
 #define HD_MINS KC_MINS
 #define HD_HASH KC_HASH
-#define HD_SPC  LT(L_SYM,KC_SPC)
+#define HD_SPC  LT(L_NAV,KC_SPC)
 #define HD_BSPC LT(L_FUN,KC_BSPC)
-#define HD_ENT  LT(L_NAV,KC_ENT)
+#define HD_ENT  LT(L_SYM,KC_ENT)
 #define HD_QUOT KC_QUOT
 #define HD_DQUO KC_DQUO
 #define HD_SLSH KC_SLSH
 #define HD_DOT  KC_DOT
-#define HD_COMM LT(L_FUN, KC_COMM)
+#define HD_COMM LT(L_CFG, KC_COMM)
 
 // Now let's place these HD keycodes on the keymap
 // for variation independent spatial referencing by key position
@@ -71,68 +71,68 @@
 // and accessible combos (defined below)
 //
 
-#define HD_LT5 KC_ESC
+//#define HD_LT5 KC_ESC
 #define HD_LT4 HD_X
 #define HD_LT3 HD_W
 #define HD_LT2 HD_M
 #define HD_LT1 HD_G
 #define HD_LT0 HD_J
-#define HD_LTA LT(L_CFG, KC_MUTE)
-#define HD_RTA LT(L_CFG, KC_MPLY)
+//#define HD_LTA LT(L_CFG, KC_MUTE)
+//#define HD_RTA LT(L_CFG, KC_MPLY)
 #define HD_RT0 HD_HASH
 #define HD_RT1 HD_DOT
 #define HD_RT2 HD_SLSH
 #define HD_RT3 HD_DQUO
 #define HD_RT4 HD_QUOT
-#define HD_RT5 KC_LNG2
+//#define HD_RT5 KC_LNG2
 
-#define HD_LM5 KC_TAB
+//#define HD_LM5 KC_TAB
 #define HD_LM4 HD_S
 #define HD_LM3 HD_C
 #define HD_LM2 HD_N
 #define HD_LM1 HD_T
 #define HD_LM0 HD_K
-#define HD_LMA KC_LPRN
-#define HD_RMA KC_RPRN
+//#define HD_LMA KC_LPRN
+//#define HD_RMA KC_RPRN
 #define HD_RM0 HD_COMM
 #define HD_RM1 HD_A
 #define HD_RM2 HD_E
 #define HD_RM3 HD_I
 #define HD_RM4 HD_H
-#define HD_RM5 KC_LNG1
+//#define HD_RM5 KC_LNG1
 
-#define HD_LB5 HD_Z
+//#define HD_LB5 HD_Z
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
 #define HD_LB1 HD_D
 #define HD_LB0 HD_V
-#define HD_LBA LT(L_NUM, KC_LBRC)
-#define HD_LBB LT(L_CFG, KC_LNG2)
-#define HD_RBB LT(L_FUN, KC_LNG1)
-#define HD_RBA LT(L_NAV, KC_RBRC)
+//#define HD_LBA LT(L_NUM, KC_LBRC)
+//#define HD_LBB LT(L_CFG, KC_LNG2)
+//#define HD_RBB LT(L_FUN, KC_LNG1)
+//#define HD_RBA LT(L_NAV, KC_RBRC)
 #define HD_RB0 HD_MINS
 #define HD_RB1 HD_U
 #define HD_RB2 HD_O
 #define HD_RB3 HD_Y
 #define HD_RB4 HD_F
-#define HD_RB5 HD_Q
+//#define HD_RB5 HD_Q
 
 //Primary Thumbs 1-3 (others are unique to the board)
-#define HD_LH5 KC_LEFT
-#define HD_LH4 KC_RGHT
-#define HD_LH3 KC_APP
-#define HD_LH2 HD_BSPC
-#define HD_LH1 HD_R
-#define HD_LH0 LT(L_CFG,KC_MUTE)
-#define HD_LHA LT(L_NAV,KC_LNG2)
-#define HD_RHA LT(L_SYM,KC_LNG1)
-#define HD_RH0 LT(L_CFG,KC_MPLY)
-#define HD_RH1 HD_SPC
-#define HD_RH2 HD_ENT
+//#define HD_LH5 KC_LEFT
+//#define HD_LH4 KC_RGHT
+#define HD_LH3 KC_MEH // USED TO BE KC_APP
+#define HD_LH2 HD_R
+#define HD_LH1 HD_BSPC
+//#define HD_LH0 LT(L_CFG,KC_MUTE)
+//#define HD_LHA LT(L_NAV,KC_LNG2)
+//#define HD_RHA LT(L_SYM,KC_LNG1)
+//#define HD_RH0 LT(L_CFG,KC_MPLY)
+#define HD_RH1 HD_ENT
+#define HD_RH2 HD_SPC
 #define HD_RH3 TG(L_NUM)
-#define HD_RH4 KC_UP
-#define HD_RH5 KC_DOWN
+//#define HD_RH4 KC_UP
+//#define HD_RH5 KC_DOWN
 
 #ifdef COMBO_ENABLE
 //
@@ -243,80 +243,5 @@
 
 #endif // EN_PRONOUNS_ALL
 #endif // EN_PRONOUNS // the entirely unnecessary pronoun combo shenanigans
-
-
-
-#ifdef JP_MODE_ENABLE
-#ifdef JP_YOUON_COMBOS
-// Major Japanese contracted consonants as combos
-//
-// These will conflict with some diacritics (noted below),
-// so some sort of mode-switch in process_keys_event is necessary
-// for both to be used on the same board.
-//
-// There is also risk of conflict with spatial any phonetically/mnemonically coded combos.
-//
-// Major (high frequency) Japanese contracted sounds
-#define JP_kya_keys HD_LM0, HD_RM1 // きゃ
-#define JP_kyu_keys HD_LM0, HD_RB1 //　きゅ
-#define JP_kyo_keys HD_LM0, HD_RB2 //　きょ
-#define JP_sya_keys HD_LM4, HD_RM1 // しゃ
-#define JP_syu_keys HD_LM4, HD_RB1 //　しゅ
-#define JP_sye_keys HD_LM4, HD_RM2 //　しぇ
-#define JP_syo_keys HD_LM4, HD_RB2 //　しょ
-#define JP_zya_keys HD_LM3, HD_RM1 // じゃ
-#define JP_zyu_keys HD_LM3, HD_RB1 //　じゅ
-#define JP_zyo_keys HD_LM3, HD_RB2 //　じょ
-#define JP_tya_keys HD_LM1, HD_RM1 // ちゃ
-#define JP_tyu_keys HD_LM1, HD_RB1 //　ちゅ
-#define JP_tye_keys HD_LM1, HD_RM2 // ちぇ
-#define JP_tyo_keys HD_LM1, HD_RB2 //　ちょ
-#define JP_pya_keys HD_LB3, HD_RM1 // ぴゃ
-#define JP_pyu_keys HD_LB3, HD_RB1 //　ぴゅ
-#define JP_pyo_keys HD_LB3, HD_RB2 //　ぴょ
-
-#ifdef JP_YOUON_COMBOS_ALL // All Japanese contracted sounds
-
-#define JP_gya_keys HD_LT1, HD_RM1 // ぎゃ
-#define JP_gyu_keys HD_LT1, HD_RB1 //　ぎゅ
-#define JP_gyo_keys HD_LT1, HD_RB2 //　ぎょ
-#define JP_tha_keys HD_LM2, HD_LM1, HD_RM1 // てゃ
-#define JP_thi_keys HD_LM2, HD_LM1, HD_RM3 // てぃ
-#define JP_thu_keys HD_LM2, HD_LM1, HD_RB1 //　てゅ
-#define JP_the_keys HD_LM2, HD_LM1, HD_RM2 // てぇ
-#define JP_tho_keys HD_LM2, HD_LM1, HD_RB2 //　てょ
-#define JP_dha_keys HD_LB1, HD_RM1 // でゃ
-#ifndef EN_PRONOUN_COMBOS
-#define JP_dhi_keys HD_LB1, HD_RM3 // でぃ conflicts with I'd (so handle it there if present)
-#endif
-#define JP_dhu_keys HD_LB1, HD_RB1 //　でゅ
-#define JP_dhe_keys HD_LB1, HD_RM2 // でぇ
-#define JP_dho_keys HD_LB1, HD_RB2 //　でょ
-#define JP_nya_keys HD_LM2, HD_RM1 // にゃ
-#define JP_nyu_keys HD_LM2, HD_RB1 //　にゅ
-#define JP_nyo_keys HD_LM2, HD_RB2 //　にょ
-
-//#define JP_hya_keys HD_RM4, HD_RM1 // ひゃ conflicts with diacritic
-#define JP_hyu_keys HD_RM4, HD_RB1 //　ひゅ
-#define JP_hyo_keys HD_RM4, HD_RB2 //　ひょ
-//#define JP_fya_keys HD_RM4, HD_RM1 // ふぁ unnecessary?
-//#define JP_fyu_keys HD_RM4, HD_RB1 //　ふぃ
-//#define JP_fye_keys HD_RM4, HD_RB1 //　ふぇ
-//#define JP_fyo_keys HD_RM4, HD_RB2 //　ふぉ
-
-#define JP_bya_keys HD_LB4, HD_RM1 // びゃ
-#define JP_byu_keys HD_LB4, HD_RB1 //　びゅ  conflicts with diacritic?
-#define JP_byo_keys HD_LB4, HD_RB2 //　びょ
-#define JP_mya_keys HD_LT2, HD_RM1 // みゃ
-#define JP_myu_keys HD_LT2, HD_RB1 //　みゅ
-#define JP_myo_keys HD_LT2, HD_RB2 //　みょ
-#define JP_rya_keys HD_LH1, HD_RM1 // りゃ
-#define JP_ryu_keys HD_LH1, HD_RB1 //　りゅ
-#define JP_ryo_keys HD_LH1, HD_RB2 //　りょ
-
-#endif // JP_YOUON_COMBOS_ALL // All Japanese contracted sounds
-#endif // JP_YOUON_COMBOS  // Major Japanese contracted sounds as combos
-#endif // JP_MODE_ENABLE // All Japanese mode features
-
 
 #endif // COMBO_ENABLE

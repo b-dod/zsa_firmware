@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ______, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, ______,                 ______, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, ______, 
     ______, HD_LM4, HD_LM3, HD_LM2, HD_LM1, HD_LM0, ______,                 ______, HD_RM0, HD_RM1, HD_RM2, HD_RM3, HD_RM4, ______, 
     ______, HD_LB4, HD_LB3, HD_LB2, HD_LB1, HD_LB0,                                 HD_RB0, HD_RB1, HD_RB2, HD_RB3, HD_RB4, ______, 
-    ______, ______, ______, ______, HD_LH3,         ______,                 ______,         ______, ______, ______, ______, ______, 
+    ______, ______, ______, ______, HD_LH3,         ______,                 ______,         HD_RH3, ______, ______, ______, ______, 
                                             HD_LH2, HD_LH1, ______, ______, HD_RH1, HD_RH2
   ),
   [L_SYM] = LAYOUT_moonlander(

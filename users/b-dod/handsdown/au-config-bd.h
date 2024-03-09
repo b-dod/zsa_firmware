@@ -130,7 +130,7 @@
 //#define HD_RH0 LT(L_CFG,KC_MPLY)
 #define HD_RH1 HD_ENT
 #define HD_RH2 HD_SPC
-//#define HD_RH3 TG(L_NUM)
+#define HD_RH3 TG(L_NUM)
 //#define HD_RH4 LT(L_FUN,KC_MPLY)
 //#define HD_RH5 KC_DN
 
