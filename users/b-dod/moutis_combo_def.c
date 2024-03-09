@@ -73,7 +73,7 @@ const uint16_t PROGMEM H_CAPW_combo[] = {HD_LM1, HD_LM2, HD_RM1, HD_RM2, COMBO_E
 // should work for most Neu variations (Gold/Titanium/Rhodium/Vibranium)
 // Bronze/Silver/Platinum (C on right hand, H on left/thumb) may need changes...
 //
-const uint16_t PROGMEM F_ESC_combo[] = {HD_LM4, HD_LM1, COMBO_END}; // ESCape
+const uint16_t PROGMEM F_ESC_combo[] = {HD_esc_keys, COMBO_END}; // ESCape
 const uint16_t PROGMEM Hndsh_combo[] = {HD_RB0, HD_RB1, COMBO_END}; // – n dash
 const uint16_t PROGMEM Hmdsh_combo[] = {HD_RB0, HD_RB2, COMBO_END}; // — m dash
 const uint16_t PROGMEM Htild_combo[] = {HD_RB1, HD_RB4, COMBO_END}; // ~ tilde (not the deadkey for eñye)
@@ -94,16 +94,16 @@ const uint16_t PROGMEM Hhash_combo[] = {HD_RT0, HD_RT2, COMBO_END}; // # HASH hi
 const uint16_t PROGMEM Hat_combo[] = {HD_RT0, HD_RT1, COMBO_END}; // @
 
 // spatially arranged diacritics
-const uint16_t PROGMEM Hdier_combo[] = {HD_RB1, HD_RB2, COMBO_END}; // ¨ dieresis (dead key)
-const uint16_t PROGMEM Henye_combo[] = {HD_LT4, HD_LT0, COMBO_END}; // ˜ enye (dead key) (ñ only?)
-const uint16_t PROGMEM Hacut_combo[] = {HD_RM1, HD_RM2, COMBO_END}; // ´ acute (dead key)é
+//const uint16_t PROGMEM Hdier_combo[] = {HD_RB1, HD_RB2, COMBO_END}; // ¨ dieresis (dead key)
+//const uint16_t PROGMEM Henye_combo[] = {HD_LT4, HD_LT0, COMBO_END}; // ˜ enye (dead key) (ñ only?)
+//const uint16_t PROGMEM Hacut_combo[] = {HD_RM1, HD_RM2, COMBO_END}; // ´ acute (dead key)é
 
 // for Neu/Au/Ti/Rh
-const uint16_t PROGMEM Hgrv_combo[] = {HD_RM2, HD_RM3, COMBO_END}; // ` grave (dead key)
-const uint16_t PROGMEM Hcirc_combo[] = {HD_RM1, HD_RM3, COMBO_END}; // ˆ circumflex (dead key)
-const uint16_t PROGMEM Hmacr_combo[] = {HD_RM2, HD_RM4, COMBO_END}; // - macron (dead key)
-const uint16_t PROGMEM Hring_combo[] = {HD_RM1, HD_RM4, COMBO_END}; // ˚ ring (dead key)
-const uint16_t PROGMEM Hcedi_combo[] = {HD_LM4, HD_LM2, COMBO_END}; // ¸ cedille (dead key)
+//const uint16_t PROGMEM Hgrv_combo[] = {HD_RM2, HD_RM3, COMBO_END}; // ` grave (dead key)
+//const uint16_t PROGMEM Hcirc_combo[] = {HD_RM1, HD_RM3, COMBO_END}; // ˆ circumflex (dead key)
+//const uint16_t PROGMEM Hmacr_combo[] = {HD_RM2, HD_RM4, COMBO_END}; // - macron (dead key)
+//const uint16_t PROGMEM Hring_combo[] = {HD_RM1, HD_RM4, COMBO_END}; // ˚ ring (dead key)
+//const uint16_t PROGMEM Hcedi_combo[] = {HD_LM4, HD_LM2, COMBO_END}; // ¸ cedille (dead key)
 //const uint16_t PROGMEM Hoslsh_combo[] = {HD_RB2, HD_LB0, COMBO_END}; // ø/Ø or Wh
 
 // TEXT ENTRY - off map standard alphas (also on Layer L_SYM @ J & G respectively)byby=
@@ -124,8 +124,8 @@ const uint16_t PROGMEM H_Sch_combo[] = {HD_Sch_keys, COMBO_END}; // TYPE "Sch"
 
 // TEXT ENTRY - (ANY ROW/ MIXED ROWS)
 
-const uint16_t PROGMEM HOE_lig_combo[] = {HD_OE_lig_keys, COMBO_END}; // Œ
-const uint16_t PROGMEM HAE_lig_combo[] = {HD_AE_lig_keys, COMBO_END}; // Æ
+//const uint16_t PROGMEM HOE_lig_combo[] = {HD_OE_lig_keys, COMBO_END}; // Œ
+//const uint16_t PROGMEM HAE_lig_combo[] = {HD_AE_lig_keys, COMBO_END}; // Æ
 
 
 // Fast 4grams
@@ -231,8 +231,8 @@ combo_t key_combos[] = {
     [HC_Sh] = COMBO_ACTION(H_Sh_combo),
     [HC_Wh] = COMBO_ACTION(H_Wh_combo),
 
-    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ
-    [HC_AE] = COMBO_ACTION(HAE_lig_combo),  // Æ
+//    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ
+//    [HC_AE] = COMBO_ACTION(HAE_lig_combo),  // Æ
 
 
     [PC_PENT] = COMBO(P3E_combo, KC_PENT), // <enter> on num
@@ -287,14 +287,14 @@ combo_t key_combos[] = {
     [HC_MDSH] = COMBO_ACTION(Hmdsh_combo), // — M-DASH
     
 // Dead keys (Mac only, for now)
-    [HC_ACUT] = COMBO_ACTION(Hacut_combo), // ´ acute
-    [HC_GRV] = COMBO_ACTION(Hgrv_combo), // ` grave
-    [HC_CIRC] = COMBO_ACTION(Hcirc_combo), // ˆ circumflex
-    [HC_MACR] = COMBO_ACTION(Hmacr_combo), // - macron
-    [HC_DIER] = COMBO_ACTION(Hdier_combo), // ¨ dieresis
-    [HC_RING] = COMBO_ACTION(Hring_combo), // ˚ ring
-    [HC_CEDILLE] = COMBO_ACTION(Hcedi_combo), // ¸ cedille
-    [HC_ENYE] = COMBO_ACTION(Henye_combo), // ˜ tilde (dead)
+//    [HC_ACUT] = COMBO_ACTION(Hacut_combo), // ´ acute
+//    [HC_GRV] = COMBO_ACTION(Hgrv_combo), // ` grave
+//    [HC_CIRC] = COMBO_ACTION(Hcirc_combo), // ˆ circumflex
+//    [HC_MACR] = COMBO_ACTION(Hmacr_combo), // - macron
+//    [HC_DIER] = COMBO_ACTION(Hdier_combo), // ¨ dieresis
+//    [HC_RING] = COMBO_ACTION(Hring_combo), // ˚ ring
+//    [HC_CEDILLE] = COMBO_ACTION(Hcedi_combo), // ¸ cedille
+//    [HC_ENYE] = COMBO_ACTION(Henye_combo), // ˜ tilde (dead)
 //    [HC_OSLSH] = COMBO_ACTION(Hoslsh_combo), // ø/Ø or Wh
 
 //    [HC_ENYE] = COMBO(Henye_combo, SK_ENYE), // ñ/Ñ enye
@@ -326,6 +326,8 @@ combo_t key_combos[] = {
     [HC_your_4gram] = COMBO_ACTION(H_your_combo),// TYPE "your"
     [HC_they_4gram] = COMBO_ACTION(H_they_combo), // TYPE "they" #23
     [HC_their_5gram] = COMBO_ACTION(H_their_combo), // TYPE "their" #6
+    [HC_theyd_6gram] = COMBO_ACTION(H_theyd_combo), // TYPE "they'd"
+    [HC_theyll_7gram] = COMBO_ACTION(H_theyll_combo), // TYPE "they'll"
     [HC_theyre_7gram] = COMBO_ACTION(H_theyre_combo), // TYPE "they're"
 
     [HC_there_5gram] = COMBO_ACTION(H_there_combo), // TYPE "there" #7

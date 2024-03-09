@@ -61,14 +61,14 @@ enum my_combos {
     HC_MDSH, // — M-dash
     HC_TILD, // ~ tilde
     HC_TIC, // ` tic (not a dead key)
-    HC_ACUT, // ´ acute
-    HC_GRV, // ` grave (dead key)
-    HC_CIRC, // ˆ circumflex
-    HC_MACR, // - macron
-    HC_DIER, // ¨ dieresis
-    HC_RING, // ˚ ring
-    HC_CEDILLE, // ¸ cedille
-    HC_ENYE, // ñ/Ñ enye
+//    HC_ACUT, // ´ acute
+//    HC_GRV, // ` grave (dead key)
+//    HC_CIRC, // ˆ circumflex
+//    HC_MACR, // - macron
+//    HC_DIER, // ¨ dieresis
+//    HC_RING, // ˚ ring
+//    HC_CEDILLE, // ¸ cedille
+//    HC_ENYE, // ñ/Ñ enye
 //    HC_OSLSH, // ø/Ø
 
     HC_Q, // Q is not on the map
@@ -78,8 +78,8 @@ enum my_combos {
 
     
 
-    HC_OE, // Œ
-    HC_AE, // Æ
+//    HC_OE, // Œ
+//    HC_AE, // Æ
 /*
     HC_1E, // É acute
     HC_2E, // È grave
