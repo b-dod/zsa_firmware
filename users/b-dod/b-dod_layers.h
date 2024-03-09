@@ -49,7 +49,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LM3 KC_LBRC
 #define LS_LM2 KC_LPRN
 #define LS_LM1 KC_LCBR
-#define LS_LM0 SK_SCRS
+#define LS_LM0 LSA(KC_8)  // ° — was SK_SCRS
 #define LS_RM0 SK_IEXC
 #define LS_RM1 RSFT_T(KC_PAST)
 #define LS_RM2 RGUI_T(KC_PEQL)
@@ -93,8 +93,8 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 /* L_FUN LAYER K-key row (left) and Num row (right)
          ╭──────────────────────────────────────────╮               ╭──────────────────────────────────────────╮
  RGB_TOG │ F9       F10     F11     F12     F13     │               │ /       7       8       9       -        │ RGB_MOD
- RGB_VAI │ C_T(F5)  A_T(F6) G_T(F7) S_T(L8) F14     |               | *       S_T(1)  G_T(2)  A_T(3)  C_T(+)   │ RGB_HUI
- RGB_VAD │ F1       F2      F3      F4      INS     │ __ __   __ __ │ ,       4       5       3       =        │ RGB_HUD
+ RGB_VAI │ C_T(F5)  A_T(F6) G_T(F7) S_T(L8) F14     |               | *       S_T(4)  G_T(5)  A_T(6)  C_T(+)   │ RGB_HUI
+ RGB_VAD │ F1       F2      F3      F4      INS     │ __ __   __ __ │ ,       1       2       3       =        │ RGB_HUD
          ╰────────────────╮ __      __      __      │ __         __ │ 0       .       TG(LN)  ╭────────────────╯
               __      __  ╰─────────────────────────╯               ╰─────────────────────────╯ __       __
 */
@@ -118,10 +118,10 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LF_LM2 LGUI_T(KC_F7)
 #define LF_LM1 LSFT_T(KC_F8)
 #define LF_LM0 KC_F14
-#define LF_RM0 KC_COMM
-#define LF_RM1 RSFT_T(KC_1)
-#define LF_RM2 RGUI_T(KC_2)
-#define LF_RM3 RALT_T(KC_3)
+#define LF_RM0 KC_PAST
+#define LF_RM1 RSFT_T(KC_4)
+#define LF_RM2 RGUI_T(KC_5)
+#define LF_RM3 RALT_T(KC_6)
 #define LF_RM4 RCTL_T(KC_PPLS)
 #define LF_RM5 RGB_HUI
 
@@ -136,9 +136,9 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LF_RBB KC_TRNS
 #define LF_RBA KC_TRNS
 #define LF_RB0 KC_COMM
-#define LF_RB1 KC_4
-#define LF_RB2 KC_5
-#define LF_RB3 KC_6
+#define LF_RB1 KC_1
+#define LF_RB2 KC_2
+#define LF_RB3 KC_3
 #define LF_RB4 KC_EQL
 #define LF_RB5 RGB_HUD
 
@@ -151,8 +151,8 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LF_LHA KC_NO
 #define LF_RHA KC_NO
 #define LF_RH0 KC_TRNS
-#define LF_RH1 KC_0
-#define LF_RH2 KC_DOT
+#define LF_RH1 KC_DOT
+#define LF_RH2 KC_0
 #define LF_RH3 KC_TRNS
 #define LF_RH4 SK_ZOOMRST
 #define LF_RH5 KC_TRNS
