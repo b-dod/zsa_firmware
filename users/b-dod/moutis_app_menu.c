@@ -22,7 +22,13 @@ void process_APP_MENU(keyrecord_t *record) {
             tap_code(KC_TAB);
             return; // handled this record.
         }
-        mods_held = (saved_mods & (MOD_MASK_GUI | MOD_MASK_ALT)); // were mods held?
+        if (user_config.OSIndex) {  // Can't SemKey this bc hold mods & timer...
+                mods_held = (saved_mods & MOD_MASK_ALT); // were mods held?
+            } else {
+                mods_held = (saved_mods & MOD_MASK_GUI); // were mods held?
+                unregister_mods(MOD_MASK_ALT);
+            }
+//        mods_held = (saved_mods & (MOD_MASK_GUI | MOD_MASK_ALT)); // were mods held?
         if (!mods_held) { // gui/alt not down, supply them
             if (user_config.OSIndex) {  // Can't SemKey this bc hold mods & timer...
                 register_code(KC_RALT); // Win/Lux
