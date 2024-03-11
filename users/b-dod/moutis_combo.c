@@ -82,7 +82,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;
 
-
+/*
             case HC_ACUT:
                 tap_code16(A(KC_E)); // this should use semkeys
                 combo_on = combo_index; // may add "e" in matrix_scan_user_process_combo
@@ -124,7 +124,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code16(KC_U); // almost always "œu"
                 combo_on = combo_index; // but like qu, we'll take it back if we must.
                 break;
-
+*/
             case HC_NDSH:
                 register_code16(A(KC_MINS));  // should be a semkey
                 break;
@@ -508,7 +508,7 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                 case HC_COLN:
                     tap_code16(A(KC_SCLN)); // held, so … (this could use semkeys)
                     break;
-                case HC_OE:
+//                case HC_OE:
                 case HC_Q:
                     tap_code16(KC_BSPC); // held, so delete u
                     break;
@@ -610,7 +610,7 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
 // END PRONOUN shenanigans
 
     // if lingered, these will followup with the most common composed letter (Latinate language mashup stats)
-                case HC_ACUT:
+/*                case HC_ACUT:
                 case HC_GRV:
                 case HC_CIRC:
                     tap_code16(KC_E); // this should use semkeys? éêè
@@ -630,7 +630,7 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                 case HC_ENYE:
                     tap_code16(KC_N); // this should use semkeys? ñ
                     break;
-
+*/
                     
                 case HC_TYPE_LEFTCOMBO: // already "LeftComboTap" has been sent; if held, undo and send "LeftComboHeld"
                         send_string(LeftComboHeldE); //

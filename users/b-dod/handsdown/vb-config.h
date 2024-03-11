@@ -2,7 +2,7 @@
 //
 // The Hands Down Variation dependent defs & files
 //
-#define HD_adaptive_code "handsdown/vb-adaptive.c"
+#define HD_adaptive_code "handsdown/vb2-adaptive.c"
 //
 
 //

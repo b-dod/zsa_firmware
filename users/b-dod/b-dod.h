@@ -6,7 +6,8 @@
 // defines all variation dependent constants/files/keycodes, etc.
 // they will be used in the respective keymap for each keyboard
 
-#include "handsdown/au-config-bd.h" // definitions for the Alpha layer and mnemonic combos
+//#include "handsdown/au-config-bd.h" // definitions for the Alpha layer and mnemonic combos
+#include "handsdown/vb-config.h" // definitions for the Alpha layer and mnemonic combos
 #include "b-dod_layers.h" // definitions for all the other layers
 
 #ifndef USERSPACE
