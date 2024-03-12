@@ -16,10 +16,27 @@ void process_APP_MENU(keyrecord_t *record) {
     disable_caps_word(); // turn off CAPS_WORD
     prior_keycode = preprior_keycode = prior_keydown = 0; // turn off Adaptives.
     if (record->event.pressed) {
+    saved_mods = get_mods(); // preserve mods
+//    clear_mods(); // clean up lingering mods…
         if (saved_mods & MOD_MASK_CTRL) { // cycle window w/in app
             unregister_code(KC_RALT);  // ignore these if ctrl
+            unregister_code(KC_LALT);
             unregister_code(KC_RGUI);
-            tap_code(KC_TAB);
+            unregister_code(KC_LGUI);
+            if (user_config.OSIndex) {
+                tap_code(KC_TAB);
+            } else {
+                if (saved_mods & MOD_BIT(KC_RCTL)) {
+                    unregister_code(KC_RCTL);
+                    tap_code16(G(KC_GRV));
+                    register_code(KC_RCTL);
+                } else {
+                    unregister_code(KC_LCTL);
+                    tap_code16(G(KC_GRV));
+                    register_code(KC_LCTL);
+                }
+            }
+//            tap_code(KC_TAB);
             return; // handled this record.
         }
         if (user_config.OSIndex) {  // Can't SemKey this bc hold mods & timer...
