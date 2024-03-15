@@ -79,7 +79,9 @@ void keyboard_post_init_user(void) {
     #include "moutis_combo.c"  // combo processing code (def in keymap)
 #endif
 
+#ifdef TAPPING_TERM_PER_KEY
 #include "b-dod_tapterm.c"
+#endif
 
 #include "moutis_casemods.c"
 
