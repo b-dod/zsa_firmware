@@ -122,6 +122,26 @@ const uint16_t PROGMEM H_Ph_combo[] = {HD_Ph_keys, COMBO_END}; // TYPE "ph"
 const uint16_t PROGMEM H_Gh_combo[] = {HD_Gh_keys, COMBO_END}; // TYPE "gh"
 const uint16_t PROGMEM H_Sch_combo[] = {HD_Sch_keys, COMBO_END}; // TYPE "Sch"
 
+//
+// 'ing' combos
+//
+const uint16_t PROGMEM H_xing_combo[] = {HD_xing_keys, COMBO_END}; // TYPE "xing"
+const uint16_t PROGMEM H_wing_combo[] = {HD_wing_keys, COMBO_END}; // TYPE "wing"
+const uint16_t PROGMEM H_ming_combo[] = {HD_ming_keys, COMBO_END}; // TYPE "ming"
+const uint16_t PROGMEM H_ging_combo[] = {HD_ging_keys, COMBO_END}; // TYPE "ging"
+const uint16_t PROGMEM H_jing_combo[] = {HD_jing_keys, COMBO_END}; // TYPE "jing"
+const uint16_t PROGMEM H_sing_combo[] = {HD_sing_keys, COMBO_END}; // TYPE "sing"
+const uint16_t PROGMEM H_cing_combo[] = {HD_cing_keys, COMBO_END}; // TYPE "cing"
+const uint16_t PROGMEM H_ning_combo[] = {HD_ning_keys, COMBO_END}; // TYPE "ning"
+const uint16_t PROGMEM H_ting_combo[] = {HD_ting_keys, COMBO_END}; // TYPE "ting"
+const uint16_t PROGMEM H_king_combo[] = {HD_king_keys, COMBO_END}; // TYPE "king"
+const uint16_t PROGMEM H_bing_combo[] = {HD_bing_keys, COMBO_END}; // TYPE "bing"
+const uint16_t PROGMEM H_ping_combo[] = {HD_ping_keys, COMBO_END}; // TYPE "ping"
+const uint16_t PROGMEM H_ling_combo[] = {HD_ling_keys, COMBO_END}; // TYPE "ling"
+const uint16_t PROGMEM H_ding_combo[] = {HD_ding_keys, COMBO_END}; // TYPE "ding"
+const uint16_t PROGMEM H_ving_combo[] = {HD_ving_keys, COMBO_END}; // TYPE "ving"
+const uint16_t PROGMEM H_zing_combo[] = {HD_zing_keys, COMBO_END}; // TYPE "zing"
+
 // TEXT ENTRY - (ANY ROW/ MIXED ROWS)
 
 //const uint16_t PROGMEM HOE_lig_combo[] = {HD_OE_lig_keys, COMBO_END}; // Œ
@@ -230,6 +250,26 @@ combo_t key_combos[] = {
     [HC_Th] = COMBO_ACTION(H_Th_combo),
     [HC_Sh] = COMBO_ACTION(H_Sh_combo),
     [HC_Wh] = COMBO_ACTION(H_Wh_combo),
+
+    //
+    // 'ing' combos
+    //
+    [HC_xing] = COMBO_ACTION(H_xing_combo), // TYPE "xing"
+    [HC_wing] = COMBO_ACTION(H_wing_combo), // TYPE "wing"
+    [HC_ming] = COMBO_ACTION(H_ming_combo), // TYPE "ming"
+    [HC_ging] = COMBO_ACTION(H_ging_combo), // TYPE "ging"
+    [HC_jing] = COMBO_ACTION(H_jing_combo), // TYPE "jing"
+    [HC_sing] = COMBO_ACTION(H_sing_combo), // TYPE "sing"
+    [HC_cing] = COMBO_ACTION(H_cing_combo), // TYPE "cing"
+    [HC_ning] = COMBO_ACTION(H_ning_combo), // TYPE "ning"
+    [HC_ting] = COMBO_ACTION(H_ting_combo), // TYPE "ting"
+    [HC_king] = COMBO_ACTION(H_king_combo), // TYPE "king"
+    [HC_bing] = COMBO_ACTION(H_bing_combo), // TYPE "bing"
+    [HC_ping] = COMBO_ACTION(H_ping_combo), // TYPE "ping"
+    [HC_ling] = COMBO_ACTION(H_ling_combo), // TYPE "ling"
+    [HC_ding] = COMBO_ACTION(H_ding_combo), // TYPE "ding"
+    [HC_ving] = COMBO_ACTION(H_ving_combo), // TYPE "ving"
+    [HC_zing] = COMBO_ACTION(H_zing_combo), // TYPE "zing"
 
 //    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ
 //    [HC_AE] = COMBO_ACTION(HAE_lig_combo),  // Æ

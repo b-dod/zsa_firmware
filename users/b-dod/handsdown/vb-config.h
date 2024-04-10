@@ -201,6 +201,28 @@
 #define HD_Gh_keys HD_LT2, HD_LT1 // TYPE "gh"
 #define HD_Sch_keys HD_LM4, HD_LM3, HD_LM2 // TYPE "Sch"
 
+//
+// 'ing' combos
+// going to try as an experiment and see if I like using these
+// they seem efficient in principle
+//
+#define HD_xing_keys HD_X, HD_E // TYPE "xing"
+#define HD_wing_keys HD_W, HD_E // TYPE "wing"
+#define HD_ming_keys HD_M, HD_E // TYPE "ming"
+#define HD_ging_keys HD_G, HD_E // TYPE "ging"
+#define HD_jing_keys HD_J, HD_E // TYPE "jing"
+#define HD_sing_keys HD_S, HD_E // TYPE "sing"
+#define HD_cing_keys HD_C, HD_E // TYPE "cing"
+#define HD_ning_keys HD_N, HD_E // TYPE "ning"
+#define HD_ting_keys HD_T, HD_E // TYPE "ting"
+#define HD_king_keys HD_K, HD_E // TYPE "king"
+#define HD_bing_keys HD_B, HD_E // TYPE "bing"
+#define HD_ping_keys HD_P, HD_E // TYPE "ping"
+#define HD_ling_keys HD_L, HD_E // TYPE "ling"
+#define HD_ding_keys HD_D, HD_E // TYPE "ding"
+#define HD_ving_keys HD_V, HD_E // TYPE "ving"
+#define HD_zing_keys HD_LM3, HD_LM1, HD_E // TYPE "zing"
+
 // Should we put all the diacritic keys here?
 // or get keep them all in the common area (if they all share
 // HD Neu vowel block)?

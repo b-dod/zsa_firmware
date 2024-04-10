@@ -125,6 +125,23 @@ enum my_combos {
     HC_Ph, // treat as φ
     HC_Sch, // treat as digraph 'SCH'
 
+    HC_xing, // TYPE "xing"
+    HC_wing, // TYPE "wing"
+    HC_ming, // TYPE "ming"
+    HC_ging, // TYPE "ging"
+    HC_jing, // TYPE "jing"
+    HC_sing, // TYPE "sing"
+    HC_cing, // TYPE "cing"
+    HC_ning, // TYPE "ning"
+    HC_ting, // TYPE "ting"
+    HC_king, // TYPE "king"
+    HC_bing, // TYPE "bing"
+    HC_ping, // TYPE "ping"
+    HC_ling, // TYPE "ling"
+    HC_ding, // TYPE "ding"
+    HC_ving, // TYPE "ving"
+    HC_zing, // TYPE "zing"
+
 #ifdef EN_PRONOUN_COMBOS
 // Pronoun combos. KEEP these together!
     HC_I, // Cap I + "'ve " if lingered
