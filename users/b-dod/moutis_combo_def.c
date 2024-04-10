@@ -140,6 +140,7 @@ const uint16_t PROGMEM H_ping_combo[] = {HD_ping_keys, COMBO_END}; // TYPE "ping
 const uint16_t PROGMEM H_ling_combo[] = {HD_ling_keys, COMBO_END}; // TYPE "ling"
 const uint16_t PROGMEM H_ding_combo[] = {HD_ding_keys, COMBO_END}; // TYPE "ding"
 const uint16_t PROGMEM H_ving_combo[] = {HD_ving_keys, COMBO_END}; // TYPE "ving"
+const uint16_t PROGMEM H_qing_combo[] = {HD_qing_keys, COMBO_END}; // TYPE "qing"
 const uint16_t PROGMEM H_zing_combo[] = {HD_zing_keys, COMBO_END}; // TYPE "zing"
 
 // TEXT ENTRY - (ANY ROW/ MIXED ROWS)
@@ -269,6 +270,7 @@ combo_t key_combos[] = {
     [HC_ling] = COMBO_ACTION(H_ling_combo), // TYPE "ling"
     [HC_ding] = COMBO_ACTION(H_ding_combo), // TYPE "ding"
     [HC_ving] = COMBO_ACTION(H_ving_combo), // TYPE "ving"
+    [HC_qing] = COMBO_ACTION(H_qing_combo), // TYPE "qing"
     [HC_zing] = COMBO_ACTION(H_zing_combo), // TYPE "zing"
 
 //    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ

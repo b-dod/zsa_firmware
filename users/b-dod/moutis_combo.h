@@ -140,6 +140,7 @@ enum my_combos {
     HC_ling, // TYPE "ling"
     HC_ding, // TYPE "ding"
     HC_ving, // TYPE "ving"
+    HC_qing, // TYPE "qing"
     HC_zing, // TYPE "zing"
 
 #ifdef EN_PRONOUN_COMBOS
