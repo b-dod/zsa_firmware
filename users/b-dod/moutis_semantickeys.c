@@ -146,6 +146,7 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
  //
  // handle multi-keystroke semkeys here
  //
+/*  hacky, I know, but I'm moving this into combo.c process              
                 case SK_SWRD: // Select current word
                     tap_SemKey(SK_WORDPRV);
                     register_code(KC_LSFT); // shift for select is close to universal?
@@ -158,6 +159,7 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
                     tap_SemKey(SK_LINEEND); // of course, not for VIM and the like,
                     unregister_code(KC_LSFT); // but we're talking OS platforms?
                     break;
+*/                    
                 case SK_ENYE: // ñ/Ñ ENYE
                     // Doing it this way until proper multi-keystroke table is implemented
                     if (user_config.AdaptiveKeys

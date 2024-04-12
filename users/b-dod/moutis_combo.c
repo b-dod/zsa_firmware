@@ -428,11 +428,14 @@ ADD_HERE:
                 case HC_FIND:  // Simple Find if not held
                     tap_SemKey(SK_FIND);
                     break;
-/*                    
+                    
                 case HC_SWRD:  // SELECT WORD if not held
-                    tap_SemKey(SK_SWRD);
+                    tap_SemKey(SK_WORDPRV);
+                    register_code(KC_LSFT); // shift for select is close to universal?
+                    tap_SemKey(SK_WORDNXT); // of course, not for VIM and the like,
+                    unregister_code(KC_LSFT); // but we're talking OS platforms?
                     break;
-*/
+
                 case HC_NEW:
                     tap_SemKey(SK_NEW);
                     break;
@@ -576,11 +579,14 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
 //                    tap_code(KC_ENT); // register current find
 //                    tap_SemKey(SK_FAGN); // now find the next...
                     break;
-/*
+
                 case HC_SWRD: // Held, so select LINE
-                    tap_SemKey(SK_SLNE); // select LINE
+                    tap_SemKey(SK_LINEBEG);
+                    register_code(KC_LSFT); // shift for select is close to universal?
+                    tap_SemKey(SK_LINEEND); // of course, not for VIM and the like,
+                    unregister_code(KC_LSFT); // but we're talking OS platforms?
                     break;
-*/
+
                 case HC_COPY: // held, so cut
                     tap_SemKey(SK_CUT);
                     break;

@@ -234,7 +234,7 @@ enum my_combos {
     HC_SAVE,
     HC_FIND, // Find the selection
     HC_SWRD, // select current word
-    HC_SLNE, // select current line
+//    HC_SLNE, // select current line
     HC_SALL, // select all
 
     HC_UNDO,
