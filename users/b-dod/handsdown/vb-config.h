@@ -161,6 +161,7 @@
 #define HD_open_keys  HD_LM1, HD_LB1   // open
 #define HD_new_keys   HD_LM2, HD_LB2   // new
 #define HD_close_keys HD_LM3, HD_LB3   // close
+#define HD_save_keys  HD_LM4, HD_LB4   // save
 #define HD_find_keys  HD_LM4, HD_LM0   // find selection
 #define HD_sall_keys  HD_LB4, HD_LB1   // select all
 #define HD_slne_keys  HD_LB4, HD_LB2, HD_LB1   // select line
@@ -221,6 +222,7 @@
 #define HD_ling_keys HD_L, HD_I // TYPE "ling"
 #define HD_ding_keys HD_D, HD_I // TYPE "ding"
 #define HD_ving_keys HD_V, HD_I // TYPE "ving"
+#define HD_ring_keys HD_R, HD_I // TYPE "ring"
 #define HD_qing_keys HD_LT3, HD_LT1, HD_I // TYPE "qing"
 #define HD_zing_keys HD_LM3, HD_LM1, HD_I // TYPE "zing"
 

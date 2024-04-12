@@ -144,6 +144,10 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code(KC_V); // send "V"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;
+            case HC_ring: // TYPE "ring"
+                tap_code(KC_R); // send "R"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
             case HC_qing: // TYPE "qing"
                 tap_code(KC_Q); // send "Q"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
@@ -411,6 +415,7 @@ ADD_HERE:
                 case HC_ling: // TYPE "ling"
                 case HC_ding: // TYPE "ding"
                 case HC_ving: // TYPE "ving"
+                case HC_ring: // TYPE "ring"
                 case HC_qing: // TYPE "qing"
                 case HC_zing: // TYPE "zing"
                     unregister_mods(MOD_MASK_SHIFT);  //
@@ -423,6 +428,11 @@ ADD_HERE:
                 case HC_FIND:  // Simple Find if not held
                     tap_SemKey(SK_FIND);
                     break;
+/*                    
+                case HC_SWRD:  // SELECT WORD if not held
+                    tap_SemKey(SK_SWRD);
+                    break;
+*/
                 case HC_NEW:
                     tap_SemKey(SK_NEW);
                     break;
@@ -566,7 +576,11 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
 //                    tap_code(KC_ENT); // register current find
 //                    tap_SemKey(SK_FAGN); // now find the next...
                     break;
-
+/*
+                case HC_SWRD: // Held, so select LINE
+                    tap_SemKey(SK_SLNE); // select LINE
+                    break;
+*/
                 case HC_COPY: // held, so cut
                     tap_SemKey(SK_CUT);
                     break;

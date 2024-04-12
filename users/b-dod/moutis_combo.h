@@ -140,6 +140,7 @@ enum my_combos {
     HC_ling, // TYPE "ling"
     HC_ding, // TYPE "ding"
     HC_ving, // TYPE "ving"
+    HC_ring, // TYPE "ring"
     HC_qing, // TYPE "qing"
     HC_zing, // TYPE "zing"
 
@@ -230,6 +231,7 @@ enum my_combos {
     HC_OPEN,
     HC_CLOZ,
     HC_QUIT,
+    HC_SAVE,
     HC_FIND, // Find the selection
     HC_SWRD, // select current word
     HC_SLNE, // select current line

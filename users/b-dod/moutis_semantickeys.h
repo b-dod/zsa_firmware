@@ -45,6 +45,7 @@ enum my_keycodes {
     SK_SLNE, // select current line
     SK_CLOZ, // close
     SK_QUIT, // quit
+    SK_SAVE, // save
     SK_FIND, // find
     SK_NEW, // new
     SK_OPEN, // open

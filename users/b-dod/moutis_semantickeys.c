@@ -79,6 +79,7 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
     [SK_QUIT - SK_KILL] = {G(KC_Q),C(KC_Q)}, // quit
     [SK_NEW - SK_KILL] = {G(KC_N),C(KC_N)}, // new
     [SK_OPEN - SK_KILL] = {G(KC_O),C(KC_O)}, // open
+    [SK_SAVE - SK_KILL] = {G(KC_S),C(KC_S)}, // save
     [SK_FIND - SK_KILL] = {G(KC_F),C(KC_F)}, // find
     [SK_FAGN - SK_KILL] = {G(KC_G),KC_F3}, // find again
     [SK_SCAP - SK_KILL] = {S(G(KC_4)),KC_PSCR}, // Screen Capture
