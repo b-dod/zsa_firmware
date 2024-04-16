@@ -54,7 +54,7 @@ const uint16_t PROGMEM Hpste_combo[] = {HD_pste_keys, COMBO_END}; // paste (hold
 
 /* examples of text entry combos */
 const uint16_t PROGMEM H_Left_combo[] = {HD_LT3, HD_LT2, HD_LT1, COMBO_END}; // SIRI
-//const uint16_t PROGMEM H_Right_combo[] = {HD_RT1, HD_RT2, HD_RT3, COMBO_END}; // some demonstrator macro placeholder
+const uint16_t PROGMEM H_Right_combo[] = {HD_RT1, HD_RT2, HD_RT3, COMBO_END}; // some demonstrator macro placeholder
 
 const uint16_t PROGMEM F_KILL_combo[] = {HD_RT3, HD_RT0, COMBO_END}; // KILL = Force quit OR CTRL-ALT-DEL
 const uint16_t PROGMEM F_SCLP_combo[] = {HD_LT2, HD_LT1, HD_LT0, COMBO_END}; // SCREEN shot SELECTION to clipboard
@@ -382,7 +382,7 @@ combo_t key_combos[] = {
 #endif // EN_PRONOUN_COMBOS
 
     [HC_TYPE_LEFTCOMBO] = COMBO(H_Left_combo, MAC_SIRI), // a personally useful 5-8gram!
-//    [HC_TYPE_RIGHTCOMBO] = COMBO_ACTION(H_Right_combo), // a demonstrator, how long autotypes can be!
+    [HC_TYPE_RIGHTCOMBO] = COMBO_ACTION(H_Right_combo), // a demonstrator, how long autotypes can be!
     
     [HC_SPC] = COMBO(Hspc_combo, KC_SPC), // SPACE
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER

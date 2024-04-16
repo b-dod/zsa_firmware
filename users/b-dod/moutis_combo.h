@@ -26,7 +26,7 @@
 #define LeftComboHeldJ "hidarikombochouosi"
 #endif
 #ifndef RightComboTapE
-#define RightComboTapE "RightCombo tapped"
+#define RightComboTapE "@ashellinthepit.com"
 #endif
 #ifndef RightComboHeldE
 #define RightComboHeldE "RightCombo held"

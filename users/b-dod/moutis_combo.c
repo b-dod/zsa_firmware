@@ -749,9 +749,9 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     break;
 */
                     
-                case HC_TYPE_LEFTCOMBO: // already "LeftComboTap" has been sent; if held, undo and send "LeftComboHeld"
-                        send_string(LeftComboHeldE); //
-                    break;
+//                case HC_TYPE_LEFTCOMBO: // already "LeftComboTap" has been sent; if held, undo and send "LeftComboHeld"
+//                        send_string(LeftComboHeldE); //
+//                    break;
                 case HC_TYPE_RIGHTCOMBO: // already "RightComboTap" has been sent; if held, add "RightComboHeld"
                         send_string(RightComboHeldE); //
                     break;
