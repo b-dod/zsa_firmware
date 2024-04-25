@@ -26,10 +26,10 @@
 #define LeftComboHeldJ "hidarikombochouosi"
 #endif
 #ifndef RightComboTapE
-#define RightComboTapE "@ashellinthepit.com"
+#define RightComboTapE "ashellinthepit"
 #endif
 #ifndef RightComboHeldE
-#define RightComboHeldE "RightCombo held"
+#define RightComboHeldE "@ashellinthepit.com"
 #endif
 #ifndef RightComboTapJ
 #define RightComboTapJ "migikombotappu"
