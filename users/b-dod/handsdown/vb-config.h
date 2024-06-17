@@ -177,6 +177,7 @@
 #define HD_spc_keys  HD_LM1, HD_LM0     // SPACE
 #define HD_ent_keys  HD_LB0, HD_LB1     // ENTER
 #define HD_ent2_keys HD_LB0, HD_LB1, HD_LB2 // hard-ENTER/page break
+#define HD_ent3_keys HD_LB0, HD_LB1, HD_LB2, HD_LB3 // Semkey "Next Paragraph" then ENTER
 #define APPMENU_keys  HD_LT1, HD_LT0  // APPMENU
 #define APPMENU_nav_keys  LN_LT1, LN_LT0  // APPMENU
 
@@ -223,8 +224,14 @@
 #define HD_ding_keys HD_D, HD_I // TYPE "ding"
 #define HD_ving_keys HD_V, HD_I // TYPE "ving"
 #define HD_ring_keys HD_R, HD_I // TYPE "ring"
-#define HD_qing_keys HD_LT3, HD_LT1, HD_I // TYPE "qing"
+#define HD_quing_keys HD_LT3, HD_LT1, HD_I // TYPE "quing"
 #define HD_zing_keys HD_LM3, HD_LM1, HD_I // TYPE "zing"
+#define HD_shing_keys HD_LM4, HD_LM3, HD_I // TYPE "shing"
+#define HD_ching_keys HD_LM3, HD_LM2, HD_I // TYPE "ching"
+#define HD_thing_keys HD_LM2, HD_LM1, HD_I // TYPE "thing"
+#define HD_phing_keys HD_LB3, HD_LB1, HD_I // TYPE "phing"
+#define HD_whing_keys HD_LT3, HD_LT2, HD_I // TYPE "whing"
+
 
 // Should we put all the diacritic keys here?
 // or get keep them all in the common area (if they all share

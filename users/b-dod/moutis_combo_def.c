@@ -33,6 +33,7 @@ const uint16_t PROGMEM Hstab_combo[] = {HD_stab_keys, COMBO_END};  // shift-tab
 const uint16_t PROGMEM Hspc_combo[] = {HD_spc_keys, COMBO_END};    // SPACE
 const uint16_t PROGMEM Hent_combo[] = {HD_ent_keys, COMBO_END};    // ENTER
 const uint16_t PROGMEM Hent2_combo[] = {HD_ent2_keys, COMBO_END};  // hard-ENTER/page break
+const uint16_t PROGMEM Hent3_combo[] = {HD_ent3_keys, COMBO_END};  // Semkey "Next Paragraph" then ENTER
 
 // SEMANTIC FUNCTIONS  ** usinp SemKeys **
 const uint16_t PROGMEM Hnew_combo[] = {HD_new_keys, COMBO_END}; // new
@@ -142,8 +143,13 @@ const uint16_t PROGMEM H_ling_combo[] = {HD_ling_keys, COMBO_END}; // TYPE "ling
 const uint16_t PROGMEM H_ding_combo[] = {HD_ding_keys, COMBO_END}; // TYPE "ding"
 const uint16_t PROGMEM H_ving_combo[] = {HD_ving_keys, COMBO_END}; // TYPE "ving"
 const uint16_t PROGMEM H_ring_combo[] = {HD_ring_keys, COMBO_END}; // TYPE "ring"
-const uint16_t PROGMEM H_qing_combo[] = {HD_qing_keys, COMBO_END}; // TYPE "qing"
+const uint16_t PROGMEM H_quing_combo[] = {HD_quing_keys, COMBO_END}; // TYPE "quing"
 const uint16_t PROGMEM H_zing_combo[] = {HD_zing_keys, COMBO_END}; // TYPE "zing"
+const uint16_t PROGMEM H_shing_combo[] = {HD_shing_keys, COMBO_END}; // TYPE "shing"
+const uint16_t PROGMEM H_ching_combo[] = {HD_ching_keys, COMBO_END}; // TYPE "ching"
+const uint16_t PROGMEM H_thing_combo[] = {HD_thing_keys, COMBO_END}; // TYPE "thing"
+const uint16_t PROGMEM H_phing_combo[] = {HD_phing_keys, COMBO_END}; // TYPE "phing"
+const uint16_t PROGMEM H_whing_combo[] = {HD_whing_keys, COMBO_END}; // TYPE "whing"
 
 // TEXT ENTRY - (ANY ROW/ MIXED ROWS)
 
@@ -273,8 +279,13 @@ combo_t key_combos[] = {
     [HC_ding] = COMBO_ACTION(H_ding_combo), // TYPE "ding"
     [HC_ving] = COMBO_ACTION(H_ving_combo), // TYPE "ving"
     [HC_ring] = COMBO_ACTION(H_ring_combo), // TYPE "ring"
-    [HC_qing] = COMBO_ACTION(H_qing_combo), // TYPE "qing"
+    [HC_quing] = COMBO_ACTION(H_quing_combo), // TYPE "quing"
     [HC_zing] = COMBO_ACTION(H_zing_combo), // TYPE "zing"
+    [HC_shing] = COMBO_ACTION(H_shing_combo), // TYPE "shing"
+    [HC_ching] = COMBO_ACTION(H_ching_combo), // TYPE "ching"
+    [HC_thing] = COMBO_ACTION(H_thing_combo), // TYPE "thing"
+    [HC_phing] = COMBO_ACTION(H_phing_combo), // TYPE "phing"
+    [HC_whing] = COMBO_ACTION(H_whing_combo), // TYPE "whing"
 
 //    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ
 //    [HC_AE] = COMBO_ACTION(HAE_lig_combo),  // Æ
@@ -369,7 +380,7 @@ combo_t key_combos[] = {
     [HC_youre_6gram] = COMBO_ACTION(H_youre_combo),// TYPE "you're"
     [HC_youve_6gram] = COMBO_ACTION(H_youve_combo),// TYPE "you've"
     [HC_your_4gram] = COMBO_ACTION(H_your_combo),// TYPE "your"
-    [HC_they_4gram] = COMBO_ACTION(H_they_combo), // TYPE "they" #23
+    [HC_theyve_7gram] = COMBO_ACTION(H_they_combo), // TYPE "they" #23
     [HC_their_5gram] = COMBO_ACTION(H_their_combo), // TYPE "their" #6
     [HC_theyd_6gram] = COMBO_ACTION(H_theyd_combo), // TYPE "they'd"
     [HC_theyll_7gram] = COMBO_ACTION(H_theyll_combo), // TYPE "they'll"
@@ -387,6 +398,7 @@ combo_t key_combos[] = {
     [HC_SPC] = COMBO(Hspc_combo, KC_SPC), // SPACE
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER
     [HC_ENT2] = COMBO(Hent2_combo, SK_HENT), // hard-ENTER
+    [HC_ENT3] = COMBO_ACTION(Hent3_combo), // Semkey "Next Paragraph" then ENTER
 
 /* These all use SemKeys, even as simple combos (handled by process_semkey from process_record_user) */
     [HC_NEW] = COMBO(Hnew_combo, SK_NEW),

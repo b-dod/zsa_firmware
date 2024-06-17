@@ -148,14 +148,46 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code(KC_R); // send "R"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;
-            case HC_qing: // TYPE "qing"
+            case HC_quing: // TYPE "quing"
                 tap_code(KC_Q); // send "Q"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_U); // send "u"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;
             case HC_zing: // TYPE "zing"
                 tap_code(KC_Z); // send "Z"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;
+            case HC_shing: // TYPE "shing"
+                tap_code(KC_S); // send "S"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+            case HC_ching: // TYPE "ching"
+                tap_code(KC_C); // send "C"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+            case HC_thing: // TYPE "thing"
+                tap_code(KC_T); // send "T"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+            case HC_phing: // TYPE "phing"
+                tap_code(KC_P); // send "P"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+            case HC_whing: // TYPE "whing"
+                tap_code(KC_W); // send "W"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;                                                                
 // END 'ing' combos
 /*
             case HC_ACUT:
@@ -200,6 +232,10 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 combo_on = combo_index; // but like qu, we'll take it back if we must.
                 break;
 */
+            case HC_ENT3:
+                tap_SemKey(SK_PARANXT);  // Next Paragraph
+                tap_code(KC_ENT);
+                break;
             case HC_NDSH:
                 register_code16(A(KC_MINS));  // should be a semkey
                 break;
@@ -416,8 +452,13 @@ ADD_HERE:
                 case HC_ding: // TYPE "ding"
                 case HC_ving: // TYPE "ving"
                 case HC_ring: // TYPE "ring"
-                case HC_qing: // TYPE "qing"
+                case HC_quing: // TYPE "quing"
                 case HC_zing: // TYPE "zing"
+                case HC_shing: // TYPE "shing"
+                case HC_ching: // TYPE "ching"
+                case HC_thing: // TYPE "thing"
+                case HC_phing: // TYPE "phing"
+                case HC_whing: // TYPE "whing"                    
                     unregister_mods(MOD_MASK_SHIFT);  //
                     tap_code(KC_I); // send "I" honoring CAPSLK state
                     tap_code(KC_N); // send "N" honoring CAPSLK state

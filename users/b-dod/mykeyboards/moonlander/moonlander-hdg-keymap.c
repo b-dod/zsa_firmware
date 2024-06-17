@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ______, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, ______,                 ______, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, ______, 
     ______, HD_LM4, HD_LM3, HD_LM2, HD_LM1, HD_LM0, ______,                 ______, HD_RM0, HD_RM1, HD_RM2, HD_RM3, HD_RM4, ______, 
     ______, HD_LB4, HD_LB3, HD_LB2, HD_LB1, HD_LB0,                                 HD_RB0, HD_RB1, HD_RB2, HD_RB3, HD_RB4, ______, 
-    ______, ______, ______, ______, HD_LH3,         ______,                 ______,         ______, ______, ______, ______, ______, 
+    ______, ______, ______, ______, HD_LH3,         HD_SPC,                 ______,         ______, ______, ______, ______, ______, 
                                             HD_LH2, HD_LH1, ______, ______, HD_RH1, HD_RH2
   ),
   [L_SYM] = LAYOUT_moonlander(
@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ______, LV_LT4, LV_LT3, LV_LT2, LV_LT1, LV_LT0, ______,                 ______, LV_RT0, LV_RT1, LV_RT2, LV_RT3, LV_RT4, ______, 
     ______, LV_LM4, LV_LM3, LV_LM2, LV_LM1, LV_LM0, ______,                 ______, LV_RM0, LV_RM1, LV_RM2, LV_RM3, LV_RM4, ______, 
     ______, LV_LB4, LV_LB3, LV_LB2, LV_LB1, LV_LB0,                                 LV_RB0, LV_RB1, LV_RB2, LV_RB3, LV_RB4, ______, 
-    ______, ______, ______, ______, ______,         ______,                 ______,         ______, ______, ______, ______, ______, 
+    ______, ______, ______, ______, ______,         ______,                 ______,         LV_RH0, LV_RH3, ______, ______, ______, 
                                             ______, ______, ______, ______, LV_RH1, LV_RH2
   ),
     [L_CFG] = LAYOUT_moonlander(

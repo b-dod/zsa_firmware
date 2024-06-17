@@ -61,6 +61,7 @@ enum my_combos {
     HC_MDSH, // — M-dash
     HC_TILD, // ~ tilde
     HC_TIC, // ` tic (not a dead key)
+    HC_ENT3, // Semkey "Next Paragraph" then ENTER
 //    HC_ACUT, // ´ acute
 //    HC_GRV, // ` grave (dead key)
 //    HC_CIRC, // ˆ circumflex
@@ -141,8 +142,13 @@ enum my_combos {
     HC_ding, // TYPE "ding"
     HC_ving, // TYPE "ving"
     HC_ring, // TYPE "ring"
-    HC_qing, // TYPE "qing"
+    HC_quing, // TYPE "quing"
     HC_zing, // TYPE "zing"
+    HC_shing, // TYPE "shing"
+    HC_ching, // TYPE "ching"
+    HC_thing, // TYPE "thing"
+    HC_phing, // TYPE "phing"
+    HC_whing, // TYPE "whing"
 
 #ifdef EN_PRONOUN_COMBOS
 // Pronoun combos. KEEP these together!
