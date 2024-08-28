@@ -148,6 +148,15 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
             }
             break;
 
+        case KC_J:
+            switch (prior_keycode) {
+            case KC_M:
+                tap_code(KC_L);
+                return_state = false; // done.
+                break;
+            }
+            break;
+
         case KC_T:  // alt fingering remedy for middle-index splits
             switch (prior_keycode) {
                 case KC_K: // quickly typing "k?" yields "kn" (+48x)
@@ -162,14 +171,19 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 case KC_T: // TK = CK (>282x)
                     tap_code(KC_BSPC);
                     tap_code(KC_C);
-                    break;
+                    break; // and let current keycode send normally
+                case KC_D: // DK/GK = LK ()
+                case KC_G:
+                    tap_code(KC_BSPC);
+                    tap_code(KC_L);
+                    break; // and let current keycode send normally
             }
-            // falling through here intentionally here. V&K are treated same.
+            break;
         case KC_V: // remedy inner column split by shifting fingering
             switch (prior_keycode) {
                 case KC_D: // DV/TV/GV = LV ()
-                case KC_T: // TK/DK/GK = LK ()
-                case KC_G: //
+                case KC_T:
+                case KC_G:
                     tap_code(KC_BSPC);
                     tap_code(KC_L);
                     break; // and let current keycode send normally
@@ -220,14 +234,18 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
           case KC_QUOT:
               switch (prior_keycode) {
                   case KC_DOT:
-                      send_string("edu");
-                      return_state = false; // done.
-                      break;
+                    send_string("edu");
+                    return_state = false; // done.
+                    break;
                   case KC_SLSH:
-                      tap_code(KC_BSPC);
-                      send_string(".org");
-                      return_state = false; // done.
-                      break;
+                    tap_code(KC_BSPC);
+                    send_string(".org");
+                    return_state = false; // done.
+                    break;
+                  case KC_E:
+                    send_string("'ll");
+                    return_state = false; // done.
+                    break;
               }
               break;
             case KC_SLSH:
