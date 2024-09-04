@@ -384,6 +384,7 @@ register_key_trap_and_return:
                 }
 #endif
             case KC_B:  // for linger Bryson    
+            case KC_D:  // for linger Dodwell    
             case KC_Q:  // Qu, linger deletes U
                 if ((saved_mods & MOD_MASK_ALT)
 #ifdef JP_MODE_ENABLE
@@ -496,6 +497,7 @@ storeSettings:
 //            case KC_V:  //
 //            case KC_Z:  //
             case KC_B:  // for linger Bryson    
+            case KC_D:  // for linger Dodwell    
             case KC_Q:  // for linger Qu (ironically, need to handle this direclty w/o the macros.)
                 unregister_code16(keycode);
                 linger_key = 0; // make sure nothing lingers

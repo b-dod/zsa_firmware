@@ -50,6 +50,11 @@ void matrix_scan_user(void) {
                             SEND_STRING("ryson");
                         }
                         break;                        
+                    case KC_D: // already "D" has been sent; if lingered, add "odwell"
+                        if ((saved_mods & MOD_MASK_SHIFT)) {
+                            SEND_STRING("odwell");
+                        }
+                        break;                        
 /*
                     case KC_V: // already "V" has been sent; if lingered, add "ivi "
                         if ((saved_mods & MOD_MASK_SHIFT)) {
