@@ -151,6 +151,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
         case KC_J:
             switch (prior_keycode) {
             case KC_M:
+            case KC_N:
                 tap_code(KC_L);
                 return_state = false; // done.
                 break;
