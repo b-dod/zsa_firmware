@@ -298,6 +298,14 @@ __ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND
     RGB_HUI, QK_BOOT, AG_SWAP, AG_NORM, KC_VOLD, KC_BRID, RGB_VAD, __no__, __no__, RGB_SAD, __no__, KC_MRWD, KC_MPLY, KC_MFFD, SK_ZOOMIN, RGB_HUD,
     __no__, __no__, __no__, TG(L_NUM), __no__, __no__, __no__, __no__, __no__, __no__)
 */
+/*   L_CFG Keyboard Configuration (left) and Media Settings (right)
+          ╭────────────────────────────────────────────────────--──────────╮                  ╭────────────────────────────────────-───────────╮
+          │ QK_RBT            CG_SWAP     CG_NORM    EE_CLR    LCA(KC_DEL) │                  │ SK_KILL  KC_NUM   KC_EJCT  __       SK_ZOOMRST │ RGB_MOD
+  RGB_VAI │ HD_AdaptKeyToggle HD_L_QWERTY HD_L_ALPHA KC_VOLU   KC_BRIU     │                  │  __      KC_MPRV  KC_MUTE  KC_MNXT  SK_ZOOMOUT │ RGB_SAI
+  RGB_HUI │ QK_BOOT           AG_SWAP     AG_NORM    KC_VOLD   KC_BRID     │ RGB_VAD RGB_SAD  │  __      KC_MRWD  KC_MPLY  KC_MFFD  SK_ZOOMIN  │ RGB_HUD
+          ╰────────────────────────────╮  __         TG(L_NUM) __          │ __           __  │  __      __       __   ╭───────────────────────╯
+            __                __       ╰───────────────────────────────────╯                  ╰────────────────────────╯   __       __
+*/
 
 #define LC_LT5 KC_NO
 #define LC_LT4 QK_RBT
