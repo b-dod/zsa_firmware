@@ -235,7 +235,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
           case KC_QUOT:
               switch (prior_keycode) {
                   case KC_DOT:
-                    send_string("edu");
+                    send_string("ca");
                     return_state = false; // done.
                     break;
                   case KC_SLSH:
