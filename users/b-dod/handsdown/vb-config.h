@@ -18,7 +18,7 @@
 #define HD_H RCTL_T(KC_H)
 #define HD_I RALT_T(KC_I)
 #define HD_J KC_J
-#define HD_K KC_K
+#define HD_K LT(L_CFG,KC_K)
 #define HD_L KC_L
 #define HD_M KC_M
 #define HD_N LGUI_T(KC_N)
