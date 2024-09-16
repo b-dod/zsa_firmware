@@ -46,7 +46,7 @@ void matrix_scan_user(void) {
                     tap_code(KC_U);
                     break;
                     case KC_B: // already "B" has been sent; if lingered, add "ryson"
-                        if ((saved_mods & MOD_MASK_SHIFT)) {
+                        if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
                             SEND_STRING("ryson");
                         }
                         break;                        
