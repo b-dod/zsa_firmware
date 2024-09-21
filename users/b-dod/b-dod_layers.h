@@ -301,8 +301,8 @@ __ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 /*   L_CFG Keyboard Configuration (left) and Media Settings (right)
           ╭────────────────────────────────────────────────────--──────────╮                  ╭────────────────────────────────────-───────────╮
   RGB_TOG │ QK_RBT            CG_SWAP     CG_NORM    EE_CLR    LCA(KC_DEL) │                  │ SK_KILL  KC_NUM   KC_EJCT  __       SK_ZOOMRST │ RGB_MOD
-  RGB_VAI │ HD_AdaptKeyToggle HD_L_QWERTY HD_L_ALPHA KC_VOLU   KC_BRIU     │                  │  __      KC_MPRV  KC_MUTE  KC_MNXT  SK_ZOOMIN  │ RGB_SAI
-  RGB_HUI │ QK_BOOT           AG_SWAP     AG_NORM    KC_VOLD   KC_BRID     │ RGB_VAD RGB_SAD  │  __      KC_MRWD  KC_MPLY  KC_MFFD  SK_ZOOMOUT │ RGB_HUD
+  RGB_VAI │ HD_AdaptKeyToggle HD_L_QWERTY HD_L_ALPHA KC_VOLU   KC_BRIU     │                  │  __      KC_MPRV  KC_MPLY  KC_MNXT  SK_ZOOMIN  │ RGB_SAI
+  RGB_HUI │ QK_BOOT           AG_SWAP     AG_NORM    KC_VOLD   KC_BRID     │ RGB_VAD RGB_SAD  │  __      KC_MRWD  KC_MUTE  KC_MFFD  SK_ZOOMOUT │ RGB_HUD
           ╰────────────────────────────╮  __         TG(L_NUM) __          │ __           __  │  __      __       __   ╭───────────────────────╯
             __                __       ╰───────────────────────────────────╯                  ╰────────────────────────╯   __       __
 */
@@ -328,7 +328,7 @@ __ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 #define LC_LM0 KC_BRIU
 #define LC_RM0 KC_NO
 #define LC_RM1 KC_MPRV
-#define LC_RM2 KC_MUTE
+#define LC_RM2 KC_MPLY
 #define LC_RM3 KC_MNXT
 #define LC_RM4 SK_ZOOMIN
 #define LC_RM5 RGB_SAI
@@ -345,7 +345,7 @@ __ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND
 #define LC_RBA RGB_SAD
 #define LC_RB0 KC_NO
 #define LC_RB1 KC_MRWD
-#define LC_RB2 KC_MPLY
+#define LC_RB2 KC_MUTE
 #define LC_RB3 KC_MFFD
 #define LC_RB4 SK_ZOOMOUT
 #define LC_RB5 RGB_HUD
