@@ -62,6 +62,7 @@ enum my_combos {
     HC_TILD, // ~ tilde
     HC_TIC, // ` tic (not a dead key)
     HC_ENT3, // Semkey "Next Paragraph" then ENTER
+    HC_AMPR, // Ampersand
 //    HC_ACUT, // ´ acute
 //    HC_GRV, // ` grave (dead key)
 //    HC_CIRC, // ˆ circumflex

@@ -81,6 +81,7 @@ const uint16_t PROGMEM Hmdsh_combo[] = {HD_RB0, HD_RB2, COMBO_END}; // — m das
 const uint16_t PROGMEM Htild_combo[] = {HD_RB1, HD_RB4, COMBO_END}; // ~ tilde (not the deadkey for eñye)
 const uint16_t PROGMEM Hunds_combo[] = {HD_RB1, HD_RB3, COMBO_END}; // _ underscore
 const uint16_t PROGMEM Hequal_combo[] = {HD_RB2, HD_RB3, COMBO_END}; // = equal (hold for %)
+const uint16_t PROGMEM Hampr_combo[] = {HD_RB1, HD_RB2, COMBO_END}; // & ampersand
 //const uint16_t PROGMEM Hpercent_combo[] = {HD_RB3, HD_RB4, COMBO_END}; // % percent
 
 
@@ -247,6 +248,7 @@ combo_t key_combos[] = {
     [HC_AT] = COMBO_ACTION(Hat_combo), // @ (hold for .com)
     [HC_TAB] = COMBO(Htab_combo, KC_TAB),
     [HC_STAB] = COMBO(Hstab_combo, S(KC_TAB)),
+    [HC_AMPR] = COMBO(Hampr_combo, KC_AMPR), // Ampersand
 
     [HC_Q] = COMBO_ACTION(H_Q_combo),
     [HC_L1] = COMBO(H_L1_combo, HD_L1),
