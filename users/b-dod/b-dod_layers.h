@@ -162,7 +162,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
    ╭──────────────────────────────────────────╮               ╭──────────────────────────────────────────╮
 __ │ NUM_LK   PGUP    UP      PGDN      TAB   │               │  PSLS      P7      P8      P9      PMNS  │ __
 __ │ W_LEFT   LEFT    DOWN    RGHT     W_RGHT |               |  PAST      P4      P5      P6      PPLS  │ __
-__ │ UNDO     CUT     COPY    PSTE      SPC   │ __ __   __ __ │  PCMM      P1      P2      P3      PEQL  │ __
+__ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  PCMM      P1      P2      P3      PEQL  │ __
    ╰────────────────╮  __   G_T(BSP)  C_T(ENT)│ __         __ │  P0        PDOT    __   ╭────────────────╯
         __      __  ╰─────────────────────────╯               ╰─────────────────────────╯ __       __
 */
@@ -195,8 +195,8 @@ __ │ UNDO     CUT     COPY    PSTE      SPC   │ __ __   __ __ │  PCMM     
 
 #define LN_LB5 KC_TRNS
 #define LN_LB4 SK_UNDO
-#define LN_LB3 SK_CUT
-#define LN_LB2 SK_COPY
+#define LN_LB3 SK_COPY
+#define LN_LB2 SK_CUT
 #define LN_LB1 SK_PSTE
 #define LN_LB0 KC_SPC
 #define LN_LBA KC_ESC
@@ -219,8 +219,8 @@ __ │ UNDO     CUT     COPY    PSTE      SPC   │ __ __   __ __ │  PCMM     
 #define LN_LHA KC_NO
 #define LN_RHA KC_NO
 #define LN_RH0 KC_C
-#define LN_RH1 KC_P0
-#define LN_RH2 KC_PDOT
+#define LN_RH1 KC_PDOT
+#define LN_RH2 KC_P0
 #define LN_RH3 KC_TRNS
 #define LN_RH4 KC_TRNS
 #define LN_RH5 KC_TRNS

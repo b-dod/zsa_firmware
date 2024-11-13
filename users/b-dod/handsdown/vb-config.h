@@ -14,11 +14,11 @@
 #define HD_D KC_D
 #define HD_E RGUI_T(KC_E)
 #define HD_F KC_F
-#define HD_G KC_G
+#define HD_G LT(L_CFG,KC_G)
 #define HD_H RCTL_T(KC_H)
 #define HD_I RALT_T(KC_I)
 #define HD_J KC_J
-#define HD_K LT(L_CFG,KC_K)
+#define HD_K LT(L_NUM,KC_K)
 #define HD_L KC_L
 #define HD_M KC_M
 #define HD_N LGUI_T(KC_N)
@@ -77,8 +77,8 @@
 #define HD_LT2 HD_M
 #define HD_LT1 HD_G
 #define HD_LT0 HD_J
-//#define HD_LTA LT(L_CFG, KC_MUTE)
-//#define HD_RTA LT(L_CFG, KC_MPLY)
+#define HD_LTA LT(L_CFG, KC_MPLY)
+#define HD_RTA LT(L_CFG, KC_MPRV)
 #define HD_RT0 HD_HASH
 #define HD_RT1 HD_DOT
 #define HD_RT2 HD_SLSH
@@ -86,14 +86,14 @@
 #define HD_RT4 HD_QUOT
 //#define HD_RT5 KC_LNG2
 
-//#define HD_LM5 KC_TAB
+#define HD_LM5 KC_TAB
 #define HD_LM4 HD_S
 #define HD_LM3 HD_C
 #define HD_LM2 HD_N
 #define HD_LM1 HD_T
 #define HD_LM0 HD_K
-//#define HD_LMA KC_LPRN
-//#define HD_RMA KC_RPRN
+#define HD_LMA KC_LPRN
+#define HD_RMA KC_RPRN
 #define HD_RM0 HD_COMM
 #define HD_RM1 HD_A
 #define HD_RM2 HD_E
@@ -101,22 +101,22 @@
 #define HD_RM4 HD_H
 //#define HD_RM5 KC_LNG1
 
-//#define HD_LB5 HD_Z
+#define HD_LB5 HD_Z
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
 #define HD_LB1 HD_D
 #define HD_LB0 HD_V
-//#define HD_LBA LT(L_NUM, KC_LBRC)
+#define HD_LBA LT(L_NUM, KC_LBRC)
 //#define HD_LBB LT(L_CFG, KC_LNG2)
 //#define HD_RBB LT(L_FUN, KC_LNG1)
-//#define HD_RBA LT(L_NAV, KC_RBRC)
+#define HD_RBA LT(L_NAV, KC_RBRC)
 #define HD_RB0 HD_MINS
 #define HD_RB1 HD_U
 #define HD_RB2 HD_O
 #define HD_RB3 HD_Y
 #define HD_RB4 HD_F
-//#define HD_RB5 HD_Q
+#define HD_RB5 HD_Q
 
 //Primary Thumbs 1-3 (others are unique to the board)
 //#define HD_LH5 KC_LEFT
@@ -157,10 +157,10 @@
 // the above combos may compete for the same locations,
 // we'll define them all here.
 //
-#define HD_quit_keys  HD_LB0, HD_LM0   // quit
-#define HD_open_keys  HD_LM1, HD_LB1   // open
-#define HD_new_keys   HD_LM2, HD_LB2   // new
-#define HD_close_keys HD_LM3, HD_LB3   // close
+#define HD_quit_keys  HD_RT0, HD_RM0   // quit
+#define HD_open_keys  HD_RM0, HD_RB0   // open
+#define HD_new_keys   HD_LB0, HD_LM0   // new
+#define HD_close_keys HD_LT0, HD_LM0   // close
 #define HD_save_keys  HD_LM4, HD_LB4   // save
 #define HD_find_keys  HD_LM4, HD_LM0   // find selection
 #define HD_sall_keys  HD_LB4, HD_LB1   // select all
