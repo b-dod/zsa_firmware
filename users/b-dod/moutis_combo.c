@@ -469,6 +469,10 @@ ADD_HERE:
                 case HC_FIND:  // Simple Find if not held
                     tap_SemKey(SK_FIND);
                     break;
+
+                case HC_SALL: // SELECT ALL if not held
+                    tap_SemKey(SK_SALL); // SELECT ALL
+                    break;
                     
                 case HC_SWRD:  // SELECT WORD if not held
                     tap_SemKey(SK_WORDPRV);
@@ -619,6 +623,11 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     tap_SemKey(SK_PSTE); // paste the copy. will find the selection
 //                    tap_code(KC_ENT); // register current find
 //                    tap_SemKey(SK_FAGN); // now find the next...
+                    break;
+
+                case HC_SALL: // SELECT ALL and CLEAR if held
+                    tap_SemKey(SK_SALL); // SELECT ALL
+                    tap_code16(KC_BSPC); // CLEAR
                     break;
 
                 case HC_SWRD: // Held, so select LINE
