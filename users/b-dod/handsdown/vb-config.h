@@ -14,7 +14,7 @@
 #define HD_D KC_D
 #define HD_E RGUI_T(KC_E)
 #define HD_F KC_F
-#define HD_G LT(L_CFG,KC_G)
+#define HD_G KC_G
 #define HD_H RCTL_T(KC_H)
 #define HD_I RALT_T(KC_I)
 #define HD_J KC_J
