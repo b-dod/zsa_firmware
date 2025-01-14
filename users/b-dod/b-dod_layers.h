@@ -162,7 +162,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
    ╭──────────────────────────────────────────╮               ╭──────────────────────────────────────────╮
 __ │ NUM_LK   PGUP    UP      PGDN      TAB   │               │  PSLS      P7      P8      P9      PMNS  │ __
 __ │ W_LEFT   LEFT    DOWN    RGHT     W_RGHT |               |  PAST      P4      P5      P6      PPLS  │ __
-__ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  PCMM      P1      P2      P3      PEQL  │ __
+__ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  COMM      P1      P2      P3      PEQL  │ __
    ╰────────────────╮  __   G_T(ENT)  S_T(BSP)│ __         __ │  P0        PDOT    __   ╭────────────────╯
         __      __  ╰─────────────────────────╯               ╰─────────────────────────╯ __       __
 */
@@ -203,7 +203,7 @@ __ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  PCMM     
 #define LN_LBB KC_TRNS
 #define LN_RBB KC_TRNS
 #define LN_RBA KC_ESC
-#define LN_RB0 KC_PCMM
+#define LN_RB0 KC_COMM
 #define LN_RB1 KC_P1
 #define LN_RB2 KC_P2
 #define LN_RB3 KC_P3
