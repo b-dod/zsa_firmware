@@ -226,15 +226,15 @@ __ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  COMM     
 #define LN_RH5 KC_TRNS
 
 /*   L_NAV THE NAVIGATION (right hand) LAYER w/ edit & mods on left
-   ╭──────────────────────────────────────────╮                  ╭───────────────────────────────────────────────╮
-__ │   CLOZ     QUIT    SCAP    SCLP    PSTM  │                  │  DOCBEG     HOME    UP      PGUP    PARAPRV   │ KC_NUM
-__ │   LCTL     LALT    LGUI    LSFT    FIND  |                  |  WORDPRV    LEFT    DOWN    RGHT    WORDNXT   │ __
-__ │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND     END     DOWN    PGDN    PARANXT   │ __
-   ╰──────────────────╮  __   S(MENU)   MENU  │ __           __  │  HISTPRV  HISTNXT    __    ╭──────────────────╯
-      HISTPRV HISTNXT ╰───────────────────────╯                  ╰────────────────────────────╯ ZOOMRST ZOOMOUT
+    ╭──────────────────────────────────────────╮                  ╭───────────────────────────────────────────────╮
+TAB │   CLOZ     QUIT    SCAP    SCLP    PSTM  │                  │  DOCBEG     HOME    UP      PGUP    PARAPRV   │ KC_NUM
+__  │   LCTL     LALT    LGUI    LSFT    FIND  |                  |  WORDPRV    LEFT    DOWN    RGHT    WORDNXT   │ __
+__  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEND     END     DOWN    PGDN    PARANXT   │ __
+    ╰──────────────────╮  __   S(MENU)   MENU  │ __           __  │  HISTPRV  HISTNXT    __    ╭──────────────────╯
+       HISTPRV HISTNXT ╰───────────────────────╯                  ╰────────────────────────────╯ ZOOMRST ZOOMOUT
 */
 
-#define LV_LT5 KC_TRNS
+#define LV_LT5 KC_TAB
 #define LV_LT4 SK_CLOZ
 #define LV_LT3 SK_QUIT
 #define LV_LT2 SK_SCAP
