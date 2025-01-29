@@ -6,7 +6,7 @@
 */
 
 //#undef ONESHOT_TIMEOUT
-//#define ONESHOT_TIMEOUT 1250
+#define ONESHOT_TIMEOUT 1250
 /*
 #ifndef NO_DEBUG
 #define NO_DEBUG
