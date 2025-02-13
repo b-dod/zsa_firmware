@@ -134,9 +134,20 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     return_state = false; // done.
                     break;
                case KC_M:
-                    tap_code(KC_BSPC);
-                    tap_code(KC_L);
-                    break; // and let current keycode send normally
+                    if (!preprior_keycode) {
+                        tap_code(KC_BSPC);
+                        tap_code(KC_L);
+                        break; // and let current keycode send normally
+                    }
+                    switch (preprior_keycode) {
+                        case KC_X:
+                            tap_code(KC_BSPC);
+                            tap_code(KC_C);
+                            tap_code(KC_L);
+                            return_state = false; // done.
+                            break;
+                    }
+                    break;
                 case KC_J: // JG = jpg
                     tap_code(KC_P); // insert a P
                     break; // and let current keycode send normally
