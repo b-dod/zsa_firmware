@@ -239,8 +239,15 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     break;
                 case KC_B: // Pull S down (SP is 83x more common than BP)
                     tap_code(KC_BSPC);
+                    if (saved_mods & MOD_MASK_SHIFT) {
+                    tap_code16(S(KC_S)); //(but maybe should be BS? SP/BS are about equal...)
+                    unregister_mods(MOD_MASK_SHIFT);  //
+                    tap_code(KC_P);
+                    return_state = false; // done.
+                    } else {
                     tap_code(KC_S); //(but maybe should be BS? SP/BS are about equal...)
                     return_state = true; // not done (process this key normally)
+                    }
                     break;
             }
             break;
