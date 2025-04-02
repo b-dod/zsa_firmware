@@ -3,7 +3,7 @@
 #
 
 LEADER_ENABLE = no       # Enable the Leader Key feature
-MOUSEKEY_ENABLE = no     # Mouse keys
+MOUSEKEY_ENABLE = yes     # Mouse keys
 UNICODE_ENABLE = no      # will need this for HD Polyglot
 NKRO_ENABLE = no         # USB Nkey Rollover
 KEY_OVERRIDE_ENABLE = no
