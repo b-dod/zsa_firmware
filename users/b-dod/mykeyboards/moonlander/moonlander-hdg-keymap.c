@@ -59,8 +59,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [L_NAV] = LAYOUT_moonlander(
     ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 
-    LV_LT5, LV_LT4, LV_LT3, LV_LT2, LV_LT1, LV_LT0, ______,                 ______, LV_RT0, LV_RT1, LV_RT2, LV_RT3, LV_RT4, ______, 
-    ______, LV_LM4, LV_LM3, LV_LM2, LV_LM1, LV_LM0, ______,                 ______, LV_RM0, LV_RM1, LV_RM2, LV_RM3, LV_RM4, ______, 
+    LV_LT5, LV_LT4, LV_LT3, LV_LT2, LV_LT1, LV_LT0, ______,                 LV_RTA, LV_RT0, LV_RT1, LV_RT2, LV_RT3, LV_RT4, ______, 
+    ______, LV_LM4, LV_LM3, LV_LM2, LV_LM1, LV_LM0, ______,                 LV_RMA, LV_RM0, LV_RM1, LV_RM2, LV_RM3, LV_RM4, ______, 
     ______, LV_LB4, LV_LB3, LV_LB2, LV_LB1, LV_LB0,                                 LV_RB0, LV_RB1, LV_RB2, LV_RB3, LV_RB4, ______, 
     ______, ______, ______, ______, ______,         ______,                 ______,         LV_RH0, LV_RH3, ______, ______, ______, 
                                             ______, ______, ______, ______, LV_RH1, LV_RH2

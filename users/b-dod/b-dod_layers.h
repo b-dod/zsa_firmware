@@ -240,6 +240,7 @@ __  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEN
 #define LV_LT2 SK_SCAP
 #define LV_LT1 SK_SCLP
 #define LV_LT0 SK_PSTM
+#define LV_RTA KC_MS_WH_DOWN
 #define LV_RT0 SK_DOCBEG
 #define LV_RT1 KC_HOME
 #define LV_RT2 KC_UP
@@ -253,6 +254,7 @@ __  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEN
 #define LV_LM2 LGUI_T(KC_NO)
 #define LV_LM1 LSFT_T(KC_NO)
 #define LV_LM0 SK_FIND
+#define LV_RMA KC_MS_WH_UP
 #define LV_RM0 SK_WORDPRV
 #define LV_RM1 KC_LEFT
 #define LV_RM2 KC_DOWN
