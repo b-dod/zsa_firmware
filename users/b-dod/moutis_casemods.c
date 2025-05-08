@@ -130,7 +130,7 @@ bool process_caps_word(uint16_t keycode, const keyrecord_t *record) {
                             disable_caps_word();
                             return true; // let QMK handle space normally
                         } else {
-                            register_code16(KC_UNDS);
+                            register_code16(KC_SPC);
                             last_press_was_space = true;
                             return false; // We handled it
                         }
@@ -146,7 +146,7 @@ bool process_caps_word(uint16_t keycode, const keyrecord_t *record) {
             switch (keycode) {
                 case KC_SPC:
                     if (last_press_was_space) {
-                        unregister_code16(KC_UNDS);
+                        unregister_code16(KC_SPC);
                         return false; // We handled it
                     }
             }

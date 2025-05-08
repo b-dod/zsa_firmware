@@ -121,7 +121,7 @@
 //Primary Thumbs 1-3 (others are unique to the board)
 #define HD_LH7 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
 //#define HD_LH5 KC_LEFT
-#define HD_LH4 KC_MS_BTN2 // USED TO BE KC_RGHT
+#define HD_LH4 HYPR_T(KC_MS_BTN2) // USED TO BE KC_RGHT
 #define HD_LH3 MEH_T(KC_MS_BTN1) // USED TO BE KC_APP
 #define HD_LH2 HD_R
 #define HD_LH1 HD_BSPC
