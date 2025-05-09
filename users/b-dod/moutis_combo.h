@@ -150,6 +150,7 @@ enum my_combos {
     HC_thing, // TYPE "thing"
     HC_phing, // TYPE "phing"
     HC_whing, // TYPE "whing"
+    HC_ghing, // TYPE "ghing"
 
 #ifdef EN_PRONOUN_COMBOS
 // Pronoun combos. KEEP these together!

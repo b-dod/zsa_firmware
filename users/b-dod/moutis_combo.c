@@ -187,6 +187,12 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 unregister_mods(MOD_MASK_SHIFT);
                 tap_code(KC_H); // send "H"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+            case HC_ghing: // TYPE "ghing"
+                tap_code(KC_G); // send "W"
+                unregister_mods(MOD_MASK_SHIFT);
+                tap_code(KC_H); // send "H"
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
                 break;                                                                
 // END 'ing' combos
 /*
@@ -459,6 +465,7 @@ ADD_HERE:
                 case HC_thing: // TYPE "thing"
                 case HC_phing: // TYPE "phing"
                 case HC_whing: // TYPE "whing"                    
+                case HC_ghing: // TYPE "ghing"                    
                     unregister_mods(MOD_MASK_SHIFT);  //
                     tap_code(KC_I); // send "I" honoring CAPSLK state
                     tap_code(KC_N); // send "N" honoring CAPSLK state

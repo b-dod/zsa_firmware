@@ -233,6 +233,7 @@
 #define HD_thing_keys HD_LM2, HD_LM1, HD_I // TYPE "thing"
 #define HD_phing_keys HD_LB3, HD_LB1, HD_I // TYPE "phing"
 #define HD_whing_keys HD_LT3, HD_LT2, HD_I // TYPE "whing"
+#define HD_ghing_keys HD_LT2, HD_LT1, HD_I // TYPE "ghing"
 
 
 // Should we put all the diacritic keys here?

@@ -151,6 +151,7 @@ const uint16_t PROGMEM H_ching_combo[] = {HD_ching_keys, COMBO_END}; // TYPE "ch
 const uint16_t PROGMEM H_thing_combo[] = {HD_thing_keys, COMBO_END}; // TYPE "thing"
 const uint16_t PROGMEM H_phing_combo[] = {HD_phing_keys, COMBO_END}; // TYPE "phing"
 const uint16_t PROGMEM H_whing_combo[] = {HD_whing_keys, COMBO_END}; // TYPE "whing"
+const uint16_t PROGMEM H_ghing_combo[] = {HD_ghing_keys, COMBO_END}; // TYPE "ghing"
 
 // TEXT ENTRY - (ANY ROW/ MIXED ROWS)
 
@@ -288,6 +289,7 @@ combo_t key_combos[] = {
     [HC_thing] = COMBO_ACTION(H_thing_combo), // TYPE "thing"
     [HC_phing] = COMBO_ACTION(H_phing_combo), // TYPE "phing"
     [HC_whing] = COMBO_ACTION(H_whing_combo), // TYPE "whing"
+    [HC_ghing] = COMBO_ACTION(H_ghing_combo), // TYPE "ghing"
 
 //    [HC_OE] = COMBO_ACTION(HOE_lig_combo),  // Œ
 //    [HC_AE] = COMBO_ACTION(HAE_lig_combo),  // Æ
