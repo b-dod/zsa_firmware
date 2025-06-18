@@ -101,7 +101,7 @@
 #define HD_RM4 HD_H
 //#define HD_RM5 KC_LNG1
 
-#define HD_LB5 HD_Z
+#define HD_LB5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
@@ -120,6 +120,7 @@
 
 //Primary Thumbs 1-3 (others are unique to the board)
 #define HD_LH7 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
+#define HD_LH6 HYPR(KC_SPC) // SHIFT GUI CTRL ALT SPACE, Keyboard Maestro Palettes
 //#define HD_LH5 KC_LEFT
 #define HD_LH4 HYPR_T(KC_MS_BTN2) // USED TO BE KC_RGHT
 #define HD_LH3 MEH_T(KC_MS_BTN1) // USED TO BE KC_APP
