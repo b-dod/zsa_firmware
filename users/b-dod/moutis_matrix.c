@@ -51,7 +51,7 @@ void matrix_scan_user(void) {
                         }
                         break;                        
                     case KC_D: // already "D" has been sent; if lingered, add "odwell"
-                        if ((saved_mods & MOD_MASK_SHIFT)) {
+                        if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
                             SEND_STRING("odwell");
                         }
                         break;                        
