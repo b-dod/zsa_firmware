@@ -24,6 +24,8 @@
 
 #include "moutis_combo.h"
 
+#include "sentence_case.h"
+
 //
 // These COULD be made variation/platform dependent, to allow
 // them to adapt to geometry differences. Ex.

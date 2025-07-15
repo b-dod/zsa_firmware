@@ -93,3 +93,6 @@ void keyboard_post_init_user(void) {
 #include "moutis_process_record.c"
 
 #include "moutis_matrix.c"
+
+// #include Getreuer Sentence Case code
+#include "sentence_case.c"

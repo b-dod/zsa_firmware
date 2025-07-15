@@ -135,7 +135,7 @@
 #define HD_RH3 TG(L_NUM)
 //#define HD_RH4 KC_UP
 //#define HD_RH5 KC_DOWN
-#define HD_RH7 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
+#define HD_RH7 OSM(MOD_RSFT) // S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
 
 #ifdef COMBO_ENABLE
 //
