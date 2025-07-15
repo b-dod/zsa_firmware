@@ -22,6 +22,13 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         oled_write_P(PSTR("Combo: "), false);
 #endif
 */
+
+        if (is_sentence_case_primed())
+        {
+            set_oneshot_mods(MOD_BIT(KC_LSFT));  // Shift mod to capitalize.
+            set_sentence_case_state_word();
+        }
+
         switch(combo_index) {
             case PC_STAB ... COMBO_LENGTH:// these may have a hold delay BEFORE triggering
             case HC_AT ... HC_COLN: //
@@ -470,6 +477,7 @@ ADD_HERE:
                     tap_code(KC_I); // send "I" honoring CAPSLK state
                     tap_code(KC_N); // send "N" honoring CAPSLK state
                     tap_code(KC_G); // send "G" honoring CAPSLK state
+                    set_sentence_case_state_word();
                     break;
 // END 'ing' combos
 
@@ -557,10 +565,18 @@ ADD_HERE:
                         send_string(RightComboTapE); // send "Japan" right away
                     break;
 
+#ifdef EN_PRONOUN_COMBOS_ALL
+                case HC_here_4gram:
+                case HC_there_5gram:
+                    set_sentence_case_state_word();
+                    combo_on = 0;  // done w/these shenanigans
+                    break;
 #ifdef EN_PRONOUN_COMBOS
                 case HC_I ... HC_Iv:
 #ifdef EN_PRONOUN_COMBOS_ALL
-                case HC_wed_4gram ... HC_their_5gram:
+                case HC_wed_4gram ... HC_your_4gram:
+                case HC_they_4gram ... HC_their_5gram:
+#endif
 #endif
 #endif
                     tap_code(KC_SPC); // add space after a composed pronoun

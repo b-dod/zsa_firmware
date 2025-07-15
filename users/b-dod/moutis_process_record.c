@@ -30,6 +30,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 #endif // #ifdef ADAPTIVE_ENABLE
 
+// Call Getreuer process sentence case function
+if (!process_sentence_case(keycode, record)) { return false; }
+
   switch (keycode) {
     case MAC_SIRI:
       HCS(0xCF);
