@@ -321,7 +321,8 @@ __attribute__((weak)) bool sentence_case_check_ending(const uint16_t* buffer) {
 #if SENTENCE_CASE_BUFFER_SIZE >= 5
   // Don't consider the abbreviations "vs." and "etc." to end the sentence.
   if (SENTENCE_CASE_JUST_TYPED(KC_SPC, KC_V, KC_S, KC_DOT) ||
-      SENTENCE_CASE_JUST_TYPED(KC_SPC, KC_E, KC_T, KC_C, KC_DOT)) {
+      SENTENCE_CASE_JUST_TYPED(KC_SPC, KC_E, KC_T, KC_C, KC_DOT) ||
+      SENTENCE_CASE_JUST_TYPED(KC_SPC, KC_A, KC_K, KC_A, KC_DOT)) {
     return false;  // Not a real sentence ending.
   }
 #endif  // SENTENCE_CASE_BUFFER_SIZE >= 5
