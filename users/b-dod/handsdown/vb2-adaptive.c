@@ -94,10 +94,10 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     return_state = false; // done.
                     break;
                 case KC_L:
-                    if (preprior_keycode == KC_P) { // PLD = PWD?
-                        tap_code(KC_BSPC);
-                        tap_code(KC_W); // replace the L with W
-                        break; // process the D normally
+                    if (preprior_keycode == KC_P) { // PLD = PLZ
+                        tap_code(KC_Z); // replace the L with W
+                        return_state = false; // done.
+                        break;
                     }
             }
             break;
