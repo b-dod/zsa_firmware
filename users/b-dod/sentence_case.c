@@ -359,6 +359,7 @@ __attribute__((weak)) char sentence_case_press_user(uint16_t keycode,
         return ' ';  // Space key or Enter.
 
       case KC_QUOT:
+      case KC_DQUO:
         return '\'';  // Quote key.
     }
   }
