@@ -162,34 +162,19 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
 */                    
                 case SK_ENYE: // ñ/Ñ ENYE
                     // Doing it this way until proper multi-keystroke table is implemented
-                    if (user_config.AdaptiveKeys
-#ifdef JP_MODE_ENABLE
-                        && IS_ENGLISH_MODE
-#endif
-                        ) { // if  in English mode
+                    if (user_config.AdaptiveKeys) { // if  in English mode
                         clear_keyboard(); // clean record to tinker with.
                         tap_SemKey(SK_ENYE);
                         set_mods(saved_mods & MOD_MASK_SHIFT); // Preserve shift state
                         tap_code16(KC_N);
                         // set_mods(saved_mods); // restore mods just in case? (not necessary?)
-#ifdef JP_MODE_ENABLE
-                    } else { // (if in Japanese mode, send ん)
-                        tap_code16(KC_N);  //
-                        tap_code16(KC_N);  //
-#endif
                     }
                     break;
                 case SK_HENK: // Japanese
-#ifdef JP_MODE_ENABLE
-                    IS_ENGLISH_MODE = false;
-#endif
                     tap_SemKey(SK_HENK); // Mac/Win/iOS all different?
 //                    return_state = false; // stop processing this record.
                     break;
                 case SK_MHEN: // English
-#ifdef JP_MODE_ENABLE
-                    IS_ENGLISH_MODE = true;
-#endif
                     tap_SemKey(SK_MHEN); // Mac/Win/iOS/Lux all different?
 //                    return_state = false; // stop processing this record.
                     break;

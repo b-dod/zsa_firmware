@@ -325,12 +325,7 @@ register_key_trap_and_return:
                             register_linger_key(SK_FDQL); // linger on semkey for «
                         }
                         return_state = false; // don't do more with this record.
-#ifndef JP_MODE_ENABLE
                 } else if (saved_mods & MOD_MASK_SHIFT) { // SHFT (only)?
-#else
-                } else if (((saved_mods & MOD_MASK_SHIFT) && IS_ENGLISH_MODE)  // SHFT (only)
-                           || (!saved_mods && !IS_ENGLISH_MODE)) { // or no mods & not in english
-#endif
                     register_linger_key(SQUO_S); // example of simple linger macro
                     return_state = false; // don't do more with this record.
                 } else //{ // no mods, so linger
@@ -347,12 +342,7 @@ register_key_trap_and_return:
                         tap_SemKey(SK_FDQR); // semkey for »
                     }
                     return_state = false; // don't do more with this record.
-#ifndef JP_MODE_ENABLE
                 } else if (saved_mods & MOD_MASK_SHIFT) { // SHFT (only)?
-#else
-                } else if (((saved_mods & MOD_MASK_SHIFT) && IS_ENGLISH_MODE)  // SHFT (only)
-                           || (!saved_mods && !IS_ENGLISH_MODE)) { // or no mods & not in english
-#endif
                     register_linger_key(DQUO_S); // example of simple linger macro
                     return_state = false; // don't do more with this record.
                 } else { // no mods, so
@@ -361,39 +351,10 @@ register_key_trap_and_return:
                 }
                 break;
 
-#ifdef JP_MODE_ENABLE
-            case KC_C: // C if English, z if Japanese mode
-                if (!IS_ENGLISH_MODE) {
-                    register_code(KC_Z);
-                    return_state = false; // stop processing this record.
-                }
-                break;
-#endif
-            case KC_L: // L if English, ん if Japanese mode
-            case KC_X: // X if English, - if Japanese mode
-#ifdef JP_MODE_ENABLE
-                if (!IS_ENGLISH_MODE) {
-                    switch (keycode) {
-                        case KC_L: // L if English, ん if Japanese mode
-                            tap_code(KC_N);
-                            tap_code(KC_N);
-                            return_state = false; // stop processing this record.
-                            break;
-                        case KC_X: // X if English, - if Japanese mode
-                            register_code(KC_MINS);
-                            return_state = false; // stop processing this record.
-                            break;
-                    }
-                }
-#endif
             case KC_B:  // for linger Bryson    
             case KC_D:  // for linger Dodwell    
             case KC_Q:  // Qu, linger deletes U
-                if ((saved_mods & MOD_MASK_ALT)
-#ifdef JP_MODE_ENABLE
-                    || !IS_ENGLISH_MODE
-#endif
-                    ) // can this linger?
+                if ((saved_mods & MOD_MASK_ALT)) // can this linger?
                     break; // N: do default thing
 #ifndef KEY_OVERRIDE_ENABLE
 linger_and_return:
@@ -403,16 +364,10 @@ linger_and_return:
                 break;
 /*
             case KC_LNG1: // Japanese
-#ifdef JP_MODE_ENABLE
-                IS_ENGLISH_MODE = false;
-#endif
                 tap_SemKey(SK_HENK); // Mac/Win/iOS all different?
                 return_state = false; // stop processing this record.
                 break;
             case KC_LNG2: // English
-#ifdef JP_MODE_ENABLE
-                IS_ENGLISH_MODE = true;
-#endif
                 tap_SemKey(SK_MHEN); // Mac/Win/iOS all different?
                 return_state = false; // stop processing this record.
                 break;
@@ -482,20 +437,6 @@ storeSettings:
 //            prior_keycode = prior_keydown = 0; // exit Adaptive state
         switch (keycode) { // clean up on keyup.
 
-#ifdef JP_MODE_ENABLE
-            case KC_C: // C if English, z if Japanese mode
-                if (!IS_ENGLISH_MODE) {
-                    unregister_code(KC_Z);
-                    return_state = false; // stop processing this record.
-                }
-                break;
-           case KC_X: // X if English, - if Japanese mode
-                if (!IS_ENGLISH_MODE) {
-                    unregister_code(KC_MINS);
-                    return_state = false; // stop processing this record.
-                }
-                break;
-#endif
 //            case KC_J:  //
 //            case KC_V:  //
 //            case KC_Z:  //

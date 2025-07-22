@@ -23,10 +23,6 @@ bool appmenu_on = false;  // appmenu triggered (after holding key)
 bool mods_held = false;  // need to remember how we entered the appmenu state
 
 /*
-#ifdef JP_MODE_ENABLE
-bool IS_ENGLISH_MODE = true;
-#endif
-
 #ifdef RGBLIGHT_ENABLE
 int RGB_current_mode;
 #endif
