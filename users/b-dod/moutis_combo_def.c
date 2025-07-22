@@ -212,6 +212,7 @@ const uint16_t PROGMEM P01_combo[] = {KC_P0, KC_P1, COMBO_END};
 const uint16_t PROGMEM P02_combo[] = {KC_P0, KC_P2, COMBO_END};
 const uint16_t PROGMEM P04_combo[] = {KC_P0, RSFT_T(KC_P4), COMBO_END};
 const uint16_t PROGMEM P05_combo[] = {KC_P0, RGUI_T(KC_P5), COMBO_END};
+const uint16_t PROGMEM PCMM1_combo[] = {KC_COMM, KC_P1, COMBO_END};
 const uint16_t PROGMEM P12_combo[] = {KC_P1, KC_P2, COMBO_END};
 const uint16_t PROGMEM P23_combo[] = {KC_P2, KC_P3, COMBO_END};
 const uint16_t PROGMEM P13_combo[] = {KC_P1, KC_P3, COMBO_END};
@@ -313,7 +314,8 @@ combo_t key_combos[] = {
     [HC_EQL] = COMBO_ACTION(Hequal_combo), // =  (hold for %)
     [PC_SENT] = COMBO_ACTION(P2E_combo), // shift-<enter> on num
     [PC_TGNM] = COMBO(PNLCK_combo, KC_NUM), // toggle num lock
-    [PC_DASH] = COMBO_ACTION(P12_combo), // – for time span on number layer
+    [PC_DASH] = COMBO_ACTION(PCMM1_combo), // – for time span on number layer
+    [PC_AMP] = COMBO_ACTION(P12_combo), // & on number layer
     [PC_TILD] = COMBO_ACTION(P13_combo), // ~ for time span on number layer
     [PC_ELIP] = COMBO_ACTION(P23_combo), // … for time span on number layer
     [PC_LPRN] = COMBO_ACTION(P45_combo), // ( on number layer

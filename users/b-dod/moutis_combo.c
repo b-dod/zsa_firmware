@@ -529,6 +529,10 @@ ADD_HERE:
                     break;
 
                 case PC_DASH:
+                    tap_code(KC_COMM);
+                    tap_code(KC_P1);
+                    break;
+                case PC_AMP:
                     tap_code(KC_P1);
                     tap_code(KC_P2);
                     break;
@@ -747,6 +751,11 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     break;
                 case PC_DASH:
                     tap_code16(A(KC_MINS)); // this should use semkeys
+                    break;
+                case PC_AMP:
+                    tap_code(KC_SPC);
+                    tap_code16(S(KC_7)); // this should use semkeys
+                    tap_code(KC_SPC);
                     break;
 //                case HC_ELIP:
                 case PC_ELIP:

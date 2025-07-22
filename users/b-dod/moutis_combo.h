@@ -200,6 +200,7 @@ enum my_combos {
     PC_STAB,  // Shift-<tab>
     PC_TGNM, // TOGGLE NUMLCK on numpad layer
     PC_DASH, // – on number layer (keypad)
+    PC_AMP, // & on numpad layer
     PC_TILD, // ˜
     PC_ELIP, // …
     HC_EQL, // = equal
