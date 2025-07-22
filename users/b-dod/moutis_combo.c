@@ -45,7 +45,8 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 #endif
 
         switch(combo_index) {
-            case PC_STAB ... COMBO_LENGTH:// these may have a hold delay BEFORE triggering
+            case PC_STAB ... PC_DASH:// these may have a hold delay BEFORE triggering
+            case PC_TILD ... COMBO_LENGTH:// these may have a hold delay BEFORE triggering
             case HC_AT ... HC_COLN: //
                 combo_on = combo_index; // queue for matrix_scan_user_process_combo
                 break;
@@ -421,7 +422,10 @@ ADD_HERE:
 
 #endif // EN_PRONOUN_COMBOS_ALL
 #endif // EN_PRONOUN_COMBOS      
-                
+            case PC_AMP:
+                register_code16(S(KC_7)); // this should use semkeys
+                combo_on = combo_index; // may add "'ve " if held
+                break;                
         } // end switch (combo_index)
         if (combo_on) linger_timer = timer_read(); // start timing for linger process
         // should GUARD this with return instead
@@ -533,8 +537,7 @@ ADD_HERE:
                     tap_code(KC_P1);
                     break;
                 case PC_AMP:
-                    tap_code(KC_P1);
-                    tap_code(KC_P2);
+                    unregister_code16(S(KC_7)); // this should use semkeys
                     break;
                 case PC_TILD:
                     tap_code(KC_P1);
@@ -753,6 +756,7 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     tap_code16(A(KC_MINS)); // this should use semkeys
                     break;
                 case PC_AMP:
+                    tap_code(KC_BSPC);
                     tap_code(KC_SPC);
                     tap_code16(S(KC_7)); // this should use semkeys
                     tap_code(KC_SPC);
