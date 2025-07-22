@@ -30,6 +30,10 @@
                    tap_code(KC_E); // "OH" yields "OE" (almost 1:1, but eliminates an SFB?)
                    return_state = false; // done.
                    break;
+               case KC_I:
+                   tap_code(KC_F); // "IH" yields "IF"
+                   return_state = false; // done.
+                   break;
                case KC_Y:
                    tap_code(KC_I); // "YH" basically never occurs, so turn this SFB into a step
                    return_state = false; // done.
