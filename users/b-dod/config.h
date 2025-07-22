@@ -88,13 +88,15 @@
 #define STATE_RESET_TIME LINGER_TIME * 3
 
 #define ADAPTIVE_ENABLE
-#define ADAPTIVE_TRAILER KC_3
-
-// #define THUMB_REPEATER
-#ifdef THUMB_REPEATER
-#define HD_REPEATER_A HD_BSPC
-#define HD_REPEATER_B KC_ENT
-#endif
+#define ADAPT_SHIFT KC_COMM // keycode to precede alpha for one-shot shift (leader)
+#define ADAPT_H // eliminate SFBs AU/UA;EO/OE;LN;MN;NN using H (instead of ')
+#define ADAPT_AE_AU // Use AE->AU (instead of AH->AU, AH is somewhat common)
+//#define FR_ADAPTIVES // eliminate 'h SFB for French
+//#define DE_ADAPTIVES // alternate AU SFB treatment for German (same as ADAPT_AE_AU)
+#define HD_MAGIC HD_HASH // generic MAGIC_KEY (I use for text macros)
+//#define HD_MAGIC_A KC_ENT // MAGIC_KEY dependent on alpha (vowel hand?)
+#define HD_MAGIC_B KC_BSPC // MAGIC_KEY dependent on alpha (consonant hand?)
+//#define ADAPTIVE_TRAILER KC_3
 
 #define AUTO_SHIFT_TIMEOUT 145
 #define NO_AUTO_SHIFT_TAB

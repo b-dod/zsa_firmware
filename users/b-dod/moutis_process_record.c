@@ -13,18 +13,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     saved_mods = get_mods(); // preserve mods
 
+#ifdef ADAPT_SHIFT  // pseudo-adaptive comma-shift uses 2x ADAPTIVE_TERM, so pre-evaluated
+    if (
+        (prior_keycode == ADAPT_SHIFT) &&  // is it shift leader?
+        !caps_word_timer && // not already doing a caps_word?
+        (timer_elapsed(prior_keydown) <= ADAPTIVE_TERM * 4) &&  // use large threshold?
+        ((keycode & QK_BASIC_MAX) >= KC_A) &&  // followed by any alpha?
+        ((keycode & QK_BASIC_MAX) <= KC_Z) &&
+        record->event.pressed) { // only on key PRESSES
+            tap_code(KC_BSPC); // get rid of ADAPT_SHIFT
+            tap_code16(S(keycode & QK_BASIC_MAX)); // send cap letter
+            preprior_keycode = prior_keydown = linger_key = 0; // reset other states.
+            goto AdaptCont; // continue with capped letter as next adaptive leader
+        }
+
+#endif
+
 #ifdef ADAPTIVE_ENABLE
     // Should we handle an adaptive key?  (Semkey may send Adaptive?)
     if (record->event.pressed // keyup = not rolling = no adaptive -> return.
         && user_config.AdaptiveKeys // AdaptiveKeys is on
-#ifdef JP_MODE_ENABLE
-        && IS_ENGLISH_MODE // Adaptives only in primary (Latin) mode
-#endif // #ifdef JP_MODE_ENABLE
         ) {
         if (!process_adaptive_key(keycode, record)) {
-            prior_keydown = timer_read(); // (re)start prior_key timing
             preprior_keycode = prior_keycode; // look back 2 keystrokes?
+AdaptCont:  // still space constrained on AVR MCUs. This saves 12 bytes.
             prior_keycode = keycode; // this keycode is stripped of mods+taps
+            prior_keydown = timer_read(); // (re)start prior_key timing
             return false; // took care of that key
         }
     }
