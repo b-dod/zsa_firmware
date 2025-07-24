@@ -11,6 +11,19 @@
 // first the common non-alpha adaptives for macros (Basically a "Magic" key, like a reverse LeaderKey)
 //
 
+#ifndef E_MAGIC
+    #define EE_MAGIC "exomech@proton.me"
+#endif
+#ifndef TE_MAGIC
+    #define TE_MAGIC "thecreaturesound@gmail.com"
+#endif
+#ifndef DL_MAGIC
+    #define DL_MAGIC "download"
+#endif
+#ifndef UL_MAGIC
+    #define UL_MAGIC "upload"
+#endif
+
 /*
 case KC_SLSH: // the "MAGIC_SLSH" keys
     if (preprior_keycode == KC_DOT)
@@ -20,6 +33,7 @@ case KC_SLSH: // the "MAGIC_SLSH" keys
         return_state = false; // done.
     }
     break;
+*/
 case KC_COMM:
     switch (prior_keycode) { // a tap-dance of sorts
         case KC_COMM: // double comma = CAPS_WORD.
@@ -29,6 +43,7 @@ case KC_COMM:
             break;
     }
     break;
+/*
 case KC_DOT:
     if (preprior_keycode == KC_DOT)
         break;
@@ -83,8 +98,8 @@ case KC_QUOT:
 #ifdef HD_MAGIC
 case HD_MAGIC:  // default is KC_HASH "#"
 
-    if (preprior_keycode) // allow only 1 deep
-    break;
+//    if (preprior_keycode) // allow only 1 deep
+//    break;
     return_state = false; // presume we do something.
     switch (prior_keycode) {
     #ifdef A_MAGIC
@@ -111,10 +126,29 @@ case HD_MAGIC:  // default is KC_HASH "#"
             send_string(D_MAGIC);  //
             break;
     #endif
-    #ifdef E_MAGIC
+    #if defined (E_MAGIC) || defined (EE_MAGIC) || defined (TE_MAGIC)
         case KC_E: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(E_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef E_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(E_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_E:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(EE_MAGIC);  //
+                    break;
+                case KC_T:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(TE_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef F_MAGIC
@@ -153,10 +187,31 @@ case HD_MAGIC:  // default is KC_HASH "#"
             send_string(K_MAGIC);  //
             break;
     #endif
-    #ifdef L_MAGIC
+    #if defined (L_MAGIC) || defined (DL_MAGIC) || defined (UL_MAGIC)
         case KC_L: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(L_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef L_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(L_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_D:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+//                    tap_code(KC_D); // and may have been lowercase
+                    send_string(DL_MAGIC);  //
+                    break;
+                case KC_U:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+//                    tap_code(KC_U); // and may have been lowercase
+                    send_string(UL_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef M_MAGIC
@@ -242,6 +297,7 @@ case HD_MAGIC:  // default is KC_HASH "#"
     }
     break;
 #endif // HD_MAGIC
+
 
 #ifdef HD_MAGIC_A
         case HD_MAGIC_A: //

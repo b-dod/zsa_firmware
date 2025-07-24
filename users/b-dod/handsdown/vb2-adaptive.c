@@ -29,8 +29,15 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
 
 //        switch (((keycode >= SAFE_RANGE) && (keycode <= SemKeys_COUNT)) ? (keycode) : (keycode & QK_BASIC_MAX)) { // only handling normal, SHFT or ALT cases.
 
-    switch (keycode & QK_BASIC_MAX) { // process ignoring multi-function keys
+    if (keycode >= ML_SAFE_RANGE) { // process user/multi-function keys
+        switch (keycode) {
+                #if defined (HD_MAGIC) || defined (HD_MAGIC_A) || defined (HD_MAGIC_B)
+                #include "adapt_magic.c" // the common adaptive "magic" key
+                #endif //
+        }
+    }
 
+    switch (keycode & QK_BASIC_MAX) { // process ignoring multi-function keys
 /*
 // Left hand adaptives (most are single-handed neighbor fingers, bc speed, dexterity limits)
 */
@@ -148,6 +155,17 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                             break;
                     }
                     break;
+               case KC_N:
+                    if (!preprior_keycode) {
+                        break; // and let current keycode send normally
+                    }
+                    switch (preprior_keycode) {
+                        case KC_W:
+                            tap_code(KC_L);
+                            return_state = false; // done.
+                            break;
+                    }
+                    break;                
                 case KC_J: // JG = jpg
                     tap_code(KC_P); // insert a P
                     break; // and let current keycode send normally
@@ -315,7 +333,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
     }
     if (return_state) { // no adaptive processed, cancel state and pass it on.
         set_mods(saved_mods);
-        prior_keycode = preprior_keycode = keycode = 0;
+//        prior_keycode = preprior_keycode = keycode = 0;
     }
     return return_state; //
 }

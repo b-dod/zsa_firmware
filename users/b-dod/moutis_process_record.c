@@ -35,6 +35,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         && user_config.AdaptiveKeys // AdaptiveKeys is on
         ) {
         if (!process_adaptive_key(keycode, record)) {
+            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
             preprior_keycode = prior_keycode; // look back 2 keystrokes?
 AdaptCont:  // still space constrained on AVR MCUs. This saves 12 bytes.
             prior_keycode = keycode; // this keycode is stripped of mods+taps
@@ -85,6 +86,7 @@ if (!process_sentence_case(keycode, record)) { return false; }
     if (caps_word_timer) {
         if (!process_caps_word(keycode, record)) {
 #ifdef ADAPTIVE_ENABLE
+            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
             prior_keydown = timer_read(); // (re)start prior_key timing
             preprior_keycode = prior_keycode; // look back 2 keystrokes?
             prior_keycode = keycode; // this keycode is now stripped of mods+taps
@@ -169,7 +171,7 @@ register_key_trap_and_return:
                 }
                 break;
 
-            case KC_HASH:  // SHIFT = $ ALT=‹ SHIFT_ALT = ›
+            case HD_HASH:  // SHIFT = $ ALT=‹ SHIFT_ALT = ›
                 unregister_mods(MOD_MASK_SA); // get rid of shift & alt
                 if (saved_mods & MOD_MASK_ALT) { // ALT down?
                    if (saved_mods & MOD_MASK_SHIFT) { // SFT too?
@@ -181,6 +183,9 @@ register_key_trap_and_return:
                 } else if (saved_mods & MOD_MASK_SHIFT) { // only SHFT down
                     key_trap = KC_DLR;  // enter override state
                     goto register_key_trap_and_return;
+                } else {
+                    register_mods(MOD_BIT(KC_LSFT));
+                    register_code(KC_3);
                 }
                 break;
                 
@@ -440,6 +445,7 @@ storeSettings:
         } // switch (keycode) {
 
 #ifdef ADAPTIVE_ENABLE
+        keycode &= QK_BASIC_MAX; // mods & taps have been handled.
         prior_keydown = timer_read(); // (re)start prior_key timing
         preprior_keycode = prior_keycode; // look back 2 keystrokes?
         prior_keycode = keycode; // this keycode is now stripped of mods+taps
@@ -502,9 +508,12 @@ storeSettings:
             case KC_MINS:  // SHIFT = +, ALT=–(n-dash), ALT+SHIFT=±
             case KC_EQL:   // ALT _
             case KC_SLSH:  // SHIFT = *, ALT=\, ALT+SHIFT=⁄
-            case KC_HASH:  // SHIFT = @, ALT= , ALT+SHIFT=
-                if (!key_trap) // did we override this earlier?
+            case HD_HASH:  // SHIFT = @, ALT= , ALT+SHIFT=
+                if (!key_trap) {// did we override this earlier?
+                    unregister_code(KC_3);
+                    unregister_mods(MOD_BIT(KC_LSFT));
                     break; // N: do normal thing
+                }    
                 unregister_code16(key_trap); //
                 key_trap = 0;  // exit override state.
                 return_state = false; // stop processing this record.

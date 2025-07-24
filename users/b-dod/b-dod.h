@@ -44,7 +44,8 @@
 enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   MAC_SIRI,
-  HD_CAPW
+  HD_CAPW,
+  HD_HASH
 };
 
 typedef union {

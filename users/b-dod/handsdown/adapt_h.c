@@ -42,10 +42,10 @@
 #ifndef FR_ADAPTIVES
 // these are possible, but rather uncommon
                case KC_L: // LH->LN (4.43    202207313)
-               case KC_M: // MH->MN (15.49   232816441)
                    tap_code(KC_N); //
                    return_state = false; // done.
                    break;
+               case KC_M: // MH->ML
                case KC_N: // NH->NL (4.86   1491607169)
                    tap_code(KC_L);
                    return_state = false; // done.
@@ -68,9 +68,17 @@
 #if defined(ADAPT_AE_AU) || defined(DE_ADAPTIVES) // AU is really common in German (and influences EN/FR)
        case KC_E:
            switch (prior_keycode) {
-               case KC_A: // "AE" yields "AU" (8x more common) keeping it on home row
-                   tap_code(KC_U);
-                   return_state = false; // done.
+                case KC_A: // "AE" yields "AU" (8x more common) keeping it on home row
+                    tap_code(KC_U);
+                    return_state = false; // done.
+                    break;
+/*
+                case KC_T:
+                case KC_E:
+                    tap_code(KC_E);
+                    return_state = false; // done.
+                    break;
+*/
            }
            break;
 #endif // ADAPT_AE_AU
