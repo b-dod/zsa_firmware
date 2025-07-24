@@ -35,7 +35,7 @@
                    return_state = false; // done.
                    break;
                case KC_Y:
-                   tap_code(KC_I); // "YH" basically never occurs, so turn this SFB into a step
+                   tap_code(KC_QUOT); // "YH" basically never occurs, so turn this scissor into a step
                    return_state = false; // done.
                    break;
 
