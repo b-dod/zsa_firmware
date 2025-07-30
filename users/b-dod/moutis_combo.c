@@ -265,12 +265,14 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_SemKey(SK_PARANXT);  // Next Paragraph
                 tap_code(KC_ENT);
                 break;
+/*
             case HC_NDSH:
                 register_code16(A(KC_MINS));  // should be a semkey
                 break;
             case HC_MDSH:
                  register_code16(A(S(KC_MINS))); // should be a semkey
                 break;
+*/
             case HC_UNDS:
                     tap_code16(S(KC_MINS)); // _ underscore (semkey this?)
                 break;
@@ -618,13 +620,14 @@ ADD_HERE:
         // Key up, threshold met, so we'll WRAP-UP the combo action if neccessary.
         // unregister_code for repeating keys, etc. that weren't handled in matrix_scan_user
             switch(combo_index) {
+/*
                 case HC_NDSH:
                     unregister_code16(A(KC_MINS));  // this should use semkeys
                     break;
                 case HC_MDSH:
                     unregister_code16(A(S(KC_MINS)));  // this should use semkeys
                     break;
-
+*/
             }  // end switch(combo_index) {
         } // else if (threshold met)
         combo_on = combo_triggered = false;

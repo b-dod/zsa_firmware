@@ -162,7 +162,11 @@ register_key_trap_and_return:
                     if (saved_mods & MOD_MASK_SHIFT) { // SHFT too?
                         tap_code16(A(S(KC_1))); // Y:
                     } else {
-                        tap_code16(KC_BSLS); // N: just alt, so
+                        if (user_config.OSIndex == OS_Win) {
+                            wait_ms(25); // wait 25 ms to avoid windows thinking this is a key command
+                            // this isn't the issue, alt is focusing the menus in Win…
+                        }
+                        tap_code(KC_BSLS); // N: just alt, so
                     }
                     return_state = false; // don't do more with this record.
                 } else if (saved_mods & MOD_MASK_SHIFT) { // only SHFT?
@@ -391,26 +395,26 @@ linger_and_return:
                 return_state = false; // stop processing this record.
                 break;
 */
-/*
-            case SK_Lux: // SINCE MAC IS MY LAYOUT DEFAULT switch to linux
+
+            case SK_LUX: // SINCE MAC IS MY LAYOUT DEFAULT switch to linux
                 user_config.OSIndex = OS_Lux; // for Linux Semkeys
 //                process_magic(QK_MAGIC_SWAP_CTL_GUI); // tell QMK to swap ctrl/gui
                 keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = true;
                 return_state = false; // stop processing this record.
                 goto storeSettings;
-           case SK_Win: // SINCE MAC IS MY LAYOUT DEFAULT switch to windows
+           case SK_WIN: // SINCE MAC IS MY LAYOUT DEFAULT switch to windows
                 user_config.OSIndex = OS_Win; // for Windows Semkeys
 //                process_magic(QK_MAGIC_SWAP_CTL_GUI); // tell QMK to swap ctrl/gui
                 keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = true;
                 return_state = false; // stop processing this record.
                 goto storeSettings;
-            case SK_Mac: // Back to default
+            case SK_MAC: // Back to default
                 user_config.OSIndex = OS_Mac; // for Mac Semkeys
 //                process_magic(QK_MAGIC_UNSWAP_CTL_GUI); // tell QMK to restore ctrl/gui
                 keymap_config.swap_lctl_lgui = keymap_config.swap_rctl_rgui = false;
                 return_state = false; // stop processing this record.
                 goto storeSettings;
-*/
+
             case CG_SWAP: // SINCE MAC IS MY LAYOUT DEFAULT switch to windows
                 user_config.OSIndex = 1; // for Windows Semkeys
                 return_state = true; // let QMK do it's swap thing.

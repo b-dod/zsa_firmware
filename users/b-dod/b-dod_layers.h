@@ -302,7 +302,7 @@ __  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEN
 */
 /*   L_CFG Keyboard Configuration (left) and Media Settings (right)
           ╭────────────────────────────────────────────────────--──────────╮                  ╭────────────────────────────────────-───────────╮
-  RGB_TOG │ QK_RBT            CG_SWAP     CG_NORM    EE_CLR    LCA(KC_DEL) │                  │ SK_KILL  KC_NUM   KC_EJCT  __       SK_ZOOMRST │ RGB_MOD
+  RGB_TOG │ QK_RBT            SK_WIN      SK_MAC     EE_CLR    LCA(KC_DEL) │                  │ SK_KILL  KC_NUM   KC_EJCT  __       SK_ZOOMRST │ RGB_MOD
   RGB_VAI │ HD_AdaptKeyToggle HD_L_QWERTY HD_L_ALPHA KC_VOLU   KC_BRIU     │                  │  __      KC_MPRV  KC_MPLY  KC_MNXT  SK_ZOOMIN  │ RGB_SAI
   RGB_HUI │ QK_BOOT           AG_SWAP     AG_NORM    KC_VOLD   KC_BRID     │ RGB_VAD RGB_SAD  │  __      KC_MRWD  KC_MUTE  KC_MFFD  SK_ZOOMOUT │ RGB_HUD
           ╰────────────────────────────╮  __         TG(L_NUM) __          │ __           __  │  __      __       __   ╭───────────────────────╯
@@ -311,8 +311,8 @@ __  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEN
 
 #define LC_LT5 RGB_TOG
 #define LC_LT4 QK_RBT
-#define LC_LT3 CG_SWAP
-#define LC_LT2 CG_NORM
+#define LC_LT3 SK_WIN// was CG_SWAP
+#define LC_LT2 SK_MAC // was CG_NORM
 #define LC_LT1 EE_CLR
 #define LC_LT0 SK_KILL
 #define LC_RT0 LCA(KC_DEL)

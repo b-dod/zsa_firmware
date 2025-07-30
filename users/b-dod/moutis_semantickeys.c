@@ -53,8 +53,7 @@ void tap_SemKey(uint16_t semkeycode) {
     }
 }
 */
-    
-    
+
 /*
 * based on the table at:
 * https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts
@@ -104,12 +103,13 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
     [SK_WINNXT - SK_KILL] = {RCTL(KC_TAB),C(KC_TAB)}, // Window/tab switcher Next
     [SK_WINPRV - SK_KILL] = {RCTL(RSFT(KC_TAB)),C(S(KC_TAB))}, // Window/tab switcher Prev
         // Punctuation
-    [SK_SECT - SK_KILL] = {A(KC_5),0xE167}, // § ** need Win Compose via BCD.
+    [SK_SECT - SK_KILL] = {A(KC_5),0x8167}, // § ** need Win Compose via BCD.
     [SK_ENYE - SK_KILL] = {A(KC_N),A(KC_N)}, // ñ/Ñ ** need Win Compose via BCD?
     [SK_IEXC - SK_KILL] = {RALT(KC_1),RALT(KC_1)}, // ¡ Inverted exclamation mark ** need Win Compose via BCD?
     [SK_ELPS - SK_KILL] = {A(KC_SCLN),A(KC_SCLN)}, // … ** need Win Compose via BCD?
     [SK_PARA - SK_KILL] = {A(KC_7),A(KC_7)}, // ¶ ** need Win Compose via BCD?
-    [SK_MDSH - SK_KILL] = {S(A(KC_MINS)),S(A(KC_MINS))}, // — ** need Win Compose via BCD?
+    [SK_NDSH - SK_KILL] = {A(KC_MINS),0x8150}, // –
+    [SK_MDSH - SK_KILL] = {S(A(KC_MINS)),0x8151}, // —
     [SK_DCRS - SK_KILL] = {LSA(KC_7),LSA(KC_7)}, // ‡ Double Cross ** need Win Compose via BCD?
     [SK_SCRS - SK_KILL] = {RSA(KC_5),RSA(KC_5)}, // † Single Cross ** need Win Compose via BCD?
     [SK_BBLT - SK_KILL] = {LALT(KC_8),LALT(KC_8)}, // • Bold Bullet ** need Win Compose via BCD?
@@ -134,6 +134,59 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
     [SK_FSQL - SK_KILL] = {S(A(KC_3)),A(KC_LBRC)}, //  ‹ Left single French quote UNICODE?
     [SK_FSQR - SK_KILL] = {S(A(KC_4)),A(S(KC_LBRC))}, //  › Right single French quote UNICODE?
 
+};
+
+// build off BCD code from above, would have to comment out definition of tap_SemKey(sk) in moutis_semantickeys.h:
+
+void tap_SemKey(uint16_t sk) {
+    uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
+
+    if (semkeycode & 0x8000) {
+        clear_keyboard();           // must have clean buffer.
+        register_code(KC_LALT);     // hold Left Alt
+
+        // Always start with numpad 0
+        tap_code(KC_P0);
+
+        // Extract & send digits using keypad keys
+        tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
+        tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
+        tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+
+        unregister_code(KC_LALT);    // release Left Alt
+    } else {
+        tap_code16(semkeycode);      // regular keycode
+    }
+};
+
+void register_SemKey(uint16_t sk) {
+    uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
+    if (semkeycode & 0x8000) {
+        clear_keyboard();           // must have clean buffer.
+        register_code(KC_LALT);     // hold Left Alt
+
+        // Always start with numpad 0
+        tap_code(KC_P0);
+
+        // Extract & send digits using keypad keys
+        tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
+        tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
+        tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+
+        // Alt must stay held here
+    } else {
+        register_code16(semkeycode);
+    }
+};
+
+void unregister_SemKey(uint16_t sk) {
+    uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
+    if (semkeycode & 0x8000) {
+        // Release Alt to finish Unicode input
+        unregister_code(KC_LALT);
+    } else {
+        unregister_code16(semkeycode);
+    }
 };
 
 bool process_semkey(uint16_t keycode, const keyrecord_t *record) {

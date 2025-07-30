@@ -29,6 +29,9 @@ enum my_keycodes {
     HD_AdaptKeyToggle = SAFE_RANGE, // Adaptive Keys Toggle on/off
     HD_L_QWERTY, // base layer switch
     HD_L_ALPHA,
+    SK_MAC,
+    SK_WIN,
+    SK_LUX,
         // Semantic Keys (keystrokes handled by process_semkey() for platform independence)
     SK_KILL, // SK_KILL must be the first of contiguous block of SKs
     SK_HENK,  // kana (others)
@@ -78,6 +81,7 @@ enum my_keycodes {
     SK_IEXC, // ¡ Inverted exclamation mark
     SK_ELPS, // … Elipsis
     SK_PARA, // ¶ Paragraph symbol
+    SK_NDSH, // — N-Dash
     SK_MDSH, // — M-Dash
     SK_DCRS, // ‡ Double Cross
     SK_SCRS, // † Single Cross
@@ -145,9 +149,9 @@ enum my_keycodes {
 
 #define is_SemKey(sk) ((sk > (uint16_t)first_SemKey) && (sk < (uint16_t)last_Semkey))
 
-#define tap_SemKey(sk) tap_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
-#define register_SemKey(sk) register_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
-#define unregister_SemKey(sk) unregister_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
+//#define tap_SemKey(sk) tap_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
+//#define register_SemKey(sk) register_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
+//#define unregister_SemKey(sk) unregister_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex])
 
 #define linger_SemKey(sk) {register_code16(SemKeys_t[sk - SK_KILL][user_config.OSIndex]);linger_key = sk;linger_timer = state_reset_timer = timer_read();}
 #define unlinger_SemKey(sk) {unregister_code16(SemKeys_t[linger_key - SK_KILL][user_config.OSIndex]);linger_key = 0;}

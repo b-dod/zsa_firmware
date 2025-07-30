@@ -345,8 +345,8 @@ combo_t key_combos[] = {
 //    [FC_LANG2] = COMBO(H_EISUU_combo, SK_MHEN), // eisuu (others)
 //    [FC_LANG1] = COMBO(H_KANA_combo, SK_HENK), // kana (others)
 
-    [HC_NDSH] = COMBO_ACTION(Hndsh_combo), // – N-DASH
-    [HC_MDSH] = COMBO_ACTION(Hmdsh_combo), // — M-DASH
+    [HC_NDSH] = COMBO(Hndsh_combo, SK_NDSH), // – N-DASH
+    [HC_MDSH] = COMBO(Hmdsh_combo, SK_MDSH), // — M-DASH
     
 // Dead keys (Mac only, for now)
 //    [HC_ACUT] = COMBO_ACTION(Hacut_combo), // ´ acute
