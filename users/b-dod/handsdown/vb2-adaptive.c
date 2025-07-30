@@ -187,6 +187,10 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 tap_code(KC_L);
                 return_state = false; // done.
                 break;
+            case KC_G:
+                tap_code(KC_BSPC);
+                tap_code(KC_D);
+                break; // and let current keycode send normally
             }
             break;
 
