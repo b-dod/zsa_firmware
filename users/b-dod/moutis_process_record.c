@@ -24,6 +24,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             tap_code(KC_BSPC); // get rid of ADAPT_SHIFT
             tap_code16(S(keycode & QK_BASIC_MAX)); // send cap letter
             preprior_keycode = prior_keydown = linger_key = 0; // reset other states.
+            if (is_sentence_case_primed()) {
+                set_sentence_case_state_word();
+            }
             goto AdaptCont; // continue with capped letter as next adaptive leader
         }
 
