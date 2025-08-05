@@ -105,38 +105,59 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
         // Punctuation
     [SK_SECT - SK_KILL] = {A(KC_5),0x8167}, // § ** need Win Compose via BCD.
     [SK_ENYE - SK_KILL] = {A(KC_N),A(KC_N)}, // ñ/Ñ ** need Win Compose via BCD?
-    [SK_IEXC - SK_KILL] = {RALT(KC_1),RALT(KC_1)}, // ¡ Inverted exclamation mark ** need Win Compose via BCD?
-    [SK_ELPS - SK_KILL] = {A(KC_SCLN),A(KC_SCLN)}, // … ** need Win Compose via BCD?
-    [SK_PARA - SK_KILL] = {A(KC_7),A(KC_7)}, // ¶ ** need Win Compose via BCD?
+    [SK_IEXC - SK_KILL] = {RALT(KC_1),0x8161}, // ¡ Inverted exclamation mark
+    [SK_ELPS - SK_KILL] = {A(KC_SCLN),0x8133}, // … ** ELLIPSIS
+    [SK_PARA - SK_KILL] = {A(KC_7),0x8182}, // ¶
     [SK_NDSH - SK_KILL] = {A(KC_MINS),0x8150}, // –
     [SK_MDSH - SK_KILL] = {S(A(KC_MINS)),0x8151}, // —
-    [SK_DCRS - SK_KILL] = {LSA(KC_7),LSA(KC_7)}, // ‡ Double Cross ** need Win Compose via BCD?
-    [SK_SCRS - SK_KILL] = {RSA(KC_5),RSA(KC_5)}, // † Single Cross ** need Win Compose via BCD?
-    [SK_BBLT - SK_KILL] = {LALT(KC_8),LALT(KC_8)}, // • Bold Bullet ** need Win Compose via BCD?
-    [SK_GTEQ - SK_KILL] = {LALT(KC_DOT),LALT(KC_DOT)}, // ≥ Greater Than or Equal to ** need Win Compose via BCD?
-    [SK_LTEQ - SK_KILL] = {LALT(KC_COMM),LALT(KC_COMM)}, // ≤ Less Than or Equal to ** need Win Compose via BCD?
-    [SK_NOTEQ - SK_KILL] = {LALT(KC_EQL),LALT(KC_EQL)}, // ≠ NOT Equal to ** need Win Compose via BCD?
-    [SK_APPROXEQ - SK_KILL] = {LALT(KC_X),LALT(KC_X)}, // ≈ APPROX Equal to ** need Win Compose via BCD?
-    [SK_OMEGA - SK_KILL] = {LALT(KC_Z),LALT(KC_Z)}, // Ω OMEGA ** need Win Compose via BCD?
-    [SK_DEGR - SK_KILL] = {S(A(KC_8)),S(A(KC_8))}, // ° DEGREE ** need Win Compose via BCD?
+    [SK_DCRS - SK_KILL] = {LSA(KC_7),0x8135}, // ‡ Double Cross
+    [SK_SCRS - SK_KILL] = {RSA(KC_5),0x8134}, // † Single Cross
+    [SK_BBLT - SK_KILL] = {LALT(KC_8),0x8149}, // • Bold Bullet
+    [SK_GTEQ - SK_KILL] = {LALT(KC_DOT),0x4242}, // ≥ Greater Than or Equal to
+    [SK_LTEQ - SK_KILL] = {LALT(KC_COMM),0x4243}, // ≤ Less Than or Equal to
+    [SK_NOTEQ - SK_KILL] = {LALT(KC_EQL),LALT(KC_EQL)}, // ≠ NOT Equal to ** need Win Compose via ?????
+    [SK_APPROXEQ - SK_KILL] = {LALT(KC_X),0x4247}, // ≈ APPROX Equal to
+    [SK_OMEGA - SK_KILL] = {LALT(KC_Z),0x4234}, // Ω OMEGA
+    [SK_DEGR - SK_KILL] = {S(A(KC_8)),0x8176}, // ° DEGREE
         // Currency
-    [SK_CENT - SK_KILL] = {LALT(KC_4),LALT(KC_4)}, // ¢ ** need Win Compose via BCD?
-    [SK_EURO - SK_KILL] = {A(S(KC_2)),A(S(KC_2))}, // € ** need Win Compose via BCD?
-    [SK_BPND - SK_KILL] = {RALT(KC_3),RALT(KC_3)}, // £ ** need Win Compose via BCD?
-    [SK_JPY  - SK_KILL] = {LALT(KC_Y),LALT(KC_Y)},  // ¥ ** need Win Compose via BCD?
+    [SK_CENT - SK_KILL] = {LALT(KC_4),0x8162}, // ¢ CENT
+    [SK_EURO - SK_KILL] = {A(S(KC_2)),0x8128}, // € EURO
+    [SK_BPND - SK_KILL] = {RALT(KC_3),0x8163}, // £ BRITISH POUND
+    [SK_JPY  - SK_KILL] = {LALT(KC_Y),0x8165},  // ¥ YEN
         // Quotations
-    [SK_SQUL - SK_KILL] = {A(KC_RBRC),A(KC_RBRC)}, // ’ ** Left single quote UNICODE?
-    [SK_SQUR - SK_KILL] = {S(A(KC_RBRC)),S(A(KC_RBRC))}, // ’ ** Right single quote UNICODE?
-    [SK_SDQL - SK_KILL] = {A(KC_LBRC),A(KC_LBRC)}, // “ ** Left double quote UNICODE?
-    [SK_SDQR - SK_KILL] = {A(S(KC_LBRC)),A(S(KC_LBRC))}, // ” ** Right double quote UNICODE?
-    [SK_FDQL - SK_KILL] = {A(KC_BSLS),A(KC_BSLS)}, //  « Left double French quote UNICODE?
-    [SK_FDQR - SK_KILL] = {S(A(KC_BSLS)),S(A(KC_BSLS))}, //  » Right double French quote UNICODE?
-    [SK_FSQL - SK_KILL] = {S(A(KC_3)),A(KC_LBRC)}, //  ‹ Left single French quote UNICODE?
-    [SK_FSQR - SK_KILL] = {S(A(KC_4)),A(S(KC_LBRC))}, //  › Right single French quote UNICODE?
+    [SK_SQUL - SK_KILL] = {A(KC_RBRC),0x8145}, // ’ ** Left single quote
+    [SK_SQUR - SK_KILL] = {S(A(KC_RBRC)),0x8146}, // ’ ** Right single quote
+    [SK_SDQL - SK_KILL] = {A(KC_LBRC),0x8147}, // “ ** Left double quote
+    [SK_SDQR - SK_KILL] = {A(S(KC_LBRC)),0x8148}, // ” ** Right double quote
+    [SK_FDQL - SK_KILL] = {A(KC_BSLS),0x8171}, //  « Left double French quote
+    [SK_FDQR - SK_KILL] = {S(A(KC_BSLS)),0x8187}, //  » Right double French quote
+    [SK_FSQL - SK_KILL] = {S(A(KC_3)),0x8139}, //  ‹ Left single French quote
+    [SK_FSQR - SK_KILL] = {S(A(KC_4)),0x8155}, //  › Right single French quote
 
 };
 
 // build off BCD code from above, would have to comment out definition of tap_SemKey(sk) in moutis_semantickeys.h:
+
+void send_4alt_code(uint16_t semkeycode) {
+
+    // Always start with numpad 0
+    tap_code(KC_P0);
+
+    // Extract & send digits using keypad keys
+    tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
+    tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
+    tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+
+};
+
+void send_3alt_code(uint16_t semkeycode) {
+
+    // Extract & send digits using keypad keys
+    tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
+    tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
+    tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+
+};
 
 void tap_SemKey(uint16_t sk) {
     uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
@@ -145,13 +166,14 @@ void tap_SemKey(uint16_t sk) {
         clear_keyboard();           // must have clean buffer.
         register_code(KC_LALT);     // hold Left Alt
 
-        // Always start with numpad 0
-        tap_code(KC_P0);
+        send_4alt_code(semkeycode); // send 4-digit alt code
 
-        // Extract & send digits using keypad keys
-        tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
-        tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
-        tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+        unregister_code(KC_LALT);    // release Left Alt
+    } else if (semkeycode & 0x4000) {
+        clear_keyboard();           // must have clean buffer.
+        register_code(KC_LALT);     // hold Left Alt
+
+        send_3alt_code(semkeycode); // send 3-digit alt code
 
         unregister_code(KC_LALT);    // release Left Alt
     } else {
@@ -165,13 +187,14 @@ void register_SemKey(uint16_t sk) {
         clear_keyboard();           // must have clean buffer.
         register_code(KC_LALT);     // hold Left Alt
 
-        // Always start with numpad 0
-        tap_code(KC_P0);
+        send_4alt_code(semkeycode); // send 4-digit alt code
 
-        // Extract & send digits using keypad keys
-        tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
-        tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
-        tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
+        // Alt must stay held here
+    } else if (semkeycode & 0x4000) {
+        clear_keyboard();           // must have clean buffer.
+        register_code(KC_LALT);     // hold Left Alt
+
+        send_3alt_code(semkeycode); // send 3-digit alt code
 
         // Alt must stay held here
     } else {
@@ -181,7 +204,7 @@ void register_SemKey(uint16_t sk) {
 
 void unregister_SemKey(uint16_t sk) {
     uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
-    if (semkeycode & 0x8000) {
+    if ((semkeycode & 0x8000) || (semkeycode & 0x4000)) {
         // Release Alt to finish Unicode input
         unregister_code(KC_LALT);
     } else {
