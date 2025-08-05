@@ -20,6 +20,9 @@
 #ifndef DL_MAGIC
     #define DL_MAGIC "download"
 #endif
+#ifndef RV_MAGIC
+    #define RV_MAGIC "review"
+#endif
 #ifndef UL_MAGIC
     #define UL_MAGIC "upload"
 #endif
@@ -262,10 +265,25 @@ case HD_MAGIC:  // default is KC_HASH "#"
             send_string(U_MAGIC);  //
             break;
     #endif
-    #ifdef V_MAGIC
+    #if defined (V_MAGIC) || defined (RV_MAGIC)
         case KC_V: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(V_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef V_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(V_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_R:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+//                    tap_code(KC_D); // and may have been lowercase
+                    send_string(RV_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef W_MAGIC
