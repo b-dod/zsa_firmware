@@ -263,6 +263,7 @@ register_key_trap_and_return:
                 } else if (saved_mods & MOD_MASK_SHIFT) { // only SHFT down
                     tap_code16(KC_SCLN); // just semicolon
                     return_state = false; // stop processing this record.
+                    prior_keycode = preprior_keycode = keycode = 0; // so shifted comma doesn't trigger adaptive shift
                 }
                 break;
 
