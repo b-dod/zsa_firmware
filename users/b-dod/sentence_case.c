@@ -247,6 +247,25 @@ bool process_sentence_case(uint16_t keycode, keyrecord_t* record) {
       }
       break;
 
+    case '#':  // Current key is a symbol.
+      switch (sentence_state) {
+
+        case STATE_PRIMED:
+          // Symbol during primed state, handle special here if desired
+/*
+          if (keycode != suppress_key) {
+            suppress_key = keycode;
+//            set_oneshot_mods(MOD_BIT(KC_LSFT));  // Shift mod to capitalize.
+            new_state = STATE_INIT;
+          }
+          break;
+*/
+
+        default:
+          new_state = sentence_state; // effectively ignore symbols
+      }
+      break;      
+
     case '.':  // Current key is sentence-ending punctuation.
       switch (sentence_state) {
         case STATE_WORD:
