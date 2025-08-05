@@ -35,9 +35,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         && user_config.AdaptiveKeys // AdaptiveKeys is on
         ) {
         if (!process_adaptive_key(keycode, record)) {
-            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
             preprior_keycode = prior_keycode; // look back 2 keystrokes?
 AdaptCont:  // still space constrained on AVR MCUs. This saves 12 bytes.
+            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
             prior_keycode = keycode; // this keycode is stripped of mods+taps
             prior_keydown = timer_read(); // (re)start prior_key timing
             return false; // took care of that key
