@@ -18,13 +18,13 @@
     #define TE_MAGIC "thecreaturesound@gmail.com"
 #endif
 #ifndef DL_MAGIC
-    #define DL_MAGIC "download"
+    #define DL_MAGIC "ownload" // full word "download"
 #endif
 #ifndef RV_MAGIC
-    #define RV_MAGIC "review"
+    #define RV_MAGIC "eview" // full word "review"
 #endif
 #ifndef UL_MAGIC
-    #define UL_MAGIC "upload"
+    #define UL_MAGIC "pload" // full word "upload"
 #endif
 
 /*
@@ -203,15 +203,13 @@ case HD_MAGIC:  // default is KC_HASH "#"
             }
             switch (preprior_keycode) {
                 case KC_D:
+//                    tap_code(KC_BSPC); // and may have been lowercase
                     tap_code(KC_BSPC); // and may have been lowercase
-                    tap_code(KC_BSPC); // and may have been lowercase
-//                    tap_code(KC_D); // and may have been lowercase
                     send_string(DL_MAGIC);  //
                     break;
                 case KC_U:
+//                    tap_code(KC_BSPC); // and may have been lowercase
                     tap_code(KC_BSPC); // and may have been lowercase
-                    tap_code(KC_BSPC); // and may have been lowercase
-//                    tap_code(KC_U); // and may have been lowercase
                     send_string(UL_MAGIC);  //
                     break;
             }
@@ -278,9 +276,8 @@ case HD_MAGIC:  // default is KC_HASH "#"
             }
             switch (preprior_keycode) {
                 case KC_R:
+//                    tap_code(KC_BSPC); // and may have been lowercase
                     tap_code(KC_BSPC); // and may have been lowercase
-                    tap_code(KC_BSPC); // and may have been lowercase
-//                    tap_code(KC_D); // and may have been lowercase
                     send_string(RV_MAGIC);  //
                     break;
             }
