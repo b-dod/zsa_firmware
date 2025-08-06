@@ -138,19 +138,12 @@ const uint16_t SemKeys_t[SemKeys_COUNT - SK_KILL][OS_count] = {
 
 // build off BCD code from above, would have to comment out definition of tap_SemKey(sk) in moutis_semantickeys.h:
 
-void send_4alt_code(uint16_t semkeycode) {
+void send_alt_code(uint16_t semkeycode) {
 
-    // Always start with numpad 0
+    if (semkeycode & 0x8000) {
+    // Always start with numpad 0 if semkeycode starts with 0x8
     tap_code(KC_P0);
-
-    // Extract & send digits using keypad keys
-    tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
-    tap_code((semkeycode >> 4) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 4)) & 0x0F) : KC_P0);
-    tap_code((semkeycode >> 0) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 0)) & 0x0F) : KC_P0);
-
-};
-
-void send_3alt_code(uint16_t semkeycode) {
+    }
 
     // Extract & send digits using keypad keys
     tap_code((semkeycode >> 8) & 0x0F ? KC_P0 - ((10 - (semkeycode >> 8)) & 0x0F) : KC_P0);
@@ -162,20 +155,14 @@ void send_3alt_code(uint16_t semkeycode) {
 void tap_SemKey(uint16_t sk) {
     uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
 
-    if (semkeycode & 0x8000) {
+    if ((semkeycode & 0x8000) || (semkeycode & 0x4000)) {
         clear_keyboard();           // must have clean buffer.
         register_code(KC_LALT);     // hold Left Alt
 
-        send_4alt_code(semkeycode); // send 4-digit alt code
+        send_alt_code(semkeycode); // send 3 or 4-digit alt code
 
         unregister_code(KC_LALT);    // release Left Alt
-    } else if (semkeycode & 0x4000) {
-        clear_keyboard();           // must have clean buffer.
-        register_code(KC_LALT);     // hold Left Alt
 
-        send_3alt_code(semkeycode); // send 3-digit alt code
-
-        unregister_code(KC_LALT);    // release Left Alt
     } else {
         tap_code16(semkeycode);      // regular keycode
     }
@@ -183,20 +170,14 @@ void tap_SemKey(uint16_t sk) {
 
 void register_SemKey(uint16_t sk) {
     uint16_t semkeycode = SemKeys_t[sk - SK_KILL][user_config.OSIndex];
-    if (semkeycode & 0x8000) {
+    if ((semkeycode & 0x8000) || (semkeycode & 0x4000)) {
         clear_keyboard();           // must have clean buffer.
         register_code(KC_LALT);     // hold Left Alt
 
-        send_4alt_code(semkeycode); // send 4-digit alt code
+        send_alt_code(semkeycode); // send 3 or 4-digit alt code
 
         // Alt must stay held here
-    } else if (semkeycode & 0x4000) {
-        clear_keyboard();           // must have clean buffer.
-        register_code(KC_LALT);     // hold Left Alt
 
-        send_3alt_code(semkeycode); // send 3-digit alt code
-
-        // Alt must stay held here
     } else {
         register_code16(semkeycode);
     }
