@@ -32,15 +32,15 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 #ifdef ADAPT_SHIFT
         // pseudo-adaptive comma-shift uses 2x ADAPTIVE_TERM, so pre-evaluated
         if (
-            (prior_keycode == ADAPT_SHIFT)  // is it shift leader?
-//            && ((timer_elapsed(prior_keydown) <= ADAPTIVE_TERM*2))  // within threshold?
-//            && ((combo_index >= HC_Q) && (combo_index <= HC_AE)) // followed by alpha combo?
-//            && ((combo_index >= HC_Th) && (combo_index <= HC_their_5gram)) // followed by alpha combo?
-            )
-        {
-            tap_code(KC_BSPC);          // get rid of the ADAPT_SHIFT
-            register_code16(KC_LSFT);  // This will unregister in matrix_scan_user_process_combo
-            prior_keycode = preprior_keycode = prior_keydown = 0; // turn off Adaptives.
+            (prior_keycode == ADAPT_SHIFT) && // is it shift leader?
+            !caps_word_timer && // not already doing a caps_word?
+            (timer_elapsed(prior_keydown) <= ADAPTIVE_TERM * 4) &&  // use large threshold?
+            (((combo_index >= HC_Q) && (combo_index <= HC_L1)) || // followed by alpha combo?
+            ((combo_index >= HC_Th) && (combo_index <= HC_their_5gram))) // followed by alpha combo?
+            ) {
+                tap_code(KC_BSPC);          // get rid of the ADAPT_SHIFT
+                register_code16(KC_LSFT);  // This will unregister in matrix_scan_user_process_combo
+                prior_keycode = preprior_keycode = prior_keydown = 0; // turn off Adaptives.
         }
 #endif
 
@@ -716,10 +716,17 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     unregister_mods(MOD_MASK_SHIFT);  //
                     tap_code(KC_H); // send "h"
                     tap_code(KC_I); // add "i"
+                    set_sentence_case_state_word();
                     break;
 //                case HC_Sc: //
 //                    tap_code(KC_H); // add "h" (for "Sch", since were already on these keys.)
 //                    break;
+                case HC_thing:
+                case HC_shing:
+                    tap_code16(KC_BSPC); // held, so delete h
+                    set_sentence_case_state_word();
+                    send_string("ioning");
+                    break;
                 case HC_AT:
                     send_string(At_ComboHeld);
                     break;
@@ -804,11 +811,11 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                 case HC_here_4gram:
                 case HC_there_5gram: // TYPE "there's" #7
                 case HC_where_5gram: //
-
+                    tap_code(KC_QUOT);
                 case HC_your_4gram: // TYPE "your's"
                 case HC_their_5gram: // TYPE "their's" #6
 
-                    tap_code(KC_QUOT);
+                    //tap_code(KC_QUOT);
 #endif // EN_PRONOUN_COMBOS_ALL
                     SEND_STRING("s ");
                     break;
