@@ -20,6 +20,9 @@
 #ifndef DL_MAGIC
     #define DL_MAGIC "ownload" // full word "download"
 #endif
+#ifndef GM_MAGIC
+    #define GM_MAGIC "ood morning folks" // full phrase "Good morning folks"
+#endif
 #ifndef RV_MAGIC
     #define RV_MAGIC "eview" // full word "review"
 #endif
@@ -215,10 +218,24 @@ case HD_MAGIC:  // default is KC_HASH "#"
             }
             break;
     #endif
-    #ifdef M_MAGIC
+    #if defined M_MAGIC || defined (GM_MAGIC)
         case KC_M: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(M_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef M_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(M_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_G:
+//                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(GM_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef N_MAGIC
