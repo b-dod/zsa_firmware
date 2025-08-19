@@ -92,6 +92,9 @@ void set_sentence_case_state_word(void) {
   set_sentence_state(STATE_WORD);
 }
 
+void set_sentence_case_state_primed(void) {
+  set_sentence_state(STATE_PRIMED);
+}
 void sentence_case_clear(void) {
   clear_state_history();
   suppress_key = KC_NO;
@@ -211,13 +214,13 @@ bool process_sentence_case(uint16_t keycode, keyrecord_t* record) {
   // matches things like "a. a" and "a.  a" but not "a.. a" or "a.a. a". The
   // state transition matrix is:
   //
-  //             'a'       '.'      ' '      '\''
-  //           +-------------------------------------
-  //   INIT    | WORD      INIT     INIT     INIT
-  //   WORD    | WORD      ENDING   INIT     WORD
-  //   ABBREV  | ABBREV    ABBREV   INIT     ABBREV
-  //   ENDING  | ABBREV    INIT     PRIMED   ENDING
-  //   PRIMED  | match!    INIT     PRIMED   PRIMED
+  //             'a'       '.'      ' '      'n'      '\''
+  //           +---------------------------------------------
+  //   INIT    | WORD      INIT     INIT     INIT     INIT
+  //   WORD    | WORD      ENDING   INIT     INIT     WORD
+  //   ABBREV  | ABBREV    ABBREV   INIT     INIT     ABBREV
+  //   ENDING  | ABBREV    INIT     PRIMED   PRIMED   ENDING
+  //   PRIMED  | match!    INIT     PRIMED   PRIMED   PRIMED
   char code = sentence_case_press_user(keycode, record, mods);
 #if defined SENTENCE_CASE_DEBUG
   dprintf("Sentence Case: code = '%c' (%d)\n", code, (int)code);
@@ -279,6 +282,18 @@ bool process_sentence_case(uint16_t keycode, keyrecord_t* record) {
 
     case ' ':  // Current key is a space.
       if (sentence_state == STATE_PRIMED ||
+          (sentence_state == STATE_ENDING
+#if SENTENCE_CASE_BUFFER_SIZE > 1
+           && sentence_case_check_ending(key_buffer)
+#endif  // SENTENCE_CASE_BUFFER_SIZE > 1
+               )) {
+        new_state = STATE_PRIMED;
+        suppress_key = KC_NO;
+      }
+      break;
+
+    case 'n':  // Current key is Enter.
+      if (sentence_state == STATE_PRIMED || sentence_state == STATE_WORD ||
           (sentence_state == STATE_ENDING
 #if SENTENCE_CASE_BUFFER_SIZE > 1
            && sentence_case_check_ending(key_buffer)
@@ -374,8 +389,10 @@ __attribute__((weak)) char sentence_case_press_user(uint16_t keycode,
         return '#';  // Symbol key.
 
       case KC_SPC:
+        return ' ';  // Space key
       case KC_ENT:
-        return ' ';  // Space key or Enter.
+      case SK_HENT:
+        return 'n'; // Enter, new line. Still new line if GUI
 
       case KC_QUOT:
       case KC_DQUO:

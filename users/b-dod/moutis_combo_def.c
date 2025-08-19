@@ -404,7 +404,7 @@ combo_t key_combos[] = {
     [HC_SPC] = COMBO(Hspc_combo, KC_SPC), // SPACE
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER
     [HC_ENT2] = COMBO(Hent2_combo, SK_HENT), // hard-ENTER
-    [HC_ENT3] = COMBO_ACTION(Hent3_combo), // Semkey "Next Paragraph" then ENTER
+    [HC_ENT3] = COMBO(Hent3_combo, SK_PHENT), // Semkey "Next Paragraph" then ENTER
 
 /* These all use SemKeys, even as simple combos (handled by process_semkey from process_record_user) */
     [HC_NEW] = COMBO(Hnew_combo, SK_NEW),

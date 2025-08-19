@@ -86,6 +86,7 @@ bool is_sentence_case_on(void); /**< Gets whether currently enabled. */
 bool is_sentence_case_primed(void); /**< Whether currently primed. */
 void sentence_case_clear(void); /**< Clears Sentence Case to initial state. */
 void set_sentence_case_state_word(void); /**< Sets Sentence Case state to STATE_WORD. */
+void set_sentence_case_state_primed(void); /**< Sets Sentence Case state to STATE_PRIMED. */
 
 /**
  * Optional callback to indicate primed state.

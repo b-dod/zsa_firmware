@@ -50,8 +50,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
             case HC_AT ... HC_COLN: //
                 combo_on = combo_index; // queue for matrix_scan_user_process_combo
                 break;
-
-                
+             
 //            case HC_CAPG: // turn on capsword for Gold
             case HC_CAPW: // turn on capsword (automatically turns off on delimiter)
                 toggle_caps_word();
@@ -464,6 +463,7 @@ ADD_HERE:
                 case HC_Ph:
                     unregister_mods(MOD_MASK_SHIFT);  //
                     tap_code(KC_H); // send "h" honoring CAPSLK state
+                    set_sentence_case_state_word();
                     break;
 
 // END the H digraphs
@@ -697,15 +697,18 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                 case HC_Th: // TION = by far most common 4-gram, (then THAT/THER/WITH/MENT)
                     unregister_mods(MOD_MASK_SHIFT);
                     send_string("ion");
+                    set_sentence_case_state_word();
                     break;
                 case HC_Gh: // held, send "ght"
                     unregister_mods(MOD_MASK_SHIFT);  //
                     tap_code(KC_H); // send "h"
                     tap_code(KC_T); // add "t" ("ght" is 55% of all "gh" occurrences)
+                    set_sentence_case_state_word();
                     break;
                 case HC_Sch: //
                     tap_code(KC_H); // send "h"
                     tap_code(KC_O); // add "o" // o is the most common after sch
+                    set_sentence_case_state_word();
                     break;
                 case HC_Ch: //
                 case HC_Wh: //
