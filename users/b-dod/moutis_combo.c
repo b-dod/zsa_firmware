@@ -48,6 +48,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
             case PC_STAB ... PC_DASH:// these may have a hold delay BEFORE triggering
             case PC_TILD ... COMBO_LENGTH:// these may have a hold delay BEFORE triggering
             case HC_AT ... HC_COLN: //
+            case HC_AMPR:
                 combo_on = combo_index; // queue for matrix_scan_user_process_combo
                 break;
              
@@ -452,6 +453,11 @@ ADD_HERE:
 #endif
 */
             switch(combo_index) {
+
+                case HC_AMPR:
+                    tap_code16(KC_AMPR);
+                    break;
+
 // the H digraphs
 
                 case HC_Sch: // to avoid outward roll on ring->pinky fingers moving in unison is easier
@@ -664,6 +670,9 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
             clear_mods();
             switch(combo_on) {  // combo_on is global, set in process_combo above
 
+                case HC_AMPR:
+                    send_string(" and ");
+                    break;
 
                 case HC_FIND: // Held, so find selection (should work with most apps/platforms)
                     tap_SemKey(SK_COPY); // copy the selection

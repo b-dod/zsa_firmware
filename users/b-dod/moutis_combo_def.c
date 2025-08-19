@@ -250,7 +250,7 @@ combo_t key_combos[] = {
     [HC_AT] = COMBO_ACTION(Hat_combo), // @ (hold for .com)
     [HC_TAB] = COMBO(Htab_combo, KC_TAB),
     [HC_STAB] = COMBO(Hstab_combo, S(KC_TAB)),
-    [HC_AMPR] = COMBO(Hampr_combo, KC_AMPR), // Ampersand
+    [HC_AMPR] = COMBO_ACTION(Hampr_combo), // Ampersand (hold for " and ")
 
     [HC_Q] = COMBO_ACTION(H_Q_combo),
     [HC_L1] = COMBO(H_L1_combo, HD_L1),
