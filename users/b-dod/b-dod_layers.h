@@ -67,7 +67,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LBB KC_TRNS
 #define LS_RBB KC_TRNS
 #define LS_RBA KC_TRNS
-#define LS_RB0 KC_UNDS
+#define LS_RB0 SK_UNDS
 #define LS_RB1 KC_PIPE
 #define LS_RB2 KC_AMPR
 #define LS_RB3 KC_CIRC

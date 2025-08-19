@@ -15,6 +15,9 @@ uint16_t preprior_keycode = KC_NO;
 uint16_t prior_keycode = KC_NO;
 uint16_t prior_keydown = 0; // timer of keydown for adaptive threshhold.
 #endif
+#ifdef ADAPT_SHIFT
+bool prior_key_adapt_shifted = false;  // prior key was adaptive shifted
+#endif
 
 uint16_t linger_key = 0;  // keycode for linger actions (ex. "Qu")
 uint32_t linger_timer = 0; // time to hold a key before something else happens.
@@ -71,15 +74,16 @@ void keyboard_post_init_user(void) {
     #include "moutis_ENCODER.c"
 #endif
 */
-#ifdef COMBO_ENABLE
-    #include "moutis_combo.c"  // combo processing code (def in keymap)
-#endif
 
 #ifdef TAPPING_TERM_PER_KEY
 #include "b-dod_tapterm.c"
 #endif
 
 #include "moutis_casemods.c"
+
+#ifdef COMBO_ENABLE
+    #include "moutis_combo.c"  // combo processing code (def in keymap)
+#endif
 
 #ifdef ADAPTIVE_ENABLE
 #include HD_adaptive_code   // this is HD variation dependent

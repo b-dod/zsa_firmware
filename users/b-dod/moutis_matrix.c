@@ -45,68 +45,72 @@ void matrix_scan_user(void) {
                 case KC_Q: // already "Q" has been sent; if lingered, add "u"
                     tap_code(KC_U);
                     break;
-                    case KC_B: // already "B" has been sent; if lingered, add "ryson"
-                        if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
-                            SEND_STRING("ryson");
-                        }
-                        break;                        
-                    case KC_D: // already "D" has been sent; if lingered, add "odwell"
-                        if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
-                            SEND_STRING("odwell");
-                        }
-                        break;                        
+                case KC_COMM: //
+                    tap_code(KC_BSPC);
+                    tap_code(KC_CAPS);
+                    break;                    
+                case KC_B: // already "B" has been sent; if lingered, add "ryson"
+                    if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
+                        SEND_STRING("ryson");
+                    }
+                    break;                        
+                case KC_D: // already "D" has been sent; if lingered, add "odwell"
+                    if ((saved_mods & MOD_MASK_SHIFT) || !saved_mods) {
+                        SEND_STRING("odwell");
+                    }
+                    break;                        
 /*
-                    case KC_V: // already "V" has been sent; if lingered, add "ivi "
-                        if ((saved_mods & MOD_MASK_SHIFT)) {
-                            SEND_STRING("ivi");
-                        }
-                        break;
-                    case KC_Z: // already "Z" has been sent; if lingered, add "oe "
-                        if ((saved_mods & MOD_MASK_SHIFT)) {
-                            SEND_STRING("oe");
-                        }
-                        break;
-                    case KC_J: // already "Z" has been sent; if lingered, add "oe "
-                        if ((saved_mods & MOD_MASK_SHIFT)) {
-                            SEND_STRING("acob");
-                        }
-                        break;
+                case KC_V: // already "V" has been sent; if lingered, add "ivi "
+                    if ((saved_mods & MOD_MASK_SHIFT)) {
+                        SEND_STRING("ivi");
+                    }
+                    break;
+                case KC_Z: // already "Z" has been sent; if lingered, add "oe "
+                    if ((saved_mods & MOD_MASK_SHIFT)) {
+                        SEND_STRING("oe");
+                    }
+                    break;
+                case KC_J: // already "Z" has been sent; if lingered, add "oe "
+                    if ((saved_mods & MOD_MASK_SHIFT)) {
+                        SEND_STRING("acob");
+                    }
+                    break;
 */
-                    case KC_LPRN: //
-                        tap_code16(KC_RPRN);
-                        tap_code16(KC_LEFT);
-                        break;
-                    case KC_LBRC: //
-                        tap_code16(KC_RBRC);
-                        tap_code16(KC_LEFT);
-                        break;
-                    case KC_LCBR: //
-                        tap_code16(KC_RCBR);
-                        tap_code16(KC_LEFT);
-                        break;
-                    case KC_LT: //
-                        tap_code16(KC_GT);
-                        tap_code16(KC_LEFT);
-                        break;
+                case KC_LPRN: //
+                    tap_code16(KC_RPRN);
+                    tap_code16(KC_LEFT);
+                    break;
+                case KC_LBRC: //
+                    tap_code16(KC_RBRC);
+                    tap_code16(KC_LEFT);
+                    break;
+                case KC_LCBR: //
+                    tap_code16(KC_RCBR);
+                    tap_code16(KC_LEFT);
+                    break;
+                case KC_LT: //
+                    tap_code16(KC_GT);
+                    tap_code16(KC_LEFT);
+                    break;
 
-                    case KC_QUOT: // ‘|’ single paired quotes
-                        tap_code16(KC_BSPC);
-                        tap_SemKey(SK_SQUL);
-                        tap_SemKey(SK_SQUR);
-                        tap_code16(KC_LEFT);
-                        break;
-                    case KC_DQUO: // “|” double paired quotes
-                        tap_code16(KC_BSPC);
-                        clear_keyboard();  // QMK doesn't let go of shift here?
-                        tap_SemKey(SK_SDQL); // “
-                        tap_SemKey(SK_SDQR); // ”
-                        tap_code(KC_LEFT);
-                        break;
-                    case SK_FDQL: //  « | » double French quote
-                        tap_SemKey(SK_FDQR);
-                        goto pushspaceshere;
-                    case SK_FSQL: //  ‹ | › single French quote
-                        tap_SemKey(SK_FSQR);
+                case KC_QUOT: // ‘|’ single paired quotes
+                    tap_code16(KC_BSPC);
+                    tap_SemKey(SK_SQUL);
+                    tap_SemKey(SK_SQUR);
+                    tap_code16(KC_LEFT);
+                    break;
+                case KC_DQUO: // “|” double paired quotes
+                    tap_code16(KC_BSPC);
+                    clear_keyboard();  // QMK doesn't let go of shift here?
+                    tap_SemKey(SK_SDQL); // “
+                    tap_SemKey(SK_SDQR); // ”
+                    tap_code(KC_LEFT);
+                    break;
+                case SK_FDQL: //  « | » double French quote
+                    tap_SemKey(SK_FDQR);
+                    goto pushspaceshere;
+                case SK_FSQL: //  ‹ | › single French quote
+                    tap_SemKey(SK_FSQR);
 pushspaceshere:
                     tap_code(KC_LEFT); // break up 2 dble spc
                     tap_code16(KC_SPACE); // to thwart "smart" EOS.

@@ -13,6 +13,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     saved_mods = get_mods(); // preserve mods
 
+    // Do we need to filter multi-function keys?
+    switch (keycode) {
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+        case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
+#ifdef TAP_DANCE_ENABLE
+        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
+#endif
+            if (!record->tap.count) // if not tapped yet…
+                return true; // let QMK do that first
+            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
+    }
+
 #ifdef ADAPT_SHIFT  // pseudo-adaptive comma-shift uses 2x ADAPTIVE_TERM, so pre-evaluated
     if (
         (prior_keycode == ADAPT_SHIFT) &&  // is it shift leader?
@@ -24,6 +36,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             tap_code(KC_BSPC); // get rid of ADAPT_SHIFT
             tap_code16(S(keycode & QK_BASIC_MAX)); // send cap letter
             preprior_keycode = prior_keydown = linger_key = 0; // reset other states.
+            prior_key_adapt_shifted = true;
             if (is_sentence_case_primed()) {
                 set_sentence_case_state_word();
             }
@@ -39,10 +52,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         ) {
         if (!process_adaptive_key(keycode, record)) {
             preprior_keycode = prior_keycode; // look back 2 keystrokes?
+            prior_key_adapt_shifted = false;
 AdaptCont:  // still space constrained on AVR MCUs. This saves 12 bytes.
             keycode &= QK_BASIC_MAX; // mods & taps have been handled.
             prior_keycode = keycode; // this keycode is stripped of mods+taps
             prior_keydown = timer_read(); // (re)start prior_key timing
+            set_sentence_case_state_word();
             return false; // took care of that key
         }
     }
@@ -71,19 +86,6 @@ if (!process_sentence_case(keycode, record)) { return false; }
         return false;
 */
       }
-
-
-    // Do we need to filter multi-function keys?
-    switch (keycode) {
-        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
-        case QK_LAYER_TAP ... QK_LAYER_TAP_MAX:
-#ifdef TAP_DANCE_ENABLE
-        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
-#endif
-            if (!record->tap.count) // if not tapped yet…
-                return true; // let QMK do that first
-            keycode &= QK_BASIC_MAX; // mods & taps have been handled.
-    }
 
     // Do we turn off CAPS_WORD?
     if (caps_word_timer) {
@@ -117,6 +119,9 @@ if (!process_sentence_case(keycode, record)) { return false; }
 
     if (record->event.pressed) {
 //        switch (((keycode >= SAFE_RANGE) && (keycode <= SemKeys_COUNT)) ? (keycode) : (keycode & QK_BASIC_MAX)) { // only handling normal, SHFT or ALT cases.
+
+        prior_key_adapt_shifted = false; // clean up prior key adaptive shift tracking
+
         switch (keycode) { // only handling normal, SHFT or ALT cases.
 
 /*
@@ -253,11 +258,16 @@ register_key_trap_and_return:
 
             case KC_COMM:  // SHIFT = ;, ALT=_
                 unregister_mods(MOD_MASK_SA); // get rid of shift & alt
+                if (!saved_mods) {
+                    register_linger_key(KC_COMM); // linger to activate CAPS LOCK
+                    return_state = false; // stop processing this record.
+                    break;
+                }                
                 if (saved_mods & MOD_MASK_ALT) { // ALT down?
                     if (saved_mods & MOD_MASK_SHIFT) { // SFT too?
                         tap_code16(A(KC_BSLS)); // convert to SemKey
                     } else {
-                        tap_code16(KC_UNDS);
+                        tap_SemKey(SK_UNDS);
                     }
                     return_state = false; // stop processing this record.
                 } else if (saved_mods & MOD_MASK_SHIFT) { // only SHFT down
@@ -453,6 +463,11 @@ storeSettings:
         } // switch (keycode) {
 
 #ifdef ADAPTIVE_ENABLE
+#ifdef ADAPT_SHIFT
+        if (keycode == KC_LT) {
+            keycode = 0;
+        }
+#endif
         keycode &= QK_BASIC_MAX; // mods & taps have been handled.
         prior_keydown = timer_read(); // (re)start prior_key timing
         preprior_keycode = prior_keycode; // look back 2 keystrokes?
@@ -462,7 +477,7 @@ storeSettings:
     } else { // key up event
 //  when I can get this to work with HRMs properly, this will strictly enforce rolling.
 //        if (keycode == prior_keycode) // releasing adaptive?
-//            prior_keycode = prior_keydown = 0; // exit Adaptive state
+//            prior_keycode = prior_keydown = 0; // exit Adaptive state        
         switch (keycode) { // clean up on keyup.
 
 //            case KC_J:  //
@@ -484,6 +499,7 @@ storeSettings:
     so for now I roll my own here.
 */
 
+            case KC_COMM:
             case KC_LT:    //  < (linger=<|>)
             case KC_LPRN:  //  ( (linger=(|))
             case KC_LBRC:  //  [ (linger=[|])

@@ -10,6 +10,14 @@
  
  */
 
+// hit KC_BSPC and set oneshot mod bit LSFT
+void bspc_and_oneshotshift(void) {
+    tap_code(KC_BSPC);
+    if (prior_key_adapt_shifted) {
+        set_oneshot_mods(MOD_BIT(KC_LSFT));  // Shift mod to capitalize.
+    }
+}
+
 
 bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
     bool return_state = true; // assume we don't do anything.
@@ -60,7 +68,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     tap_code(KC_S);
                     return_state = false; // done.
                 case KC_C: // eliminate SB SFB (CB is 11x more common than SB)
-                    tap_code(KC_BSPC);
+                    bspc_and_oneshotshift();
                     tap_code(KC_S);
                     break;
            }
@@ -75,7 +83,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     break;
                 case KC_W: // WM = LM (LM 20x more common)
                     if (!preprior_keycode) {
-                        tap_code(KC_BSPC);
+                        bspc_and_oneshotshift();
                         tap_code(KC_L);
                         break;
                     }
@@ -142,7 +150,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     break;
                case KC_M:
                     if (!preprior_keycode) {
-                        tap_code(KC_BSPC);
+                        bspc_and_oneshotshift();
                         tap_code(KC_L);
                         break; // and let current keycode send normally
                     }
@@ -206,12 +214,12 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
         case KC_K: // remedy ring-index split by shifting fingering
             switch (prior_keycode) {
                 case KC_T: // TK = CK (>282x)
-                    tap_code(KC_BSPC);
+                    bspc_and_oneshotshift();
                     tap_code(KC_C);
                     break; // and let current keycode send normally
                 case KC_D: // DK/GK = LK ()
                 case KC_G:
-                    tap_code(KC_BSPC);
+                    bspc_and_oneshotshift();
                     tap_code(KC_L);
                     break; // and let current keycode send normally
             }
@@ -221,7 +229,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 case KC_D: // DV/TV/GV = LV ()
                 case KC_T:
                 case KC_G:
-                    tap_code(KC_BSPC);
+                    bspc_and_oneshotshift();
                     tap_code(KC_L);
                     break; // and let current keycode send normally
                 case KC_L: // LV = LN ()
@@ -264,7 +272,7 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                     return_state = false; // done.
                     break;
                 case KC_B: // Pull S down (SP is 83x more common than BP)
-                    tap_code(KC_BSPC);
+                    bspc_and_oneshotshift();
                     if (saved_mods & MOD_MASK_SHIFT) {
                     tap_code16(S(KC_S)); //(but maybe should be BS? SP/BS are about equal...)
                     unregister_mods(MOD_MASK_SHIFT);  //
