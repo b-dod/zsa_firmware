@@ -260,23 +260,23 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 tap_code16(KC_U); // almost always "œu"
                 combo_on = combo_index; // but like qu, we'll take it back if we must.
                 break;
-*/
+
             case HC_ENT3:
                 tap_SemKey(SK_PARANXT);  // Next Paragraph
                 tap_code(KC_ENT);
                 break;
-/*
+
             case HC_NDSH:
                 register_code16(A(KC_MINS));  // should be a semkey
                 break;
             case HC_MDSH:
                  register_code16(A(S(KC_MINS))); // should be a semkey
                 break;
-*/
-            case HC_UNDS:
-                    tap_code16(S(KC_MINS)); // _ underscore (semkey this?)
-                break;
 
+            case HC_UNDS:
+                    tap_SemKey(SK_UNDS); // _ underscore (semkey this?)
+                break;
+*/
 #ifdef EN_PRONOUN_COMBOS // the entirely unnecessary pronoun combo shenanigans
 
             case HC_I:

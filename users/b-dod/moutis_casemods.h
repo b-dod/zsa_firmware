@@ -10,6 +10,8 @@ void enable_caps_word(void);
 void disable_caps_word(void);
 // Toggle caps word
 void toggle_caps_word(void);
+// Set last_press_was_space = false
+// void set_lastpressspc_false(void);
 
 // Function to be put in process user
 bool process_caps_word(uint16_t keycode, const keyrecord_t *record);
