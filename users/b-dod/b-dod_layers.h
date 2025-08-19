@@ -35,7 +35,7 @@ __ │    >       ]       )       }       •     │ __  __   __  __  │     _
 #define LS_LT4 KC_Z
 #define LS_LT3 KC_Q
 #define LS_LT2 SK_NOTEQ
-#define LS_LT1 SK_APPROXEQ
+#define LS_LT1 SK_APXEQ
 #define LS_LT0 SK_OMEGA
 #define LS_RT0 SK_CENT
 #define LS_RT1 KC_DLR
