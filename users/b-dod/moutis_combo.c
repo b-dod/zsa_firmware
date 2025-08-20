@@ -216,8 +216,19 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
                 unregister_mods(MOD_MASK_SHIFT);
                 tap_code(KC_H); // send "H"
                 combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
-                break;                                                                
+                break;
 // END 'ing' combos
+
+//
+// other text entry combos
+//
+            case HC_ment: // TYPE "ement", "ment" if held
+                tap_code(KC_E); // send "E"
+                unregister_mods(MOD_MASK_SHIFT);
+                combo_on = combo_index; // if held, check in matrix_scan_user_process_combo
+                break;
+// END other text entry combos
+
 /*
             case HC_ACUT:
                 tap_code16(A(KC_E)); // this should use semkeys
@@ -508,6 +519,15 @@ ADD_HERE:
                     break;
 // END 'ing' combos
 
+//
+// other text entry combos
+//
+                case HC_ment: // TYPE "ement", "ment" if held
+                    send_string("ment"); // send "MENT"
+                    set_sentence_case_state_word();
+                    break;
+// END other text entry combos
+
                 case HC_FIND:  // Simple Find if not held
                     tap_SemKey(SK_FIND);
                     break;
@@ -736,6 +756,17 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     set_sentence_case_state_word();
                     send_string("ioning");
                     break;
+
+//
+// other text entry combos
+//
+                case HC_ment: // TYPE "ement", "ment" if held
+                    tap_code16(KC_BSPC); // held, so delete e
+                    send_string("ment"); // send "MENT"
+                    set_sentence_case_state_word();
+                    break;
+// END other text entry combos
+
                 case HC_AT:
                     send_string(At_ComboHeld);
                     break;

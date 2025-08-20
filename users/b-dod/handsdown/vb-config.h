@@ -236,6 +236,10 @@
 #define HD_whing_keys HD_LT3, HD_LT2, HD_I // TYPE "whing"
 #define HD_ghing_keys HD_LT2, HD_LT1, HD_I // TYPE "ghing"
 
+//
+// 'ing' combos
+//
+#define HD_ment_keys HD_M, HD_E // TYPE "ement", "ment" if held
 
 // Should we put all the diacritic keys here?
 // or get keep them all in the common area (if they all share

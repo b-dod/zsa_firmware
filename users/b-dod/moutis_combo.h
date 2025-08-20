@@ -152,6 +152,8 @@ enum my_combos {
     HC_whing, // TYPE "whing"
     HC_ghing, // TYPE "ghing"
 
+    HC_ment, // TYPE "ement", "ment" if held
+
 #ifdef EN_PRONOUN_COMBOS
 // Pronoun combos. KEEP these together!
     HC_I, // Cap I + "'ve " if lingered
