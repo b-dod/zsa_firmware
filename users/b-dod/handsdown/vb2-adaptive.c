@@ -328,6 +328,24 @@ bool process_adaptive_key(uint16_t keycode, const keyrecord_t *record) {
                 }
                 break;
 
+            case KC_A:
+                switch (prior_keycode) {
+                   case KC_E:
+                        if (!preprior_keycode) {
+                            break; // and let current keycode send normally
+                        }
+                        switch (preprior_keycode) {
+                            case KC_I:
+                                tap_code(KC_BSPC);
+                                tap_code(KC_O);
+                                tap_code(KC_U);
+                                return_state = false; // done.
+                                break;
+                        }
+                        break;                
+                }
+                break;    
+
         case KC_F:
             switch (prior_keycode) {
                 case KC_Y: //
