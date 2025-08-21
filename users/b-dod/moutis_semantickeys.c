@@ -144,7 +144,8 @@ const uint16_t SemKeys_t[SK_count][OS_count] = {
     [SK_idx(SK_IQUE)] = {LSA(KC_SLASH),0x8191},           // ¿ Spanish inverted Question Mark
     [SK_idx(SK_IEXC)] = {A(KC_1),0x8161},                 // ¡ Spanish inverted Exclamation Mark
         // Composed letters with diacritics
-    [SK_idx(SK_ENYE)] = {A(KC_N),ALGR(KC_N)}             // ñ/Ñ
+    [SK_idx(SK_ENYE)] = {A(KC_N),ALGR(KC_N)},             // ñ/Ñ
+    [SK_idx(SK_SCARON)] = {KC_NO,KC_NO},                  // š/Š CARON
 
 };
 
@@ -279,6 +280,14 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
                     // set_mods(held_mods); // restore mods just in case? (not necessary?)
                 }
                 break;
+
+            case SK_SCARON:
+                tap_code(KC_S);
+                clear_keyboard(); // clean record to tinker with.
+                tap_code16(A(S(KC_V)));
+                set_mods(held_mods & MOD_MASK_SHIFT); // Preserve shift state
+                break;
+
             case SK_HENK: // Japanese
                 tap_SemKey(SK_HENK); // Mac/Win/iOS all different?
 //                    return_state = false; // stop processing this record.

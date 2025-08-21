@@ -27,7 +27,7 @@ enum tap_dance_codes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_HD] = LAYOUT_moonlander(
     ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 
-    HD_LT5, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, HD_LTA,                 HD_RTA, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, ______, 
+    HD_LT5, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, HD_LTA,                 HD_RTA, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, HD_RT5, 
     HD_LM5, HD_LM4, HD_LM3, HD_LM2, HD_LM1, HD_LM0, HD_LMA,                 HD_RMA, HD_RM0, HD_RM1, HD_RM2, HD_RM3, HD_RM4, ______, 
     HD_LB5, HD_LB4, HD_LB3, HD_LB2, HD_LB1, HD_LB0,                                 HD_RB0, HD_RB1, HD_RB2, HD_RB3, HD_RB4, HD_RB5, 
     HD_LH7, HD_LH6, ______, HD_LH4, HD_LH3,         HD_LBA,                 HD_RBA,         HD_RH3, ______, ______, ______, HD_RH7, 
@@ -71,6 +71,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LC_LM5, LC_LM4, LC_LM3, LC_LM2, LC_LM1, LC_LM0, ______,                 ______, LC_RM0, LC_RM1, LC_RM2, LC_RM3, LC_RM4, LC_RM5, 
     LC_LB5, LC_LB4, LC_LB3, LC_LB2, LC_LB1, LC_LB0,                                 LC_RB0, LC_RB1, LC_RB2, LC_RB3, LC_RB4, LC_RB5, 
     ______, ______, ______, ______, ______,         LC_LBA,                 LC_RBA,         ______, ______, ______, ______, ______, 
+                                            ______, ______, ______, ______, ______, ______
+  ),
+    [L_TEST] = LAYOUT_moonlander(
+    ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 
+    LT_LT5, LT_LT4, LT_LT3, LT_LT2, LT_LT1, LT_LT0, ______,                 ______, LT_RT0, LT_RT1, LT_RT2, LT_RT3, LT_RT4, LT_RT5, 
+    LT_LM5, LT_LM4, LT_LM3, LT_LM2, LT_LM1, LT_LM0, ______,                 ______, LT_RM0, LT_RM1, LT_RM2, LT_RM3, LT_RM4, LT_RM5, 
+    LT_LB5, LT_LB4, LT_LB3, LT_LB2, LT_LB1, LT_LB0,                                 LT_RB0, LT_RB1, LT_RB2, LT_RB3, LT_RB4, LT_RB5, 
+    ______, ______, ______, ______, ______,         LT_LBA,                 LT_RBA,         ______, ______, ______, ______, ______, 
                                             ______, ______, ______, ______, ______, ______
   ),
 };

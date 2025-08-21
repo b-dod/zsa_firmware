@@ -123,6 +123,7 @@ enum my_keycodes {
     SK_IEXC,    // ¡ Spanish inverted Exclamation Mark
         // Composed letters with diacritics
     SK_ENYE,    // ñ/Ñ ENYE
+    SK_SCARON, // š/Š CARON
 
 /* Eventually…these should be handled as SemKeys with BCD & Alt-gr for Windows?
     HD_aumlt,

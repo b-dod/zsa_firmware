@@ -84,7 +84,7 @@
 #define HD_RT2 HD_SLSH
 #define HD_RT3 HD_DQUO
 #define HD_RT4 HD_QUOT
-//#define HD_RT5 KC_LNG2
+#define HD_RT5 TO(L_TEST) // was KC_LNG2
 
 #define HD_LM5 KC_TAB
 #define HD_LM4 HD_S

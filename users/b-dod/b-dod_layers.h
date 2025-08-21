@@ -365,3 +365,71 @@ __  │   UNDO     COPY     CUT    PSTE    FAGN  │ __  __    __  __ │  DOCEN
 #define LC_RH3 KC_NO
 #define LC_RH4 KC_NO
 
+/*   L_TEST THE TEST LAYER w/ HRM
+    ╭──────────────────────────────────────────╮                  ╭───────────────────────────────────────────────╮
+__  │   ____     ____    ____    ____    ____  │                  │  ______     ____    __      ____    _______   │ ______
+__  │   ____     ____    ____    ____    ____  |                  |  _______    ____    ____    ____    _______   │ __
+__  │   ____     ____     ___    ____    ____  │ __  __    __  __ │  ______     ___     ____    ____    _______   │ __
+    ╰──────────────────╮  __   _(____)   ____  │ __           __  │  _______  _______    __    ╭──────────────────╯
+       _______ _______ ╰───────────────────────╯                  ╰────────────────────────────╯ _______ _______
+*/
+
+#define LT_LT5 KC_NO
+#define LT_LT4 KC_NO
+#define LT_LT3 KC_NO
+#define LT_LT2 KC_NO
+#define LT_LT1 KC_NO
+#define LT_LT0 KC_NO
+#define LT_RTA KC_NO
+#define LT_RT0 KC_NO
+#define LT_RT1 KC_NO
+#define LT_RT2 KC_NO
+#define LT_RT3 KC_NO
+#define LT_RT4 KC_NO
+#define LT_RT5 TO(L_HD)
+
+#define LT_LM5 KC_NO
+#define LT_LM4 SK_SCARON
+#define LT_LM3 KC_NO
+#define LT_LM2 KC_NO
+#define LT_LM1 KC_NO
+#define LT_LM0 KC_NO
+#define LT_RMA KC_NO
+#define LT_RM0 KC_NO
+#define LT_RM1 RSFT_T(KC_NO)
+#define LT_RM2 RGUI_T(KC_NO)
+#define LT_RM3 RALT_T(KC_NO)
+#define LT_RM4 RCTL_T(KC_NO)
+#define LT_RM5 KC_NO
+
+#define LT_LB5 KC_NO
+#define LT_LB4 KC_NO
+#define LT_LB3 KC_NO
+#define LT_LB2 KC_NO
+#define LT_LB1 KC_NO
+#define LT_LB0 KC_NO
+#define LT_LBA KC_NO
+#define LT_LBB KC_NO
+#define LT_RBB KC_NO
+#define LT_RBA KC_NO
+#define LT_RB0 KC_NO
+#define LT_RB1 KC_NO
+#define LT_RB2 KC_NO
+#define LT_RB3 KC_NO
+#define LT_RB4 KC_NO
+#define LT_RB5 KC_NO
+
+#define LT_LH5 KC_NO
+#define LT_LH4 KC_NO
+#define LT_LH3 KC_NO
+#define LT_LH2 KC_NO
+#define LT_LH1 KC_NO
+#define LT_LH0 KC_NO
+#define LT_LHA KC_NO
+#define LT_RHA KC_NO
+#define LT_RH0 KC_NO
+#define LT_RH1 KC_NO
+#define LT_RH2 KC_NO
+#define LT_RH3 KC_NO
+#define LT_RH4 KC_NO
+#define LT_RH5 KC_NO
