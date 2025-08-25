@@ -86,7 +86,7 @@
 #define HD_RT4 HD_QUOT
 //#define HD_RT5 KC_LNG2
 
-#define HD_LM5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
+#define HD_LM5 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
 #define HD_LM4 HD_S
 #define HD_LM3 HD_C
 #define HD_LM2 HD_N
@@ -101,7 +101,7 @@
 #define HD_RM4 HD_H
 //#define HD_RM5 KC_LNG1
 
-#define HD_LB5 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
+#define HD_LB5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
