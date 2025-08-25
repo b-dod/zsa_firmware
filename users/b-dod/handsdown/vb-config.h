@@ -61,10 +61,10 @@
 //
 //    Base (alpha) Layer  Hands Down Vibranium-vb (HRMs /+ thumb mods)
 //      ╭─────────────────────╮                 ╭─────────────────────╮
-// esc  │  X   W   M   G   J  │ L_CFG     L_NUM │  #$  .:  /*  "[  '] │ LANG2/henk
-// tab  │  S   C   N   T   K  | (             ) |  ,;   A   E   I   H │ LANG1/mhen
-//  Z   │  B   P   L   D   V  │ [ copy   pste ] │  -+   U   O   Y   F │ Q
-//      ╰───────────╮ bsp  R  │ &             | │ spc  ret ╭──────────╯
+// tab  │  X   W   M   G   J  │ L_CFG     L_NUM │  #$  .:  /*  "[  '] │ LANG2/henk
+// ray  │  S   C   N   T   K  | (             ) |  ,;   A   E   I   H │ LANG1/mhen
+// shrt │  B   P   L   D   V  │ [ copy   pste ] │  -+   U   O   Y   F │ Q
+// esc  ╰───────────╮ bsp  R  │ &             | │ spc  ret ╭──────────╯
 //    left rght app ╰─────────╯                 ╰──────────╯ tgLN  up  dn
 //
 // For small boards, Q (LT3) & Z (LT4) are (also) on the sym layer
@@ -86,7 +86,7 @@
 #define HD_RT4 HD_QUOT
 //#define HD_RT5 KC_LNG2
 
-#define HD_LM5 KC_TAB
+#define HD_LM5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
 #define HD_LM4 HD_S
 #define HD_LM3 HD_C
 #define HD_LM2 HD_N
@@ -101,7 +101,7 @@
 #define HD_RM4 HD_H
 //#define HD_RM5 KC_LNG1
 
-#define HD_LB5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
+#define HD_LB5 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
@@ -119,8 +119,8 @@
 #define HD_RB5 HD_Q
 
 //Primary Thumbs 1-3 (others are unique to the board)
-#define HD_LH7 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
-#define HD_LH6 HYPR(KC_SPC) // SHIFT GUI CTRL ALT SPACE, Keyboard Maestro Palettes
+#define HD_LH7 KC_TAB
+#define HD_LH6 S(KC_TAB) // HYPR(KC_SPC) // SHIFT GUI CTRL ALT SPACE, Keyboard Maestro Palettes
 //#define HD_LH5 KC_LEFT
 #define HD_LH4 HYPR_T(KC_MS_BTN2) // USED TO BE KC_RGHT
 #define HD_LH3 MEH_T(KC_MS_BTN1) // USED TO BE KC_APP
