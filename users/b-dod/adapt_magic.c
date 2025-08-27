@@ -11,7 +11,10 @@
 // first the common non-alpha adaptives for macros (Basically a "Magic" key, like a reverse LeaderKey)
 //
 
-#ifndef E_MAGIC
+#ifndef A_MAGIC
+    #define A_MAGIC "ASitP"
+#endif
+#ifndef EE_MAGIC
     #define EE_MAGIC "exomech@proton.me"
 #endif
 #ifndef TE_MAGIC
