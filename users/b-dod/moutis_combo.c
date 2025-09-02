@@ -691,7 +691,7 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
             switch(combo_on) {  // combo_on is global, set in process_combo above
 
                 case HC_AMPR:
-                    send_string(" and ");
+                    send_string(" & ");
                     break;
 
                 case HC_FIND: // Held, so find selection (should work with most apps/platforms)
