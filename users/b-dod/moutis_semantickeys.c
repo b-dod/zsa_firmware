@@ -66,7 +66,7 @@ const uint16_t SemKeys_t[SK_count][OS_count] = {
     [SK_idx(SK_KILL)] = {G(A(KC_ESC)),C(A(KC_DEL))},          // Force quit / ctrl-alt-del
     [SK_idx(SK_HENK)] = {KC_LNG1, C(S(KC_1))},                // 変換/かな
     [SK_idx(SK_MHEN)] = {KC_LNG2, C(S(KC_0))},                // 無変換/英数
-//    [SK_idx(SK_DKT8)] = {C(S(KC_3)),G(KC_H)},             // Dictate speech to text
+    [SK_idx(SK_DKT8)] = {C(S(KC_3)),G(KC_H)},             // Dictate speech to text
 //    [SK_idx(SK_AIVC)] = {C(S(KC_4)),G(KC_C)},             // AI voice control (mac Siri/Win Cortana)
         // extended characters/ editing commands
     [SK_idx(SK_HENT)] = {G(KC_ENT),C(KC_ENT)},                // Hard ENTER

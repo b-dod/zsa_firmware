@@ -608,9 +608,9 @@ ADD_HERE:
                     tap_code(KC_9);
                     break;
                                         
-//                case HC_TYPE_LEFTCOMBO:
-//                        send_string(LeftComboTapE); //
-//                    break;
+                case HC_TYPE_LEFTCOMBO:
+                        tap_SemKey(SK_DKT8); //
+                    break;
                 case HC_TYPE_RIGHTCOMBO:
                         send_string(RightComboTapE); // send "Japan" right away
                     break;
@@ -903,9 +903,12 @@ void matrix_scan_user_process_combo() {  // called from matrix_scan_user if comb
                     break;
 */
                     
-//                case HC_TYPE_LEFTCOMBO: // already "LeftComboTap" has been sent; if held, undo and send "LeftComboHeld"
+                case HC_TYPE_LEFTCOMBO: // if held, send Mac dictate key
 //                        send_string(LeftComboHeldE); //
-//                    break;
+                        host_consumer_send(0xCF);
+                        wait_ms(10);
+                        host_consumer_send(0);
+                    break;
                 case HC_TYPE_RIGHTCOMBO: // already "RightComboTap" has been sent; if held, add "RightComboHeld"
                         send_string(RightComboHeldE); //
                     break;

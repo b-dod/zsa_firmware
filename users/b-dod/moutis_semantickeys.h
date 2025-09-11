@@ -41,7 +41,7 @@ enum my_keycodes {
     SK_KILL, // SK_KILL must be the first of contiguous block of SKs
     SK_HENK,  // kana (others)
     SK_MHEN, // eisuu (others)
-//    SK_DKT8,    // speech to text
+    SK_DKT8,    // speech to text
 //    SK_AIVC,    // AI voice control (mac Siri/Win cortana)
         // extended characters/ editing commands
     SK_HENT, // Hard-Enter
