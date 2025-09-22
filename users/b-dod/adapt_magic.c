@@ -14,6 +14,9 @@
 #ifndef A_MAGIC
     #define A_MAGIC "ASitP"
 #endif
+#ifndef AA_MAGIC
+    #define AA_MAGIC "A Shell in the Pit"
+#endif
 #ifndef EE_MAGIC
     #define EE_MAGIC "exomech@proton.me"
 #endif
@@ -111,10 +114,24 @@ case HD_MAGIC:  // default is KC_HASH "#"
 //    break;
     return_state = false; // presume we do something.
     switch (prior_keycode) {
-    #ifdef A_MAGIC
+    #if defined (A_MAGIC) || defined (AA_MAGIC)
         case KC_A: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(A_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef A_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(A_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_A:
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(AA_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef B_MAGIC
