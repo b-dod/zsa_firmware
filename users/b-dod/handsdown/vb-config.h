@@ -181,6 +181,7 @@
 #define HD_ent_keys  HD_LB0, HD_LB1     // ENTER
 #define HD_ent2_keys HD_LB0, HD_LB1, HD_LB2 // hard-ENTER/page break
 #define HD_ent3_keys HD_LB0, HD_LB1, HD_LB2, HD_LB3 // Semkey "Next Paragraph" then ENTER
+#define HD_ent4_keys HD_LB0, HD_LB1, HD_LB2, HD_LB4 // Semkey "Previous Paragraph" then ENTER then UP ARROW
 #define APPMENU_keys  HD_LT1, HD_LT0  // APPMENU
 #define APPMENU_nav_keys  LN_LT1, LN_LT0  // APPMENU
 

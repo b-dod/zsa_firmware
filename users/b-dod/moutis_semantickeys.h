@@ -46,6 +46,7 @@ enum my_keycodes {
         // extended characters/ editing commands
     SK_HENT, // Hard-Enter
     SK_PHENT, // next paragraph then hard-enter
+    SK_PPENTUP, // previous paragraph then enter then up arrow
     SK_UNDO, // undo
     SK_REDO, // redo
     SK_CUT, // cut

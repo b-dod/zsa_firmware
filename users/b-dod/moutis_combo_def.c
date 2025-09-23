@@ -34,6 +34,7 @@ const uint16_t PROGMEM Hspc_combo[] = {HD_spc_keys, COMBO_END};    // SPACE
 const uint16_t PROGMEM Hent_combo[] = {HD_ent_keys, COMBO_END};    // ENTER
 const uint16_t PROGMEM Hent2_combo[] = {HD_ent2_keys, COMBO_END};  // hard-ENTER/page break
 const uint16_t PROGMEM Hent3_combo[] = {HD_ent3_keys, COMBO_END};  // Semkey "Next Paragraph" then ENTER
+const uint16_t PROGMEM Hent4_combo[] = {HD_ent4_keys, COMBO_END};  // Semkey "Previous Paragraph" then ENTER then UP ARROW
 
 // SEMANTIC FUNCTIONS  ** usinp SemKeys **
 const uint16_t PROGMEM Hnew_combo[] = {HD_new_keys, COMBO_END}; // new
@@ -416,6 +417,7 @@ combo_t key_combos[] = {
     [HC_ENT] = COMBO(Hent_combo, KC_ENT), // ENTER
     [HC_ENT2] = COMBO(Hent2_combo, SK_HENT), // hard-ENTER
     [HC_ENT3] = COMBO(Hent3_combo, SK_PHENT), // Semkey "Next Paragraph" then ENTER
+    [HC_ENT4] = COMBO(Hent4_combo, SK_PPENTUP), // Semkey "Previous Paragraph" then ENTER then UP ARROW
 
 /* These all use SemKeys, even as simple combos (handled by process_semkey from process_record_user) */
     [HC_NEW] = COMBO(Hnew_combo, SK_NEW),

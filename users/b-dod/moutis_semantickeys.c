@@ -292,6 +292,12 @@ bool process_semkey(uint16_t keycode, const keyrecord_t *record) {
                 tap_code(KC_ENT);
                 set_sentence_case_state_primed(); // prime sentence case
                 break;
+            case SK_PPENTUP:
+                tap_SemKey(SK_PARAPRV); // Previous Paragraph
+                tap_code(KC_ENT); // enter
+                tap_code(KC_UP); // up arrow
+                set_sentence_case_state_primed(); // prime sentence case
+                break;
             default: // default keydown event (from the semkey table)
                 register_SemKey(keycode);
                 break;
