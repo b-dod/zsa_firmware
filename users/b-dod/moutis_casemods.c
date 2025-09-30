@@ -117,6 +117,7 @@ bool process_caps_word(uint16_t keycode, const keyrecord_t *record) {
             case KC_MINS:
             case KC_BSPC:
             case KC_RIGHT ... KC_LEFT:
+            case KC_SLSH:
                 last_press_was_space = false;
                 return true; // let QMK handle it.
             case SK_UNDS:
