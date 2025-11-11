@@ -20,6 +20,9 @@
 #ifndef EE_MAGIC
     #define EE_MAGIC "exomech@proton.me"
 #endif
+#ifndef H_MAGIC
+    #define H_MAGIC "https://"
+#endif
 #ifndef TE_MAGIC
     #define TE_MAGIC "thecreaturesound@gmail.com"
 #endif
