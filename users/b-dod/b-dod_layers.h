@@ -225,6 +225,81 @@ __ │ UNDO     COPY     CUT    PSTE      SPC   │ __ __   __ __ │  COMM     
 #define LN_RH4 KC_TRNS
 #define LN_RH5 KC_TRNS
 
+/*  L_Nav Navigation (right) NUMPad Layer (left) (LM – reversed)
+   ╭──────────────────────────────────────────╮               ╭──────────────────────────────────────────╮
+__ │ PSLS     P7      P8      P9        PMNS  │               │ NUM_LK    PGUP    UP      PGDN     TAB   │ __
+__ │ PAST     P4      P5      P6        PPLS  │               │ W_LEFT    LEFT    DOWN    RGHT     W_RGHT│ __
+__ │ COMM     P1      P2      P3        PEQL  │ __ __   __ __ │ UNDO      COPY     CUT     PSTE     SPC  │ __
+   ╰────────────────╮  __     P0      PDOT    │ __         __ │ DEL    S_T(BSP) G_T(ENT)╭────────────────╯
+        __      __  ╰─────────────────────────╯               ╰─────────────────────────╯ __       __
+*/
+
+/* ───────── Top row ───────── */
+#define LM_LT5 KC_TRNS
+#define LM_LT4 KC_PSLS
+#define LM_LT3 KC_P7
+#define LM_LT2 KC_P8
+#define LM_LT1 KC_P9
+#define LM_LT0 KC_PMNS
+
+#define LM_RT0 KC_NUM
+#define LM_RT1 KC_PGUP
+#define LM_RT2 KC_UP
+#define LM_RT3 KC_PGDN
+#define LM_RT4 KC_TAB
+#define LM_RT5 KC_TRNS
+
+/* ───────── Middle row ───────── */
+#define LM_LM5 KC_TRNS
+#define LM_LM4 KC_PAST
+#define LM_LM3 RSFT_T(KC_P4)
+#define LM_LM2 RGUI_T(KC_P5)
+#define LM_LM1 RALT_T(KC_P6)
+#define LM_LM0 RCTL_T(KC_PPLS)
+
+#define LM_RM0 SK_WORDPRV
+#define LM_RM1 KC_LEFT
+#define LM_RM2 KC_DOWN
+#define LM_RM3 KC_RGHT
+#define LM_RM4 SK_WORDNXT
+#define LM_RM5 KC_TRNS
+
+/* ───────── Bottom row ───────── */
+#define LM_LB5 KC_TRNS
+#define LM_LB4 KC_COMM
+#define LM_LB3 KC_P1
+#define LM_LB2 KC_P2
+#define LM_LB1 KC_P3
+#define LM_LB0 KC_PEQL
+#define LM_LBA KC_ESC
+#define LM_LBB KC_TRNS
+
+#define LM_RBB KC_TRNS
+#define LM_RBA KC_ESC
+#define LM_RB0 SK_UNDO
+#define LM_RB1 SK_COPY
+#define LM_RB2 SK_CUT
+#define LM_RB3 SK_PSTE
+#define LM_RB4 KC_SPC
+#define LM_RB5 KC_TRNS
+
+/* ───────── Thumb / inner ───────── */
+#define LM_LH5 KC_TRNS
+#define LM_LH4 KC_TRNS
+#define LM_LH3 KC_TRNS
+#define LM_LH2 KC_P0
+#define LM_LH1 KC_PDOT
+#define LM_LH0 KC_C
+#define LM_LHA KC_NO
+
+#define LM_RHA KC_NO
+#define LM_RH0 KC_DEL
+#define LM_RH1 LSFT_T(KC_BSPC)
+#define LM_RH2 LGUI_T(KC_ENT)
+#define LM_RH3 KC_TRNS
+#define LM_RH4 KC_TRNS
+#define LM_RH5 KC_TRNS
+
 /*   L_NAV THE NAVIGATION (right hand) LAYER w/ edit & mods on left
     ╭──────────────────────────────────────────╮                  ╭───────────────────────────────────────────────╮
 TAB │   CLOZ     QUIT    SCAP    SCLP    PSTM  │                  │  DOCBEG     HOME    UP      PGUP    PARAPRV   │ KC_NUM

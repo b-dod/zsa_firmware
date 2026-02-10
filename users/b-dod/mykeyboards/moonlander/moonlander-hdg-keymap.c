@@ -26,11 +26,11 @@ enum tap_dance_codes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [L_HD] = LAYOUT_moonlander(
-    ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 
+    ______, ______, ______, ______, ______, HD_LU0, HD_LUA,                 ______, ______, ______, ______, ______, ______, ______, 
     HD_LT5, HD_LT4, HD_LT3, HD_LT2, HD_LT1, HD_LT0, HD_LTA,                 HD_RTA, HD_RT0, HD_RT1, HD_RT2, HD_RT3, HD_RT4, ______, 
     HD_LM5, HD_LM4, HD_LM3, HD_LM2, HD_LM1, HD_LM0, HD_LMA,                 HD_RMA, HD_RM0, HD_RM1, HD_RM2, HD_RM3, HD_RM4, ______, 
     HD_LB5, HD_LB4, HD_LB3, HD_LB2, HD_LB1, HD_LB0,                                 HD_RB0, HD_RB1, HD_RB2, HD_RB3, HD_RB4, HD_RB5, 
-    HD_LH7, HD_LH6, ______, HD_LH4, HD_LH3,         HD_LBA,                 HD_RBA,         HD_RH3, ______, ______, ______, HD_RH7, 
+    HD_LH7, HD_LH6, HD_LH5, HD_LH4, HD_LH3,         HD_LBA,                 HD_RBA,         HD_RH3, ______, ______, ______, HD_RH7, 
                                             HD_LH2, HD_LH1, ______, ______, HD_RH1, HD_RH2
   ),
   [L_SYM] = LAYOUT_moonlander(
@@ -56,6 +56,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ______, LN_LB4, LN_LB3, LN_LB2, LN_LB1, LN_LB0,                                 LN_RB0, LN_RB1, LN_RB2, LN_RB3, LN_RB4, ______, 
     ______, ______, ______, ______, LN_LH3,         LN_LBA,                 LN_RBA,         LN_RH3, ______, ______, ______, ______, 
                                             LN_LH2, LN_LH1, ______, ______, LN_RH1, LN_RH2
+  ),
+  [L_NUM_INV] = LAYOUT_moonlander(
+    ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 
+    ______, LM_LT4, LM_LT3, LM_LT2, LM_LT1, LM_LT0, ______,                 ______, LM_RT0, LM_RT1, LM_RT2, LM_RT3, LM_RT4, ______, 
+    ______, LM_LM4, LM_LM3, LM_LM2, LM_LM1, LM_LM0, ______,                 ______, LM_RM0, LM_RM1, LM_RM2, LM_RM3, LM_RM4, ______, 
+    ______, LM_LB4, LM_LB3, LM_LB2, LM_LB1, LM_LB0,                                 LM_RB0, LM_RB1, LM_RB2, LM_RB3, LM_RB4, ______, 
+    ______, ______, ______, ______, LM_LH3,         LM_LBA,                 LM_RBA,         LM_RH3, ______, ______, ______, ______, 
+                                            LM_LH2, LM_LH1, ______, ______, LM_RH1, LM_RH2
   ),
   [L_NAV] = LAYOUT_moonlander(
     ______, ______, ______, ______, ______, ______, ______,                 ______, ______, ______, ______, ______, ______, ______, 

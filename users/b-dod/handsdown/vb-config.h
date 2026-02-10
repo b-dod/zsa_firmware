@@ -71,6 +71,9 @@
 // and accessible combos (defined below)
 //
 
+#define HD_LU0 G(A(KC_LEFT))
+#define HD_LUA G(A(KC_RGHT))
+
 #define HD_LT5 KC_ESC
 #define HD_LT4 HD_X
 #define HD_LT3 HD_W
@@ -86,7 +89,7 @@
 #define HD_RT4 HD_QUOT
 //#define HD_RT5 KC_LNG2
 
-#define HD_LM5 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
+#define HD_LM5 S(G(A(KC_SPC))) // Spotlight/Raycast launch
 #define HD_LM4 HD_S
 #define HD_LM3 HD_C
 #define HD_LM2 HD_N
@@ -101,7 +104,7 @@
 #define HD_RM4 HD_H
 //#define HD_RM5 KC_LNG1
 
-#define HD_LB5 S(G(A(KC_SPC))) // Spotlight/Raycast launch, was HD_Z previously
+#define HD_LB5 S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT, was HD_Z previously
 #define HD_LB4 HD_B
 #define HD_LB3 HD_P
 #define HD_LB2 HD_L
@@ -121,7 +124,7 @@
 //Primary Thumbs 1-3 (others are unique to the board)
 #define HD_LH7 KC_TAB
 #define HD_LH6 S(KC_TAB) // HYPR(KC_SPC) // SHIFT GUI CTRL ALT SPACE, Keyboard Maestro Palettes
-//#define HD_LH5 KC_LEFT
+#define HD_LH5 TG(L_NUM_INV)
 #define HD_LH4 HYPR_T(KC_MS_BTN2) // USED TO BE KC_RGHT
 #define HD_LH3 MEH_T(KC_MS_BTN1) // USED TO BE KC_APP
 #define HD_LH2 HD_R
@@ -135,7 +138,7 @@
 #define HD_RH3 TG(L_NUM)
 //#define HD_RH4 KC_UP
 //#define HD_RH5 KC_DOWN
-#define HD_RH7 OSM(MOD_RSFT) // S(G(KC_SPC)) // SHIFT GUI SPACE, SHORTCAT
+#define HD_RH7 S(KC_TAB) // S(KC_TAB)
 
 #ifdef COMBO_ENABLE
 //
