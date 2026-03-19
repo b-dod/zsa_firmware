@@ -17,6 +17,9 @@
 #ifndef AA_MAGIC
     #define AA_MAGIC "A Shell in the Pit"
 #endif
+#ifndef CB_MAGIC
+    #define CB_MAGIC "ubscription"
+#endif
 #ifndef EE_MAGIC
     #define EE_MAGIC "exomech@proton.me"
 #endif
@@ -31,6 +34,12 @@
 #endif
 #ifndef GM_MAGIC
     #define GM_MAGIC "ood morning folks" // full phrase "Good morning folks"
+#endif
+#ifndef N_MAGIC
+    #define N_MAGIC "th"
+#endif
+#ifndef NR_MAGIC
+    #define NR_MAGIC "ths"
 #endif
 #ifndef RV_MAGIC
     #define RV_MAGIC "eview" // full word "review"
@@ -137,10 +146,24 @@ case HD_MAGIC:  // default is KC_HASH "#"
             }
             break;
     #endif
-    #ifdef B_MAGIC
+    #if defined (B_MAGIC) || defined (CB_MAGIC)
         case KC_B: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(B_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef B_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(B_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_C:
+//                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(CB_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef C_MAGIC
@@ -263,7 +286,7 @@ case HD_MAGIC:  // default is KC_HASH "#"
     #endif
     #ifdef N_MAGIC
         case KC_N: //
-            tap_code(KC_BSPC); // and may have been lowercase
+//            tap_code(KC_BSPC); // and may have been lowercase
             send_string(N_MAGIC);  //
             break;
     #endif
@@ -279,10 +302,24 @@ case HD_MAGIC:  // default is KC_HASH "#"
             send_string(P_MAGIC);  //
             break;
     #endif
-    #ifdef R_MAGIC
+    #if defined R_MAGIC || defined (NR_MAGIC)
         case KC_R: //
-            tap_code(KC_BSPC); // and may have been lowercase
-            send_string(R_MAGIC);  //
+            if (!preprior_keycode) {
+            #ifdef R_MAGIC
+                tap_code(KC_BSPC); // and may have been lowercase
+                send_string(R_MAGIC);  //                
+            #else
+                return_state = true;
+            #endif
+                break;
+            }
+            switch (preprior_keycode) {
+                case KC_N:
+//                    tap_code(KC_BSPC); // and may have been lowercase
+                    tap_code(KC_BSPC); // and may have been lowercase
+                    send_string(NR_MAGIC);  //
+                    break;
+            }
             break;
     #endif
     #ifdef S_MAGIC
